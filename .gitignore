@@ -1,0 +1,24 @@
+# Dependencies
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Local preview
+.serve/
+.tmp/
+data/sync-report.txt
+
+# Secrets and sync config
+scripts/config.env
+scripts/*.json
+!scripts/config.example.env
+data/.last-sync.json
+data/*.csv
+!data/*.csv.example
+!data/company-mentor-list.csv
+data/*.xlsx
+data/*.xlsm

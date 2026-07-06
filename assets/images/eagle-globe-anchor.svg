@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Eagle, Globe, and Anchor placeholder">
+  <circle cx="32" cy="32" r="30" fill="#003057"/>
+  <circle cx="32" cy="34" r="14" fill="none" stroke="#c5a572" stroke-width="2"/>
+  <ellipse cx="32" cy="34" rx="14" ry="8" fill="none" stroke="#c5a572" stroke-width="1.5"/>
+  <path d="M32 18 L36 28 L32 26 L28 28 Z" fill="#c5a572"/>
+  <path d="M22 42 Q32 50 42 42" fill="none" stroke="#c5a572" stroke-width="2"/>
+  <text x="32" y="58" text-anchor="middle" fill="#ffffff" font-size="6" font-family="sans-serif">EGA</text>
+</svg>

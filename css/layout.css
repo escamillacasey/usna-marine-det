@@ -1,0 +1,135 @@
+/* Page layout — header, main, footer */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: 3px solid var(--color-maroon);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: var(--space-lg);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  color: var(--color-navy);
+}
+
+.site-header__brand:hover,
+.site-header__brand:focus-visible {
+  color: var(--color-maroon);
+}
+
+.site-header__logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.site-header__title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+.site-header__tagline {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Two-column content rows */
+.content-row {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .content-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content-row--reverse .content-row__media {
+    order: 2;
+  }
+}
+
+.content-row__media img,
+.content-row__media .media-placeholder {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* Grid layouts */
+.grid-2 {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Site footer */
+.site-footer {
+  background: var(--color-navy-dark);
+  color: var(--color-gray-100);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer a {
+  color: var(--color-gold-light);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.site-footer__social {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: var(--space-lg);
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: var(--font-size-xs);
+}

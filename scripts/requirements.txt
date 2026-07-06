@@ -1,0 +1,4 @@
+# Optional — export from Ops workbook (Phase 1) and live Google Sheets sync (Phase 2)
+openpyxl>=3.1.0
+gspread>=6.0.0
+google-auth>=2.0.0
