@@ -1,6 +1,16 @@
 # Image assets
 
-Placeholder SVGs are included for local development. Replace with official USNA assets before publishing to Cascade.
+Placeholder SVGs are included for local development. Official images can be pulled from the live site with:
+
+```bash
+python3 scripts/scrape-live-images.py
+```
+
+That downloads **65 content images** into `scraped/` (mirroring the live paths), copies key files to canonical names in this folder, and regenerates **`IMAGE-GAPS.md`** — use that file to see what's still missing.
+
+## Gap report
+
+See **`IMAGE-GAPS.md`** for a checklist of every image the new site needs vs. what is on disk.
 
 ## Mapping from live sites
 

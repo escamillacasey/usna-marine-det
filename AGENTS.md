@@ -64,6 +64,13 @@ Operational data lives in Google Sheets (AppSheet backend). Workflow:
 
 See `data/README.md` for column mapping. When the user exports their Marines sheet, run sync and update pages from the generated JS.
 
+## Messaging and commander's intent
+
+- The **annual campaign order is internal only** — never link to it, attach it, or paste it on the public site.
+- Public copy should reflect CO intent and priority themes using `docs/MESSAGING-GUIDE.md` (approved phrases + page mapping).
+- Source material lives in gitignored `docs/internal/campaign-order-source.*` — see `docs/internal/README.md`.
+- On a messaging pass: update the guide's approved phrases first, then edit the HTML snippets listed in the mapping table. Keep the homepage a router (tagline + two about sentences, not LOE lists).
+
 ## When editing
 
 Preserve consistency with existing patterns. Recommend usability, accessibility, and maintainability improvements proactively.

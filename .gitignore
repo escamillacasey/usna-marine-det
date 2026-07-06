@@ -22,3 +22,10 @@ data/*.csv
 !data/company-mentor-list.csv
 data/*.xlsx
 data/*.xlsm
+
+# Internal messaging (campaign order — never publish)
+docs/internal/campaign-order-source.*
+docs/internal/campaign-plan-ocr.txt
+docs/internal/*.pdf
+docs/internal/*.docx
+docs/internal/*.doc
