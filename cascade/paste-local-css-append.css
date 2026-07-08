@@ -541,12 +541,12 @@ ul, ol {
   margin-right: auto;
 }
 
-/* Home masthead — full-bleed photo + left scrim (logo reads naturally on dark panel) */
+/* Home masthead — full-bleed photo, mission line anchored at bottom */
 .hero--masthead {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: clamp(18rem, 42vw, 26rem);
+  min-height: clamp(16rem, 38vw, 24rem);
   padding: 0;
   background: var(--color-navy-dark);
   overflow: hidden;
@@ -563,7 +563,7 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 58% center;
+  object-position: center center;
   opacity: 1;
 }
 
@@ -571,11 +571,10 @@ ul, ol {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    102deg,
-    rgba(0, 26, 51, 0.94) 0%,
-    rgba(0, 26, 51, 0.82) 28%,
-    rgba(0, 48, 87, 0.45) 55%,
-    rgba(92, 0, 0, 0.2) 100%
+    to top,
+    rgba(0, 26, 51, 0.88) 0%,
+    rgba(0, 26, 51, 0.35) 45%,
+    transparent 100%
   );
 }
 
@@ -585,55 +584,17 @@ ul, ol {
   width: 100%;
   max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
-}
-
-.hero--masthead .hero__brand-lockup {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  max-width: 38rem;
-}
-
-.hero--masthead .hero__logo {
-  width: clamp(4.5rem, 13vw, 6rem);
-  height: auto;
-  flex-shrink: 0;
-  margin: 0;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-}
-
-.hero--masthead .hero__eyebrow {
-  color: var(--color-gold);
-  margin-bottom: var(--space-xs);
-}
-
-.hero--masthead .hero__title {
-  color: var(--color-white);
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-  margin: 0 0 var(--space-sm);
-  line-height: var(--line-height-tight);
+  padding: var(--space-lg) var(--space-lg) var(--space-xl);
 }
 
 .hero--masthead .hero__lead {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--color-white);
   opacity: 1;
   margin: 0;
-  font-size: var(--font-size-base);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
   line-height: var(--line-height-loose);
-  max-width: 34rem;
-}
-
-@media (max-width: 479px) {
-  .hero--masthead .hero__brand-lockup {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
-  }
-
-  .hero--masthead .hero__media img {
-    object-position: 65% center;
-  }
+  max-width: 42rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .site-header__logo--mardet {
