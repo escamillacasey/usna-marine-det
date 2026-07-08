@@ -842,12 +842,13 @@ ul, ol {
   margin-right: auto;
 }
 
-/* Interior page header — use marines-page-header in paste HTML (not page-header).
-   USNA Standard 3.0 applies Top.jpg to .page-header, which washes out titles. */
+/* Interior page header — use div.marines-page-header in paste HTML (not header).
+   USNA Standard 3.0 applies Top.jpg to all header elements with !important. */
 .marines-page-header {
   padding: var(--space-2xl) 0 var(--space-xl);
   background: var(--color-off-white);
   background-image: none;
+  border-top: none;
   border-bottom: 4px solid var(--color-gold);
   text-align: center;
 }
@@ -862,6 +863,25 @@ ul, ol {
   font-size: var(--font-size-lg);
   max-width: var(--max-width-narrow);
   margin: 0 auto;
+}
+
+/* Belt-and-suspenders on Cascade (USNA header rule or legacy paste markup) */
+.page-main-content .marines-page-header,
+.page-main-content header.marines-page-header {
+  padding: var(--space-2xl) 0 var(--space-xl) !important;
+  background: var(--color-off-white) !important;
+  background-image: none !important;
+  border-top: none !important;
+  border-bottom: 4px solid var(--color-gold) !important;
+  text-align: center;
+}
+
+.page-main-content .marines-page-header__title {
+  color: var(--color-navy) !important;
+}
+
+.page-main-content .marines-page-header__subtitle {
+  color: var(--color-gray-600) !important;
 }
 
 /* Fallback if a page was not re-pasted yet */

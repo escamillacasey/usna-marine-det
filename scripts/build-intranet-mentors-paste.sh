@@ -8,12 +8,12 @@ HEADER='<!-- CASCADE paste → https://www.usna.edu/MarineCorps/MARDET/company_m
 <!-- USNA intranet only. Static HTML — no JavaScript. Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 
-<header class="marines-page-header">
+<div class="marines-page-header">
 <div class="container">
 <h1 class="marines-page-header__title">Marine Company Mentors</h1>
 <p class="marines-page-header__subtitle">One Marine officer dedicated to each of the Brigade'\''s 36 companies.</p>
 </div>
-</header>
+</div>
 
 <section class="content-section">
 <div class="container">
