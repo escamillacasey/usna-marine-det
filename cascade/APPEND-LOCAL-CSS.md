@@ -1,0 +1,23 @@
+# Append to Cascade `local.css`
+
+**File:** `paste-local-css-append.css` (~32 KB)
+
+## Steps
+
+1. In Cascade → **Assets** → `_files/css/` → open **`local.css`**
+2. Scroll to the **bottom**
+3. If you appended Marines styles before, **delete the old block** (from `/* --- USNA Marines site styles` through the end)
+4. Open **`cascade/paste-local-css-append.css`** in this repo → **Select all** → **Copy**
+5. **Paste** at the bottom of `local.css`
+6. **Submit** and **Publish** `local.css`
+7. Republish a test page → hard refresh (Cmd+Shift+R)
+
+Do **not** use `@import url("marines.css")` mid-file — browsers ignore it unless it is line 1.
+
+## Regenerate after CSS changes in the repo
+
+```bash
+bash scripts/print-local-css-append.sh > /dev/null
+```
+
+Updates `cascade/paste-local-css-append.css` automatically.

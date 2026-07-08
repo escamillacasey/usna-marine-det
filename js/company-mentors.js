@@ -34,10 +34,8 @@
       '<dl class="mentor-card__duties">' +
       items.map(function (item) {
         return (
-          '<div class="mentor-card__duty">' +
-            '<dt>' + escapeHtml(item.label) + '</dt>' +
-            '<dd>' + escapeHtml(item.value) + '</dd>' +
-          '</div>'
+          '<dt>' + escapeHtml(item.label) + '</dt>' +
+          '<dd>' + escapeHtml(item.value) + '</dd>'
         );
       }).join('') +
       '</dl>'

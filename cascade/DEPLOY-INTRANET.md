@@ -17,16 +17,14 @@ Same CSS workflow as public pages: `local.css` with Marines bundle appended at t
 
 ### Photo upload (pick one)
 
-| Where you publish | Cascade folder | HTML `src` prefix |
-|-------------------|----------------|-------------------|
-| **Marine Corps - Public** (`www.usna.edu/MarineCorps`) | `_files/images/public/mentors/` | `/_files/images/public/mentors/` |
-| **USNA intranet** (`intranet.usna.edu`) | `_files/images/intranet/mentors/` | `/_files/images/intranet/mentors/` |
+| Where you publish | Cascade folder | HTML `src` (page under `mardet/`) |
+|-------------------|----------------|-------------------------------------|
+| **Marine Corps - Public** (`www.usna.edu/MarineCorps`) | `_files/images/public/mentors/` | `../_files/images/public/mentors/company-02.jpg` |
+| **USNA intranet** (`intranet.usna.edu`) | `_files/images/intranet/mentors/` | `../_files/images/intranet/mentors/company-02.jpg` |
 
-Default paste file uses **public/mentors** (WAF-safe on www). Regenerate for intranet:
+**Important:** `intranet/` assets return WAF HTML (not JPEG) on the public www site. Copy photos to `public/mentors/` for Marine Corps - Public testing.
 
-```bash
-CASCADE_PHOTO_PREFIX='/_files/images/intranet/mentors/' bash scripts/build-intranet-mentors-paste.sh
-```
+Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ### Photos missing on live site?
 
@@ -108,7 +106,7 @@ Open each URL directly in the browser (replace host/path if your intranet base d
 | `…/_files/js/marines-on-the-yard.js` | 200 |
 | `…/_files/js/intranet/company-mentors-data.js` | 200, starts with `window.COMPANY_MENTORS` |
 | `…/_files/js/intranet/marines-on-the-yard-data.js` | 200, starts with `window.MARINES_ON_THE_YARD` |
-| `…/_files/images/public/mentors/company-02.jpg` | 200 + `Content-Type: image/jpeg` |
+| `…/MarineCorps/_files/images/public/mentors/company-02.jpg` | 200 + `Content-Type: image/jpeg` |
 
 Any **404** → fix upload path before testing pages.
 

@@ -1,93 +1,62 @@
 # Cascade deploy order — MarineCorps test site
 
-Homepage (`working.php`) is done. Deploy the three pages it links to next.
+Live site map: **`cascade/LIVE-URLS.md`**  
+Fix broken **Home** nav: **`cascade/FIX-NAV.md`** (Cascade navigation — not paste HTML)
 
-## Every page (same workflow as home)
+Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append updated `marines.css` to `_files/css/local.css`.
 
-1. **Add Content** → Page (match template used by `working.php`)
+## Every page (same workflow)
+
+1. **Add Content** → Page (match template used by home)
 2. Set output path / filename (see table below)
 3. Paste file contents in **HTML / source mode**
 4. **Publish**
 5. View source → confirm `local.css` link and page content
 
-## Recommended order
+## Live paths (paste files updated)
 
-### 1. Leadership (`paste-leadership-marinecorps.html`)
-
-**Before paste:** upload photos to `_files/images/public/leadership/`:
-
-| Local file | Cascade path |
+| Paste file | Cascade path |
 |------------|----------------|
-| `assets/images/public/leadership/col-reid.jpg` | `_files/images/public/leadership/col-reid.jpg` |
-| `assets/images/public/leadership/ltcol-giraldi.jpg` | `_files/images/public/leadership/ltcol-giraldi.jpg` |
+| `paste-home-marinecorps.html` | `index.php` |
+| `paste-leadership-marinecorps.html` | `leadership.php` |
+| `paste-fleet-application-marinecorps.html` | `Fleet_Marines.php` |
+| `paste-midshipmen-marinecorps.html` | `Midshipmen/index.php` |
+| `paste-prospective-marines-marinecorps.html` | `Midshipmen/prospective-marines.php` |
+| `paste-summer-training-marinecorps.html` | `Midshipmen/summer-training.php` |
+| `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
+| `paste-intranet-company-mentors-marinecorps.html` | `MARDET/company_mentors.php` |
+| `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(when ready)* |
 
-**Page path:** `leadership.php`
+**Photos:** upload to `assets/images/public/leadership/` and `assets/images/public/mentors/` (see `LIVE-URLS.md`).
 
-Unblocks home card + fleet FAQ links.
-
----
-
-### 2. Fleet assignments (`paste-fleet-application-marinecorps.html`)
-
-**Page path:** `fleet-application.php`
-
-No extra assets.
-
----
-
-### 3. Midshipmen hub (`paste-midshipmen-marinecorps.html`)
-
-**Page path:** `midshipmen/index.php` (create `midshipmen` folder in Cascade)
-
-Note: CSS link uses `../_files/css/local.css` (one level down from site root).
-
-Links to subpages that don't exist yet — deploy those next when ready.
-
----
-
-## After these three
-
-| Paste file | Repo source | Cascade path |
-|------------|-------------|--------------|
-| `paste-prospective-marines-marinecorps.html` | `pages/prospective-marines.html` | `prospective-marines.php` |
-| `paste-summer-training-marinecorps.html` | `pages/summer-training.html` | `summer-training.php` |
-
-Roles pages (`roles/index.php`, etc.) already exist on the live site — update later if needed.
-
----
-
-## Go live
-
-When `working.php` is ready to replace the public home:
-
-1. Paste home content into `index.php`
-2. Or rename outputs per webmaster guidance
-3. Republish
-
----
+**Roles** (`roles/index.php`, etc.): paste files still link here — pages return 404 until published.
 
 ## CSS reminder
 
-First line of every paste file:
+First line of root paste files:
 
 ```html
 <link href="_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 ```
 
-Subfolder pages use `../_files/css/local.css`.
+Subfolder pages: `../_files/css/local.css`
 
-After editing repo CSS, run `bash scripts/print-local-css-append.sh` and update `local.css` in Cascade assets.
+After repo CSS changes:
 
----
+```bash
+bash scripts/print-local-css-append.sh > /dev/null
+```
+
+Copy **`cascade/paste-local-css-append.css`** → paste at the **bottom** of Cascade `_files/css/local.css` → publish. See **`cascade/APPEND-LOCAL-CSS.md`**.
+
+**Banner fix:** Interior pages must use **`marines-page-header`** (not `page-header`). Re-paste updated HTML files after updating `local.css`.
 
 ## Fine-tune pass (deferred)
 
-Track these when circling back after the 70% publish:
-
 | Issue | Notes |
 |-------|-------|
-| **Site nav intermittent** | Header/nav (`site-header`, `nav-toggle`, `site-nav`) is not in paste files — relies on USNA template or is missing entirely. Nav only works when that DOM is present; inconsistent across pages. **Fix:** include header block in paste content (or Marines Format) on every page; verify `main.js` nav toggle on Cascade output. |
-| Roles pages | Repo stubs only; live `roles/*.php` may still be legacy content |
+| **Site nav Home → 404** | Fix in Cascade navigation per `FIX-NAV.md` |
+| Roles pages | Not live; nav links 404 until deployed |
 | Hero / content images | Wire `assets/images/public/content/` into pages |
 | Marine Cyber | Static hub card until 2027 revamp |
 

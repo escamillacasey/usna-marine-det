@@ -13,12 +13,10 @@ DATA_JS = ROOT / "js" / "intranet" / "company-mentors-data.js"
 PHOTOS_DIR = ROOT / "assets" / "images" / "intranet" / "mentors"
 OUT_LOCAL = ROOT / "cascade" / "includes" / "mentor-cards-local.html"
 OUT_CASCADE = ROOT / "cascade" / "includes" / "mentor-cards-cascade.html"
-# Cascade photo prefix. Default: public/mentors for Marine Corps - Public (www).
-# USNA WAF blocks _files/images/intranet/ on www — returns 200 + HTML "Request Rejected".
-# For real intranet host: CASCADE_PHOTO_PREFIX='/_files/images/intranet/mentors/' bash scripts/build-intranet-mentors-paste.sh
+# Photo prefix (MARDET/ pages). Live site serves from assets/, not _files/.
 CASCADE_PHOTO_PREFIX = os.environ.get(
     "CASCADE_PHOTO_PREFIX",
-    "/_files/images/public/mentors/",
+    "../assets/images/public/mentors/",
 )
 
 
@@ -54,10 +52,8 @@ def duties_html(mentor: dict) -> str:
 
     parts = ['<dl class="mentor-card__duties">']
     for label, value in rows:
-        parts.append('<div class="mentor-card__duty">')
         parts.append(f"<dt>{html.escape(label)}</dt>")
         parts.append(f"<dd>{html.escape(str(value))}</dd>")
-        parts.append("</div>")
     parts.append("</dl>")
     return "".join(parts)
 
