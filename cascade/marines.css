@@ -540,6 +540,29 @@ ul, ol {
   margin-right: auto;
 }
 
+.hero__logo {
+  display: block;
+  width: clamp(7rem, 22vw, 10rem);
+  height: auto;
+  margin: 0 auto var(--space-md);
+  padding: var(--space-sm);
+  background: var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.hero--compact .hero__logo {
+  margin-bottom: var(--space-lg);
+}
+
+.site-header__logo--mardet {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  padding: 0.15rem;
+}
+
 /* Intro banner (Come Lead America's Marines) */
 .intro-banner {
   background: var(--color-white);
