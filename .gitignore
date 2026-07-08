@@ -12,6 +12,13 @@ Thumbs.db
 .tmp/
 data/sync-report.txt
 
+# Photo import (source drops — not published)
+assets/images/incoming/
+data/photo-import-report.txt
+
+# Public site build artifact
+_site/
+
 # Secrets and sync config
 scripts/config.env
 scripts/*.json

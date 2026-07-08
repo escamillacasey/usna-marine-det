@@ -46,8 +46,8 @@ Community groups are **inferred** from department, billet, mentor assignment, an
 
 | Output | Used on |
 |--------|---------|
-| `js/marines-on-the-yard-data.js` | Marines on the Yard directory (by community) |
-| `js/company-mentors-data.js` | Company Mentors page + mentor section on Marines on the Yard |
+| `js/intranet/marines-on-the-yard-data.js` | Marines on the Yard directory (by community) — **intranet only** |
+| `js/intranet/company-mentors-data.js` | Company Mentors page — **intranet only** |
 
 ## Company mentor assignments
 

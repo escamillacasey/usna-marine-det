@@ -14,40 +14,63 @@ Act as a senior front-end developer and technical advisor for this project.
 - Brief explanations of major design decisions
 - **Avoid duplicate content** — each fact lives in one place; hub pages link outward, they don't repeat body copy
 
+## Public vs intranet (critical)
+
+See `docs/PUBLISH-SPLIT.md`. **Never publish intranet content to the open internet.**
+
+| Tier | Who | MARDET people data |
+|------|-----|-------------------|
+| **Public** | Internet, GitHub Pages, www.usna.edu | **Leadership only** (`pages/leadership.html` — Senior Marine, Chief of Staff) |
+| **Intranet** | USNA internal | MARDET hub, company mentors, roster, collateral duties, OpsO/Adj contacts |
+
+Public pages must **not** link to `pages/intranet/`, roster JS, or mentor headshots. Direct midshipmen to their company mentor in Bancroft Hall or to detachment leadership.
+
+GitHub Pages deploy uses `scripts/build-public-site.sh` (excludes intranet paths).
+
 ## Primary audiences (in priority order)
 
-1. **Midshipmen** — exploring or pursuing a Marine Corps commission → `pages/midshipmen/index.html`
-2. **MARDET Team** — Marines assigned to the detachment → `pages/mardet/index.html`
-3. **Fleet Marines** — applying for a USNA billet → `pages/fleet-application.html`
-4. **Faculty/Staff POCs** (secondary) — need a contact → `pages/leadership.html` (linked subtly from homepage)
+1. **Midshipmen** — exploring or pursuing a Marine Corps commission → `pages/midshipmen/index.html` (public)
+2. **MARDET Team** — Marines assigned to the detachment → `pages/intranet/index.html` (**intranet only**)
+3. **Fleet Marines** — applying for a USNA billet → `pages/fleet-application.html` (public)
+4. **Faculty/Staff POCs** (secondary) — need a contact → `pages/leadership.html` (public)
 
 ## Site map
 
-| Page | Audience | Path |
-|------|----------|------|
-| Home (audience gateway) | All | `index.html` |
-| Midshipmen hub | Midshipmen | `pages/midshipmen/index.html` |
-| MARDET Team hub | Det members | `pages/mardet/index.html` |
-| Fleet Assignments | Fleet applicants | `pages/fleet-application.html` |
-| Leadership | MARDET + POCs | `pages/leadership.html` |
-| Prospective Marines | Midshipmen | `pages/prospective-marines.html` |
-| Summer Training | Midshipmen | `pages/summer-training.html` |
-| Marines on the Yard | Midshipmen | `pages/marines-on-the-yard.html` |
-| Company Mentors | Midshipmen + MARDET | `pages/marine-company-mentors.html` |
-| Roles (ground / aviation / support) | Midshipmen | `pages/roles/` |
-| Marine Cyber | Midshipmen | `pages/marine-cyber.html` — **outdated; full revamp required for 2027 cycle before publish** |
+### Public
 
-## Navigation (top-level only — 5 items)
+| Page | Path |
+|------|------|
+| Home (audience gateway) | `index.html` |
+| Midshipmen hub | `pages/midshipmen/index.html` |
+| Fleet Assignments | `pages/fleet-application.html` |
+| Leadership | `pages/leadership.html` |
+| Prospective Marines | `pages/prospective-marines.html` |
+| Summer Training | `pages/summer-training.html` |
+| Roles (ground / aviation / support) | `pages/roles/` |
 
-Home · Midshipmen · MARDET Team · Fleet Assignments · Leadership
+### Intranet only
 
-Sub-pages are reached through hub pages, not the main nav. Keeps navigation scannable.
+| Page | Path |
+|------|------|
+| MARDET Team hub | `pages/intranet/index.html` |
+| Company Mentors | `pages/intranet/company-mentors.html` |
+| Marines on the Yard | `pages/intranet/marines-on-the-yard.html` |
+| Roster data | `js/intranet/*.js` |
+| Mentor photos | `assets/images/intranet/mentors/` |
+| Public leadership photos | `assets/images/public/leadership/` |
+| MARDET staff photos (intranet) | `assets/images/intranet/staff/` |
+
+## Navigation (top-level — public: 4 items)
+
+Home · Midshipmen · Fleet Assignments · Leadership
+
+Intranet pages add **MARDET Team** to nav. Sub-pages are reached through hub pages, not the main nav.
 
 ## Homepage rules
 
 The homepage is a **router**, not a content dump. It contains:
 - Compact hero + one-line mission
-- Three audience gateway cards
+- Audience gateway cards (Midshipmen, Fleet, Leadership — **not** MARDET Team)
 - Brief about-the-detachment (2 sentences max)
 - POC strip for faculty/staff
 - Social links
@@ -60,9 +83,9 @@ Operational data lives in Google Sheets (AppSheet backend). Workflow:
 
 1. **POA&M** tab — internal ops; not synced to the public site
 2. **Marines** tab — export to `data/marines.csv` → run `python3 scripts/sync-from-sheets.py`
-3. Sync generates `js/marines-on-the-yard-data.js` and mentor data when applicable
+3. Sync generates `js/intranet/marines-on-the-yard-data.js` and `js/intranet/company-mentors-data.js` (**intranet only**)
 
-See `data/README.md` for column mapping. When the user exports their Marines sheet, run sync and update pages from the generated JS.
+See `data/README.md` for column mapping.
 
 ## Messaging and commander's intent
 

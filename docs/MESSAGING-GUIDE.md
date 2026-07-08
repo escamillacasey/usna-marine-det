@@ -26,7 +26,7 @@ Public copy on this site should reflect **commander's intent** and detachment pr
 |------|------|------------|
 | **Primary tagline** | Inform, influence, and develop midshipmen for service as Marine Corps officers. | `index.html` hero |
 | **Engagement model (short)** | Shaping engagements inform, influence, and assess; decisive engagements select and equip. | Reference only — use plain language on public pages |
-| **Detachment mission** | The detachment embodies the Naval Academy mission to develop midshipmen morally, mentally, and physically — attracting, identifying, screening, and selecting high-quality midshipmen for Marine Corps commissions. | `pages/mardet/index.html` |
+| **Detachment mission** | The detachment embodies the Naval Academy mission to develop midshipmen morally, mentally, and physically — attracting, identifying, screening, and selecting high-quality midshipmen for Marine Corps commissions. | `pages/intranet/index.html` (intranet) |
 | **About (para 1)** | The Marine Detachment supports the Naval Academy mission to develop midshipmen morally, mentally, and physically. Marine cadre inform and influence all midshipmen on the Marine Corps — its mission, culture, and opportunities for service — regardless of commissioning intent. | `index.html` |
 | **About (para 2)** | Through four years of engagement, the detachment assesses suitability, selects those best qualified to commission, and equips Marine-selects for success at The Basic School. | `index.html` |
 | **Commander's purpose (paraphrase)** | Future Marine officers of the highest caliber — meeting USMC standards and aligned with our ethos and values. | Leadership subtitle; prospective Marines where appropriate |
@@ -41,9 +41,9 @@ Public copy on this site should reflect **commander's intent** and detachment pr
 | Midshipmen hub | Mids | Page subtitle | `pages/midshipmen/index.html` |
 | Prospective Marines | Mids | Intro under "Becoming a Marine at USNA" | `pages/prospective-marines.html` |
 | Summer Training | Mids | Intro paragraph | `pages/summer-training.html` |
-| Company Mentors | Mids + MARDET | First content paragraph | `pages/marine-company-mentors.html` |
-| Marines on the Yard | Mids | MARDET + mentor card blurbs | `pages/marines-on-the-yard.html` |
-| MARDET Team hub | MARDET | Mission section (2 paragraphs) | `pages/mardet/index.html` |
+| Company Mentors | Mids + MARDET | First content paragraph | `pages/intranet/company-mentors.html` (intranet) |
+| Marines on the Yard | Mids | MARDET + mentor card blurbs | `pages/intranet/marines-on-the-yard.html` (intranet) |
+| MARDET Team hub | MARDET | Mission section (2 paragraphs) | `pages/intranet/index.html` (intranet) |
 | Leadership | All | Page subtitle | `pages/leadership.html` |
 | Fleet Assignments | Fleet | Overview opening | `pages/fleet-application.html` |
 

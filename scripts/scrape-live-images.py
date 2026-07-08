@@ -49,54 +49,57 @@ SKIP_PATH_PARTS = (
 )
 
 CANONICAL_MAP = {
-    "USMC/_files/USNAMARINES.JPG": "hero-masthead.jpg",
-    "USMC/_files/images/MardetLogo.jpg": "mardet-logo.jpg",
-    "USMC/_files/images/OFFICIAL_trident-Flat-Blue-Gold-01.png": "trident-logo.png",
-    "USMC/_files/rsz_2prospective_marines.jpg": "prospective-marines.jpg",
-    "USMC/_files/SummerTrainingResize2.jpg": "summer-training.jpg",
-    "USMC/_files/MarineMentorsResize2.jpg": "marine-mentors.jpg",
-    "USMC/_files/rsz_graded.jpg": "marine-officers.jpg",
-    "USMC/_files/images/MarineAviationF35.jpg": "marine-aviation.jpg",
-    "USMC/_files/MarineCyber.png": "marine-cyber.png",
-    "USMC/_files/instagram.png": "social-instagram.png",
-    "USMC/_files/facebook.png": "social-facebook.png",
-    "USMC/_files/images/Col_Reid,_5x72.jpg": "col-reid.jpg",
-    "USMC/_files/Giraldi_Tom.jpg": "ltcol-giraldi.jpg",
-    "USMC/_files/images/Lt_Swartz.jpg": "staff-lt-swartz.jpg",
-    "USMC/_files/images/MSgt_Prieto.jpg": "staff-msgt-prieto.jpg",
-    "USMC/_files/images/Maj._Snelgrove,_M._4x5_1.jpg": "staff-maj-snelgrove.jpg",
-    "USMC/_files/images/mastheads/IMG_6850.JPG": "summer-training-masthead.jpg",
-    "USMC/_files/images/protramid.PNG": "protramid.png",
-    "USMC/_files/images/CH53.jpg": "prospective-ch53.jpg",
-    "USMC/_files/images/Cyber2.jpg": "prospective-cyber.jpg",
-    "USMC/_files/images/FA-18.jpg": "prospective-fa18.jpg",
-    "USMC/_files/images/MarineGround.jpg": "prospective-ground.jpg",
-    "USMC/_files/images/ProspectiveAAV.jpg": "prospective-aav.jpg",
-    "MarineCorps/_files/images/mastheads/hero1.jpg": "hero-marinecorps.jpg",
-    "MarineCorps/_files/images/tank.jpg": "tank.jpg",
-    "MarineCorps/_files/images/jump.jpg": "jump.jpg",
-    "MarineCorps/_files/images/groundCombat.jpg": "ground-combat.jpg",
-    "MarineCorps/_files/images/aviationCombat.jpg": "aviation-combat.jpg",
-    "MarineCorps/_files/images/combatSupport.jpg": "combat-support.jpg",
+    "USMC/_files/USNAMARINES.JPG": "public/content/hero-masthead.jpg",
+    "USMC/_files/images/MardetLogo.jpg": "public/content/mardet-logo.jpg",
+    "USMC/_files/images/OFFICIAL_trident-Flat-Blue-Gold-01.png": "public/content/trident-logo.png",
+    "USMC/_files/rsz_2prospective_marines.jpg": "public/content/prospective-marines.jpg",
+    "USMC/_files/SummerTrainingResize2.jpg": "public/content/summer-training.jpg",
+    "USMC/_files/MarineMentorsResize2.jpg": "intranet/marine-mentors.jpg",
+    "USMC/_files/rsz_graded.jpg": "public/content/marine-officers.jpg",
+    "USMC/_files/images/MarineAviationF35.jpg": "public/content/marine-aviation.jpg",
+    "USMC/_files/MarineCyber.png": "public/content/marine-cyber.png",
+    "USMC/_files/instagram.png": "public/content/social-instagram.png",
+    "USMC/_files/facebook.png": "public/content/social-facebook.png",
+    "USMC/_files/images/Col_Reid,_5x72.jpg": "public/leadership/col-reid.jpg",
+    "USMC/_files/Giraldi_Tom.jpg": "public/leadership/ltcol-giraldi.jpg",
+    "USMC/_files/images/Lt_Swartz.jpg": "intranet/staff/staff-lt-swartz.jpg",
+    "USMC/_files/images/MSgt_Prieto.jpg": "intranet/staff/staff-msgt-prieto.jpg",
+    "USMC/_files/images/Maj._Snelgrove,_M._4x5_1.jpg": "intranet/staff/staff-maj-snelgrove.jpg",
+    "USMC/_files/images/mastheads/IMG_6850.JPG": "public/content/summer-training-masthead.jpg",
+    "USMC/_files/images/protramid.PNG": "public/content/protramid.png",
+    "USMC/_files/images/CH53.jpg": "public/content/prospective-ch53.jpg",
+    "USMC/_files/images/Cyber2.jpg": "public/content/prospective-cyber.jpg",
+    "USMC/_files/images/FA-18.jpg": "public/content/prospective-fa18.jpg",
+    "USMC/_files/images/MarineGround.jpg": "public/content/prospective-ground.jpg",
+    "USMC/_files/images/ProspectiveAAV.jpg": "public/content/prospective-aav.jpg",
+    "MarineCorps/_files/images/mastheads/hero1.jpg": "public/content/hero-marinecorps.jpg",
+    "MarineCorps/_files/images/tank.jpg": "public/content/tank.jpg",
+    "MarineCorps/_files/images/jump.jpg": "public/content/jump.jpg",
+    "MarineCorps/_files/images/groundCombat.jpg": "public/content/ground-combat.jpg",
+    "MarineCorps/_files/images/aviationCombat.jpg": "public/content/aviation-combat.jpg",
+    "MarineCorps/_files/images/combatSupport.jpg": "public/content/combat-support.jpg",
 }
 
 PROJECT_IMAGE_NEEDS = [
-    ("hero-masthead.jpg", "Homepage / hero", "scraped or canonical"),
-    ("prospective-marines.jpg", "Midshipmen hub / prospective card", "canonical"),
-    ("summer-training.jpg", "Midshipmen hub / summer training", "canonical"),
-    ("marine-mentors.jpg", "Midshipmen hub / mentors card", "canonical"),
-    ("marine-aviation.jpg", "Roles / aviation", "canonical"),
-    ("marine-cyber.png", "Marine Cyber page", "canonical"),
-    ("ground-combat.jpg", "Roles / ground", "canonical"),
-    ("aviation-combat.jpg", "Roles / aviation", "canonical"),
-    ("combat-support.jpg", "Roles / support", "canonical"),
-    ("col-reid.jpg", "Leadership", "canonical"),
-    ("ltcol-giraldi.jpg", "Leadership", "canonical"),
-    ("trident-logo.png", "Optional leadership strip", "canonical"),
-    ("mardet-logo.jpg", "Optional leadership strip", "canonical"),
-    ("social-instagram.png", "Social bar", "canonical"),
-    ("social-facebook.png", "Social bar", "canonical"),
-    *[(f"mentors/company-{n:02d}.jpg", f"Company {n} mentor headshot", "not on public site") for n in range(1, 37)],
+    ("public/content/hero-masthead.jpg", "Homepage / hero", "scraped or canonical"),
+    ("public/content/prospective-marines.jpg", "Midshipmen hub / prospective card", "canonical"),
+    ("public/content/summer-training.jpg", "Midshipmen hub / summer training", "canonical"),
+    ("intranet/marine-mentors.jpg", "Intranet hub / mentors card", "canonical"),
+    ("public/content/marine-aviation.jpg", "Roles / aviation", "canonical"),
+    ("public/content/marine-cyber.png", "Marine Cyber page", "canonical"),
+    ("public/content/ground-combat.jpg", "Roles / ground", "canonical"),
+    ("public/content/aviation-combat.jpg", "Roles / aviation", "canonical"),
+    ("public/content/combat-support.jpg", "Roles / support", "canonical"),
+    ("public/leadership/col-reid.jpg", "Leadership", "canonical"),
+    ("public/leadership/ltcol-giraldi.jpg", "Leadership", "canonical"),
+    ("public/content/trident-logo.png", "Optional leadership strip", "canonical"),
+    ("public/content/mardet-logo.jpg", "Optional leadership strip", "canonical"),
+    ("public/content/social-instagram.png", "Social bar", "canonical"),
+    ("public/content/social-facebook.png", "Social bar", "canonical"),
+    *[
+        (f"intranet/mentors/company-{n:02d}.jpg", f"Company {n} mentor headshot", "not on public site")
+        for n in range(1, 37)
+    ],
 ]
 
 
@@ -157,15 +160,14 @@ def copy_canonical(scraped_path: Path, canonical_name: str) -> None:
 
 
 def write_gaps_report(manifest: dict) -> None:
-    canonical_on_disk = {p.name for p in IMAGES_DIR.glob("*") if p.is_file()}
-    mentor_on_disk = {p.name for p in (IMAGES_DIR / "mentors").glob("company-*.jpg")}
-
     lines = [
         "# Image inventory & gaps",
         "",
         f"Generated: {manifest['scraped_at']}",
         "",
         "Run `python3 scripts/scrape-live-images.py` to refresh downloads from the live site.",
+        "",
+        "Paths are relative to `assets/images/` — see `IMAGE-SPLIT.md` for public vs intranet layout.",
         "",
         "## Canonical site images",
         "",
@@ -174,11 +176,10 @@ def write_gaps_report(manifest: dict) -> None:
     ]
 
     for filename, purpose, source in PROJECT_IMAGE_NEEDS:
-        if filename.startswith("mentors/"):
-            name = Path(filename).name
-            status = "✅ local" if name in mentor_on_disk else "❌ missing — not published on live mentor page"
-        elif (IMAGES_DIR / filename).exists() or filename in canonical_on_disk:
+        if (IMAGES_DIR / filename).exists():
             status = "✅ local"
+        elif filename.startswith("intranet/mentors/"):
+            status = "❌ missing — not published on live mentor page"
         else:
             status = f"❌ missing — expected from {source}"
         lines.append(f"| `{filename}` | {purpose} | {status} |")

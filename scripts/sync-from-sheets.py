@@ -4,8 +4,8 @@ Sync MARDET data from Google Sheets (or local CSV exports) into website files.
 
 Data sources:
   - POA&M workbook (internal ops — not synced directly; export curated subsets)
-  - Marines tab → data/marines.csv → js/marines-on-the-yard-data.js
-  - Company mentors (from Marines sheet or separate tab) → js/company-mentors-data.js
+  - Marines tab → data/marines.csv → js/intranet/marines-on-the-yard-data.js
+  - Company mentors (from Marines sheet or separate tab) → js/intranet/company-mentors-data.js
 
 Usage:
   python3 scripts/sync-from-sheets.py
@@ -30,6 +30,8 @@ DATA_DIR = ROOT / "data"
 SCRIPTS_DIR = ROOT / "scripts"
 STATE_FILE = DATA_DIR / ".last-sync.json"
 REPORT_FILE = DATA_DIR / "sync-report.txt"
+INTRANET_JS_DIR = ROOT / "js" / "intranet"
+MENTOR_PHOTO_PREFIX = "../../assets/images/intranet/mentors"
 
 COMMUNITY_SLUGS = {
     "mardet": "mardet",
@@ -468,7 +470,7 @@ def build_mentors_from_company_list(marines: list[dict], config: dict[str, str])
                     "primaryDuty": matched.get("primaryDuty", ""),
                     "collateralDuty": matched.get("collateralDuty", ""),
                     "summerDuty": matched.get("summerDuty", ""),
-                    "photo": f"../assets/images/mentors/company-{company:02d}.jpg",
+                    "photo": f"{MENTOR_PHOTO_PREFIX}/company-{company:02d}.jpg",
                 }
             )
         else:
@@ -483,7 +485,7 @@ def build_mentors_from_company_list(marines: list[dict], config: dict[str, str])
                     "primaryDuty": "",
                     "collateralDuty": "",
                     "summerDuty": "",
-                    "photo": f"../assets/images/mentors/company-{company:02d}.jpg",
+                    "photo": f"{MENTOR_PHOTO_PREFIX}/company-{company:02d}.jpg",
                 }
             )
     return mentors, report
@@ -705,7 +707,7 @@ def normalize_mentor_from_marine(m: dict) -> dict | None:
         "primaryDuty": m.get("primaryDuty", m.get("billet", "")),
         "collateralDuty": m.get("collateralDuty", ""),
         "summerDuty": m.get("summerDuty", ""),
-        "photo": f"../assets/images/mentors/company-{m['company']:02d}.jpg",
+        "photo": f"{MENTOR_PHOTO_PREFIX}/company-{m['company']:02d}.jpg",
     }
 
 
@@ -715,9 +717,9 @@ def normalize_mentor_row(row: dict[str, str]) -> dict | None:
     company = int(pick_field(row, "company", "Company") or "0")
     if not company:
         return None
-    photo = pick_field(row, "photo", "Photo") or f"../assets/images/mentors/company-{company:02d}.jpg"
+    photo = pick_field(row, "photo", "Photo") or f"{MENTOR_PHOTO_PREFIX}/company-{company:02d}.jpg"
     if photo and not photo.startswith("../") and not photo.startswith("http"):
-        photo = f"../assets/images/mentors/{photo}"
+        photo = f"{MENTOR_PHOTO_PREFIX}/{photo}"
     return {
         "company": company,
         "battalion": int(pick_field(row, "battalion", "Battalion") or str((company - 1) // 6 + 1)),
@@ -835,8 +837,9 @@ def main() -> int:
         report_lines.append(f"Marines (Yard directory): {len(marines)} rows published")
         report_lines.append(f"  Marines changed: {marines_changed}")
         if not args.dry_run:
-            (ROOT / "js" / "marines-on-the-yard-data.js").write_text(generate_marines_js(marines))
-            report_lines.append("  Wrote js/marines-on-the-yard-data.js")
+            INTRANET_JS_DIR.mkdir(parents=True, exist_ok=True)
+            (INTRANET_JS_DIR / "marines-on-the-yard-data.js").write_text(generate_marines_js(marines))
+            report_lines.append("  Wrote js/intranet/marines-on-the-yard-data.js")
         state["marines_hash"] = marines_hash
         state["marine_count"] = len(marines)
     else:
@@ -872,8 +875,9 @@ def main() -> int:
         any_changed = any_changed or (mentors_changed and bool(state.get("mentors_hash")))
         report_lines.append(f"  Mentors changed: {mentors_changed}")
         if not args.dry_run:
-            (ROOT / "js" / "company-mentors-data.js").write_text(generate_mentors_js(mentors))
-            report_lines.append("  Wrote js/company-mentors-data.js")
+            INTRANET_JS_DIR.mkdir(parents=True, exist_ok=True)
+            (INTRANET_JS_DIR / "company-mentors-data.js").write_text(generate_mentors_js(mentors))
+            report_lines.append("  Wrote js/intranet/company-mentors-data.js")
         state["mentors_hash"] = mentors_hash
         state["mentor_count"] = len(mentors)
 
@@ -884,9 +888,9 @@ def main() -> int:
     if any_changed:
         report_lines.extend([
             "",
-            "Review pages after sync:",
-            "  - pages/marines-on-the-yard.html",
-            "  - pages/marine-company-mentors.html",
+            "Review intranet pages after sync:",
+            "  - pages/intranet/marines-on-the-yard.html",
+            "  - pages/intranet/company-mentors.html",
         ])
 
     if args.dry_run:

@@ -629,6 +629,17 @@
   gap: var(--space-lg);
 }
 
+/* USNA Cascade pages: main column is narrower than full-width local preview */
+.page-main-content .audience-cards {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .page-main-content .audience-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
   .audience-cards {
     grid-template-columns: repeat(3, 1fr);
@@ -647,6 +658,12 @@
   text-decoration: none;
   color: inherit;
   transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+/* div cards — Cascade WYSIWYG breaks <a> wrapping block elements */
+div.audience-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
 .audience-card:hover,
@@ -683,6 +700,12 @@
   font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--color-maroon);
+  text-decoration: none;
+}
+
+a.audience-card__cta:hover,
+a.audience-card__cta:focus-visible {
+  text-decoration: underline;
 }
 
 /* Hub page link lists */
@@ -726,6 +749,17 @@
   font-size: var(--font-size-sm);
   color: var(--color-gray-600);
   margin-top: var(--space-xs);
+}
+
+.hub-links__item--static {
+  display: block;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-left: 4px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  color: var(--color-navy);
+  font-weight: 600;
 }
 
 /* Compact about block */
@@ -825,17 +859,20 @@
 }
 
 .checklist li {
-  position: relative;
-  padding-left: var(--space-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
   margin-bottom: var(--space-sm);
+  padding-left: 0;
 }
 
 .checklist li::before {
   content: "✓";
-  position: absolute;
-  left: 0;
+  flex-shrink: 0;
+  width: 1.25em;
   color: var(--color-maroon);
   font-weight: 700;
+  line-height: inherit;
 }
 
 /* Training program blocks */
@@ -955,6 +992,21 @@
   display: grid;
   gap: var(--space-lg);
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  margin-bottom: var(--space-2xl);
+}
+
+.mentor-battalion-heading {
+  font-size: var(--font-size-2xl);
+  color: var(--color-navy);
+  margin: var(--space-xl) 0 var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.mentor-battalion-heading:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .mentor-card {
@@ -1183,4 +1235,13 @@
 .yard-roster__contact {
   font-size: var(--font-size-sm);
   margin: 0;
+}
+
+.intranet-banner {
+  background: var(--color-maroon);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
 }

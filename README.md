@@ -2,6 +2,8 @@
 
 Local development for the USNA Marine Detachment site modernization. Content merges the current [USNA Marines](https://www.usna.edu/Marines) and [Marine Corps](https://www.usna.edu/MarineCorps) sites into a single, maintainable static site for Cascade CMS.
 
+**Public vs intranet:** Detachment leadership is public; company mentors, roster, and collateral duties are **intranet only**. See `docs/PUBLISH-SPLIT.md`. GitHub Pages deploys the public subset via `scripts/build-public-site.sh`.
+
 ## Quick start
 
 Open `index.html` in a browser, or serve locally:
@@ -59,13 +61,20 @@ Ops workbook and full roster CSV stay local (gitignored). `data/company-mentor-l
 ├── index.html              # Audience gateway (not a content dump)
 ├── pages/
 │   ├── midshipmen/         # Hub for midshipman resources
-│   ├── mardet/             # Hub for detachment members
+│   ├── intranet/           # MARDET hub (not public deploy)
 │   ├── fleet-application.html
 │   ├── leadership.html
 │   └── …                   # Topic pages linked from hubs
 ├── css/
 ├── js/
 └── assets/images/
+    ├── shared/             # Site chrome (header logo)
+    ├── public/
+    │   ├── leadership/     # Public leadership headshots
+    │   └── content/        # Heroes, roles, prospective art
+    └── intranet/
+        ├── mentors/        # Company mentor headshots
+        └── staff/          # MARDET staff photos
 ```
 
 ## Audiences
@@ -82,16 +91,17 @@ Faculty/staff looking for a POC → Leadership page.
 
 1. Update `data/company-mentor-list.csv` and/or export from the Ops workbook (see `data/README.md`).
 2. Run `python3 scripts/sync-from-sheets.py`.
-3. Commit the generated `js/company-mentors-data.js` and add photos to `assets/images/mentors/company-XX.jpg`.
+3. Commit mentor data and add photos to `assets/images/intranet/mentors/company-XX.jpg`.
 
-See `assets/images/mentors/README.md` for photo naming.
+See `assets/images/intranet/mentors/README.md` for photo naming.
 
 ## Cascade CMS workflow
 
-1. Develop and preview locally
-2. Copy the content between `<!-- CASCADE: page content start -->` and `<!-- CASCADE: page content end -->`
-3. Paste into the Cascade page editor
-4. Link CSS/JS via Cascade asset blocks or inline as required by your template
+1. Develop and preview locally (`python3 -m http.server` from repo root)
+2. Build the Cascade CSS bundle: `bash scripts/build-cascade-bundle.sh` → upload `cascade/marines.css` (do **not** use `css/main.css` — `@import` breaks in Cascade)
+3. Upload `js/` and images under your site asset folder (see `cascade/README.md`)
+4. Copy only the HTML between `<!-- CASCADE: page content start -->` and `<!-- CASCADE: page content end -->` into the page editor
+5. Wire CSS/JS on the Format or page metadata using snippets in `cascade/snippets/` — full guide: **`docs/CASCADE-WIRING.md`**
 
 ## Images
 
