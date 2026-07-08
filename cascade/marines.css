@@ -540,58 +540,99 @@ ul, ol {
   margin-right: auto;
 }
 
-/* Home — logo inline with title on light background */
-.hero--brand {
-  min-height: auto;
-  padding: var(--space-2xl) 0;
-  background: var(--color-off-white);
-  color: var(--color-navy);
+/* Home masthead — full-bleed photo + left scrim (logo reads naturally on dark panel) */
+.hero--masthead {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(18rem, 42vw, 26rem);
+  padding: 0;
+  background: var(--color-navy-dark);
+  overflow: hidden;
   border-bottom: 4px solid var(--color-gold);
+  color: var(--color-white);
 }
 
-.hero--brand .hero__content {
-  padding: 0 var(--space-lg);
-  max-width: var(--max-width-narrow);
+.hero--masthead .hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero--masthead .hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% center;
+  opacity: 1;
+}
+
+.hero--masthead .hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    102deg,
+    rgba(0, 26, 51, 0.94) 0%,
+    rgba(0, 26, 51, 0.82) 28%,
+    rgba(0, 48, 87, 0.45) 55%,
+    rgba(92, 0, 0, 0.2) 100%
+  );
+}
+
+.hero--masthead .hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width-content);
   margin: 0 auto;
-  text-align: center;
+  padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
 }
 
-.hero__heading {
-  display: inline-flex;
+.hero--masthead .hero__brand-lockup {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin: 0 0 var(--space-sm);
+  gap: var(--space-lg);
+  max-width: 38rem;
 }
 
-.hero__logo {
-  width: clamp(3.25rem, 11vw, 4.25rem);
+.hero--masthead .hero__logo {
+  width: clamp(4.5rem, 13vw, 6rem);
   height: auto;
   flex-shrink: 0;
   margin: 0;
-  vertical-align: middle;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
-.hero--brand .hero__eyebrow {
-  color: var(--color-maroon);
-  margin-bottom: var(--space-sm);
+.hero--masthead .hero__eyebrow {
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
 }
 
-.hero--brand .hero__title {
-  color: var(--color-navy);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  margin: 0;
-  line-height: 1.15;
+.hero--masthead .hero__title {
+  color: var(--color-white);
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  margin: 0 0 var(--space-sm);
+  line-height: var(--line-height-tight);
 }
 
-.hero--brand .hero__lead {
-  color: var(--color-gray-600);
+.hero--masthead .hero__lead {
+  color: rgba(255, 255, 255, 0.92);
   opacity: 1;
-  margin: 0 auto;
-  max-width: 36rem;
+  margin: 0;
   font-size: var(--font-size-base);
   line-height: var(--line-height-loose);
+  max-width: 34rem;
+}
+
+@media (max-width: 479px) {
+  .hero--masthead .hero__brand-lockup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .hero--masthead .hero__media img {
+    object-position: 65% center;
+  }
 }
 
 .site-header__logo--mardet {
