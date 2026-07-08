@@ -12,8 +12,22 @@ Use these in paste files and when fixing Cascade navigation. Base: `https://www.
 | Fleet Assignments | `Fleet_Marines.php` | **Not** `fleet-application.php` |
 | MARDET hub | `MARDET/index.php` | |
 | Company mentors | `MARDET/company_mentors.php` | Underscore, not hyphen |
-| Marines on the Yard | `MARDET/marines_on_the_yard.php` | Deploy when ready |
+| Marines on the Yard | `MARDET/marines_on_the_yard.php` | Underscore, not hyphen; **404 until published** |
 | Roles hub | `roles/index.php` | **Not live yet** — 404 until published |
+
+## MARDET quick links (use in paste hub)
+
+From `MARDET/index.php` body, link to:
+
+| Label | URL |
+|-------|-----|
+| Detachment Leadership | `https://www.usna.edu/MarineCorps/leadership.php` |
+| Company Mentors | `company_mentors.php` (same folder) |
+| Marines on the Yard | `marines_on_the_yard.php` (same folder) |
+| Midshipmen Resources | `https://www.usna.edu/MarineCorps/Midshipmen/index.php` |
+| Fleet Assignment Info | `https://www.usna.edu/MarineCorps/Fleet_Marines.php` |
+
+**Not:** `company-mentors.php`, `marines-on-the-yard.php`, `fleet-application.php`, or lowercase `midshipmen/`.
 
 ## Images on this site
 

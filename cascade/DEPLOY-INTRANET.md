@@ -42,7 +42,7 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ### 1. MARDET hub (`paste-intranet-mardet-marinecorps.html`)
 
-**Page path:** `mardet/index.php` (create `mardet/` folder — adjust name to match your intranet URL plan)
+**Page path:** `MARDET/index.php` (folder name is **`MARDET`** — capital letters on live site)
 
 **JS:** standard — `main.js` only (paste link in page HTML or metadata).
 
@@ -50,7 +50,7 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ### 2. Company mentors (`paste-intranet-company-mentors-marinecorps.html`)
 
-**Page path:** `mardet/company-mentors.php`
+**Page path:** `MARDET/company_mentors.php`
 
 **Static HTML (no JavaScript):** paste file includes all 36 mentor cards, grouped by battalion. Battalion jump links replace the JS filter toolbar.
 
@@ -64,7 +64,7 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ### 3. Marines on the Yard (`paste-intranet-marines-on-the-yard-marinecorps.html`)
 
-**Page path:** `mardet/marines-on-the-yard.php`
+**Page path:** `MARDET/marines_on_the_yard.php`
 
 **JS metadata:**
 
@@ -83,9 +83,9 @@ Snippets: `cascade/snippets/foot-marines-on-the-yard.html`.
 
 | Page | First line of paste |
 |------|---------------------|
-| `mardet/index.php` | `<link href="../_files/css/local.css" …/>` |
-| `mardet/company-mentors.php` | `<link href="../_files/css/local.css" …/>` |
-| `mardet/marines-on-the-yard.php` | `<link href="../_files/css/local.css" …/>` |
+| `MARDET/index.php` | `<link href="../_files/css/local.css" …/>` |
+| `MARDET/company_mentors.php` | `<link href="../_files/css/local.css" …/>` |
+| `MARDET/marines_on_the_yard.php` | `<link href="../_files/css/local.css" …/>` |
 
 Adjust `../` if your intranet folder depth differs.
 
@@ -110,13 +110,13 @@ Open each URL directly in the browser (replace host/path if your intranet base d
 
 Any **404** → fix upload path before testing pages.
 
-### B. MARDET hub (`mardet/index.php`)
+### B. MARDET hub (`MARDET/index.php`)
 
 - [ ] View page source → `local.css` link present (`../_files/css/local.css`)
 - [ ] Hub cards styled (gold left border)
 - [ ] **Console** (F12 → Console): no red errors *(optional `main.js` only if wired in metadata)*
 
-### C. Company mentors (`mardet/company-mentors.php`) — static HTML
+### C. Company mentors (`MARDET/company_mentors.php`) — static HTML
 
 **Page source**
 
@@ -134,7 +134,7 @@ Any **404** → fix upload path before testing pages.
 - [ ] Battalion jump links scroll to the right section
 - [ ] Cards show name, duties, and email where applicable
 
-### D. Marines on the Yard (`mardet/marines-on-the-yard.php`)
+### D. Marines on the Yard (`MARDET/marines_on_the_yard.php`)
 
 **Network**
 
