@@ -26,6 +26,10 @@ def ordinal_suffix(n: int) -> str:
     return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
 
 
+def company_label(n: int) -> str:
+    return f"{n}{ordinal_suffix(n)} Company"
+
+
 def parse_mentors() -> list[dict]:
     text = DATA_JS.read_text(encoding="utf-8")
     mentors = []
@@ -71,7 +75,7 @@ def card_html(mentor: dict, photo_prefix: str) -> str:
         alt = f"Portrait of {rank} {name}"
         display = f"{rank} {name}"
     else:
-        alt = f"Company {company} Marine mentor"
+        alt = f"{company_label(company)} Marine mentor"
         display = "Marine Company Mentor"
 
     if photo_file.exists():
@@ -82,7 +86,7 @@ def card_html(mentor: dict, photo_prefix: str) -> str:
     else:
         photo_html = (
             f'<span class="mentor-card__photo-placeholder">Photo pending<br/>'
-            f"Company {company}</span>"
+            f"{company_label(company)}</span>"
         )
 
     email_html = ""
@@ -98,7 +102,7 @@ def card_html(mentor: dict, photo_prefix: str) -> str:
         f'<article class="mentor-card" id="company-{company}">\n'
         f'<div class="mentor-card__photo">{photo_html}</div>\n'
         f'<div class="mentor-card__body">\n'
-        f'<p class="mentor-card__company">Company {company} · {battalion_label}</p>\n'
+        f'<p class="mentor-card__company">{company_label(company)} · {battalion_label}</p>\n'
         f'<h3 class="mentor-card__name">{html.escape(display)}</h3>\n'
         f"{email_html}\n"
         f"{duties_html(mentor)}\n"

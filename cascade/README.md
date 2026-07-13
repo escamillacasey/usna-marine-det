@@ -9,7 +9,7 @@ Generated and hand-maintained files for Hannon Hill Cascade CMS.
 | Paste file | Cascade page |
 |------------|----------------|
 | `paste-home-marinecorps.html` | `index.php` |
-| `paste-leadership-marinecorps.html` | `leadership.php` |
+| `paste-leadership-marinecorps.html` | `MARDET/leadership.php` |
 | `paste-fleet-application-marinecorps.html` | `Fleet_Marines.php` |
 | `paste-midshipmen-marinecorps.html` | `Midshipmen/index.php` |
 | `paste-prospective-marines-marinecorps.html` | `Midshipmen/prospective-marines.php` |

@@ -23,6 +23,14 @@
     return (a.name || '').localeCompare(b.name || '');
   }
 
+  function companyLabel(n) {
+    var suffix = 'th';
+    if (n % 10 === 1 && n % 100 !== 11) suffix = 'st';
+    else if (n % 10 === 2 && n % 100 !== 12) suffix = 'nd';
+    else if (n % 10 === 3 && n % 100 !== 13) suffix = 'rd';
+    return n + suffix + ' Company';
+  }
+
   function appendRosterItem(ul, m) {
     var li = document.createElement('li');
     li.className = 'yard-roster__item';
@@ -40,7 +48,7 @@
     }
 
     var metaParts = [];
-    if (m.company) metaParts.push('Company ' + m.company);
+    if (m.company) metaParts.push(companyLabel(m.company));
     if (m.location) metaParts.push(m.location);
     if (m.department) metaParts.push(m.department);
     if (metaParts.length) {

@@ -93,3 +93,42 @@ The left nav is **outside** your page body paste. Updating `paste-home-marinecor
 | Left nav **Home** on `leadership.php` | `index.php` or `/MarineCorps/` |
 
 See also **`LIVE-URLS.md`** for in-content link paths (fleet, Midshipmen subpages, etc.).
+
+---
+
+## MARDET / “Marine Detachment” folder missing from left nav
+
+**Symptom:** `MARDET/index.php` loads at  
+`https://www.usna.edu/MarineCorps/MARDET/index.php`, but the left nav only shows Home, MARDET Leadership, Midshipmen, Fleet Marines — **no Marine Detachment / MARDET section** (no dropdown for Company Mentors, Marines on the Yard).
+
+Same root cause as Home: nav is **auto-generated from the site folder tree**. The folder or its index page is not indexed for navigation, or pages were not republished after a change.
+
+### Fix (Cascade Site Content)
+
+1. Open **Marine Corps - Public** → site root.
+2. Open the **`MARDET`** folder (display name may be **Marine Detachment**).
+3. On the **folder** and on **`MARDET/index.php`** → **Configure**:
+   - **Include in Navigation** → **Yes**
+   - **Display Name** → e.g. **Marine Detachment** or **MARDET** (what you want in the menu)
+4. On child pages that should appear under it:
+   - `company_mentors.php` → **Include in Navigation → Yes**
+   - `marines_on_the_yard.php` → **Include in Navigation → Yes** (when published)
+5. In the **root folder**, sort by **Order** and place **MARDET** where you want it (typically after Midshipmen, before Fleet Marines).
+6. Confirm **`MARDET/index.php`** is **Published** (not draft only).
+7. **Publish the site root folder and all contents** so every page gets fresh nav HTML.
+
+### Verify
+
+| Check | Expected |
+|-------|----------|
+| Left nav on `index.php` | **Marine Detachment** (or MARDET) with sub-links |
+| Hover / mobile | Company Mentors, Marines on the Yard |
+| Direct URL still works | `…/MARDET/index.php` → 200 |
+
+### If it keeps disappearing
+
+Something is resetting nav metadata when you publish or move assets:
+
+- Re-check **Include in Navigation** on the **MARDET folder** after each bulk publish.
+- Do not move `MARDET/` under Archive or a non-indexed parent.
+- Avoid duplicating the folder (two MARDET copies — only one should be in nav).

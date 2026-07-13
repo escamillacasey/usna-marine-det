@@ -54,11 +54,11 @@
 
       var photoAlt = mentor.name
         ? 'Portrait of ' + mentor.rank + ' ' + mentor.name
-        : 'Company ' + mentor.company + ' Marine mentor';
+        : companyLabel(mentor.company) + ' Marine mentor';
 
       var photoHtml =
         '<img src="' + mentor.photo + '" alt="' + photoAlt + '" ' +
-        'onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{innerHTML:\'Photo pending<br>Company ' + mentor.company + '\'}));">';
+        'onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{innerHTML:\'Photo pending<br>' + companyLabel(mentor.company) + '\'}));">';
 
       var displayName = mentor.name
         ? mentor.rank + ' ' + mentor.name
@@ -71,7 +71,7 @@
       card.innerHTML =
         '<div class="mentor-card__photo">' + photoHtml + '</div>' +
         '<div class="mentor-card__body">' +
-          '<p class="mentor-card__company">Company ' + mentor.company + ' · ' + mentor.battalion + getOrdinal(mentor.battalion) + ' Battalion</p>' +
+          '<p class="mentor-card__company">' + companyLabel(mentor.company) + ' · ' + mentor.battalion + getOrdinal(mentor.battalion) + ' Battalion</p>' +
           '<h3 class="mentor-card__name">' + escapeHtml(displayName) + '</h3>' +
           emailHtml +
           buildDutyList(mentor) +
@@ -87,6 +87,10 @@
     else if (n % 10 === 2 && n % 100 !== 12) suffix = 'nd';
     else if (n % 10 === 3 && n % 100 !== 13) suffix = 'rd';
     return suffix;
+  }
+
+  function companyLabel(n) {
+    return n + getOrdinal(n) + ' Company';
   }
 
   filters.forEach(function (btn) {

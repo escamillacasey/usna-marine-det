@@ -21,7 +21,8 @@ Paths are relative to `assets/images/` — see `IMAGE-SPLIT.md` for public vs in
 | `public/content/combat-support.jpg` | Roles / support | ✅ local |
 | `public/leadership/col-reid.jpg` | Leadership | ✅ local |
 | `public/leadership/ltcol-giraldi.jpg` | Leadership | ✅ local |
-| `public/content/trident-logo.png` | Optional leadership strip | ✅ local |
+| `public/roles/ground/acv.jpg` | ACV Officer role image | ❌ pending — placeholder on page |
+| `public/roles/aviation/uav.jpg` | UAV Pilot role image | ❌ pending — placeholder on page |
 | `public/content/mardet-logo.jpg` | Optional leadership strip | ✅ local |
 | `public/content/social-instagram.png` | Social bar | ✅ local |
 | `public/content/social-facebook.png` | Social bar | ✅ local |

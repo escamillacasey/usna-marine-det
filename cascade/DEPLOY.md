@@ -18,11 +18,13 @@ Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append 
 | Paste file | Cascade path |
 |------------|----------------|
 | `paste-home-marinecorps.html` | `index.php` |
-| `paste-leadership-marinecorps.html` | `leadership.php` |
+| `paste-leadership-marinecorps.html` | `MARDET/leadership.php` |
 | `paste-fleet-application-marinecorps.html` | `Fleet_Marines.php` |
 | `paste-midshipmen-marinecorps.html` | `Midshipmen/index.php` |
 | `paste-prospective-marines-marinecorps.html` | `Midshipmen/prospective-marines.php` |
 | `paste-summer-training-marinecorps.html` | `Midshipmen/summer-training.php` |
+| `paste-roles-ground-marinecorps.html` | `Midshipmen/roles/index.php` |
+| `paste-roles-aviation-marinecorps.html` | `Midshipmen/roles/aviation.php` |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
 | `paste-intranet-company-mentors-marinecorps.html` | `MARDET/company_mentors.php` |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(when ready)* |
