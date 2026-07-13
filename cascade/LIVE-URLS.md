@@ -46,4 +46,4 @@ Published photos resolve under **`assets/images/public/…`** (not `_files/image
 Examples:
 - `../assets/images/public/leadership/col-reid.jpg` (from `MARDET/leadership.php`)
 - `assets/images/public/mentors/company-02.jpg` (from `Midshipmen/company_mentors.php`)
-- `../../assets/images/public/roles/ground/infantry.jpg` (from `Midshipmen/roles/`)
+- `assets/images/public/roles/ground/infantry.jpg` (from `Midshipmen/roles/` pages)
