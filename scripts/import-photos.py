@@ -31,6 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INCOMING_DIR = ROOT / "assets" / "images" / "incoming"
 MENTORS_DIR = ROOT / "assets" / "images" / "intranet" / "mentors"
+PUBLIC_MENTORS_DIR = ROOT / "assets" / "images" / "public" / "mentors"
 STAFF_DIR = ROOT / "assets" / "images" / "intranet" / "staff"
 PUBLIC_LEADERSHIP_DIR = ROOT / "assets" / "images" / "public" / "leadership"
 REPORT_FILE = ROOT / "data" / "photo-import-report.txt"
@@ -252,11 +253,27 @@ class ImportResult:
     skipped_existing: list[str] = field(default_factory=list)
 
 
+def ordinal_company_label(n: int) -> str:
+    if 10 <= n % 100 <= 20:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix} Company"
+
+
 def copy_image(src: Path, dest: Path, force: bool) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and not force:
         return
     shutil.copy2(src, dest)
+
+
+def sync_mentor_to_public(company: int) -> None:
+    src = MENTORS_DIR / f"company-{company:02d}.jpg"
+    if not src.exists():
+        return
+    PUBLIC_MENTORS_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, PUBLIC_MENTORS_DIR / f"company-{company:02d}.jpg")
 
 
 def import_photos(incoming: Path, force: bool = False) -> ImportResult:
@@ -280,6 +297,7 @@ def import_photos(incoming: Path, force: bool = False) -> ImportResult:
             continue
         dest = MENTORS_DIR / f"company-{company:02d}.jpg"
         copy_image(path, dest, force)
+        sync_mentor_to_public(company)
         used_files.add(path)
         used_companies.add(company)
         mentor = mentor_by_company.get(company, {})
@@ -307,6 +325,7 @@ def import_photos(incoming: Path, force: bool = False) -> ImportResult:
             continue
         dest = MENTORS_DIR / f"company-{person['company']:02d}.jpg"
         copy_image(path, dest, force)
+        sync_mentor_to_public(person["company"])
         used_files.add(path)
         used_companies.add(person["company"])
         result.mentor_copied.append(
@@ -395,10 +414,24 @@ def write_report(result: ImportResult, mentors: list[dict], used_companies: set[
         if not dest.exists():
             missing.append(m)
             lines.append(
-                f"- Company {m['company']:2d} ({m['battalion']} Bn): {m['rank']} {m['name']} — missing"
+                f"- {ordinal_company_label(m['company'])} ({m['battalion']} Bn): "
+                f"{m['rank']} {m['name']} — missing"
             )
     if not missing:
         lines.append("- All 36 company mentor photos present.")
+
+    if result.mentor_copied or result.manifest_copied:
+        lines.append("")
+        lines.append("## Next steps")
+        lines.append("- `bash scripts/build-intranet-mentors-paste.sh`")
+        lines.append(
+            "- Re-paste `cascade/paste-intranet-company-mentors-marinecorps.html` "
+            "→ `Midshipmen/company_mentors.php`"
+        )
+        lines.append(
+            "- Upload new photos to Cascade `_files/images/public/mentors/` "
+            "(www copies are in `assets/images/public/mentors/`)"
+        )
 
     lines.append("")
     lines.append("## MARDET roster without staff photo (non-mentor)")
