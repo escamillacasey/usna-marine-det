@@ -13,10 +13,10 @@ DATA_JS = ROOT / "js" / "intranet" / "company-mentors-data.js"
 PHOTOS_DIR = ROOT / "assets" / "images" / "intranet" / "mentors"
 OUT_LOCAL = ROOT / "cascade" / "includes" / "mentor-cards-local.html"
 OUT_CASCADE = ROOT / "cascade" / "includes" / "mentor-cards-cascade.html"
-# Photo prefix (MARDET/ pages). Live site serves from assets/, not _files/.
+# Photo prefix for Cascade paste (Midshipmen/company_mentors.php). Live site serves from assets/.
 CASCADE_PHOTO_PREFIX = os.environ.get(
     "CASCADE_PHOTO_PREFIX",
-    "../assets/images/public/mentors/",
+    "assets/images/public/mentors/",
 )
 
 
