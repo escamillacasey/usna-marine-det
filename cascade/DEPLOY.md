@@ -25,6 +25,7 @@ Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append 
 | `paste-summer-training-marinecorps.html` | `Midshipmen/summer-training.php` |
 | `paste-roles-ground-marinecorps.html` | `Midshipmen/roles/index.php` |
 | `paste-roles-aviation-marinecorps.html` | `Midshipmen/roles/aviation.php` |
+| `paste-roles-support-marinecorps.html` | `Midshipmen/roles/support.php` |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
 | `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(when ready)* |
