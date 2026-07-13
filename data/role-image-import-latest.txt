@@ -1,0 +1,22 @@
+Source: /Users/hellbentactual/Downloads/images to add to website
+
+Wired:
+  ground/infantry.avif -> ground/infantry.jpg
+  ground/engineer.avif -> ground/combat-engineer.jpg
+  ground/acv.avif -> ground/acv.jpg
+  ground/recon_in_the_rain.avif -> ground/egr.jpg
+  aviation/ch53.avif -> aviation/ch53.jpg
+  aviation/j35-2.avif -> aviation/f35.png
+  aviation/UH1Y2.avif -> aviation/uh1y.png
+  support/comm2.avif -> support/communications.jpg
+  support/logistics.jpg -> support/logistics.jpg
+
+Unused:
+  ground/recon.avif — Amphibious recon — alternate for EGR (0307)
+  ground/acv2.avif — Alternate ACV shot
+  ground/us-marines-with-7th-engineers-support-battalion-a00146.jpg — Alternate combat engineer / demolitions
+  aviation/f35-1.avif — Alternate F-35 in-flight shot
+  aviation/UH1Y.avif — Alternate UH-1Y runway hover
+  support/comm.avif — Alternate communications
+  support/comm3.avif — Tactical networking — possible Cyberspace (1702)
+  support/logo.webp — Duplicate logistics ship scene — skip
