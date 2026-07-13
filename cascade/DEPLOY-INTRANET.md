@@ -50,7 +50,7 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ### 2. Company mentors (`paste-intranet-company-mentors-marinecorps.html`)
 
-**Page path:** `MARDET/company_mentors.php`
+**Page path:** `Midshipmen/company_mentors.php`
 
 **Static HTML (no JavaScript):** paste file includes all 36 mentor cards, grouped by battalion. Battalion jump links replace the JS filter toolbar.
 
@@ -84,7 +84,7 @@ Snippets: `cascade/snippets/foot-marines-on-the-yard.html`.
 | Page | First line of paste |
 |------|---------------------|
 | `MARDET/index.php` | `<link href="../_files/css/local.css" …/>` |
-| `MARDET/company_mentors.php` | `<link href="../_files/css/local.css" …/>` |
+| `Midshipmen/company_mentors.php` | `<link href="../_files/css/local.css" …/>` |
 | `MARDET/marines_on_the_yard.php` | `<link href="../_files/css/local.css" …/>` |
 
 Adjust `../` if your intranet folder depth differs.
@@ -116,7 +116,7 @@ Any **404** → fix upload path before testing pages.
 - [ ] Hub cards styled (gold left border)
 - [ ] **Console** (F12 → Console): no red errors *(optional `main.js` only if wired in metadata)*
 
-### C. Company mentors (`MARDET/company_mentors.php`) — static HTML
+### C. Company mentors (`Midshipmen/company_mentors.php`) — static HTML
 
 **Page source**
 

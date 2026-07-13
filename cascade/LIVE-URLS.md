@@ -11,7 +11,7 @@ Use these in paste files and when fixing Cascade navigation. Base: `https://www.
 | Fleet Assignments | `Fleet_Marines.php` | **Not** `fleet-application.php` |
 | MARDET hub | `MARDET/index.php` | Top-level nav + home audience card |
 | Detachment Leadership | `MARDET/leadership.php` | **Only** under MARDET — not site root |
-| Company mentors | `MARDET/company_mentors.php` | Underscore, not hyphen |
+| Company mentors | `Midshipmen/company_mentors.php` | Published under Midshipmen folder on live site |
 | Marines on the Yard | `MARDET/marines_on_the_yard.php` | Underscore, not hyphen |
 | Roles hub | `Midshipmen/roles/index.php` | Two levels under Midshipmen |
 | Roles aviation | `Midshipmen/roles/aviation.php` | |
@@ -25,9 +25,9 @@ From `MARDET/index.php` body, link to sibling pages with relative paths:
 
 | Label | URL (from `MARDET/`) |
 |-------|----------------------|
-| Detachment Leadership | `leadership.php` |
-| Company Mentors | `company_mentors.php` |
-| Marines on the Yard | `marines_on_the_yard.php` |
+| Detachment Leadership | `https://www.usna.edu/MarineCorps/MARDET/leadership.php` |
+| Company Mentors | `https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php` |
+| Marines on the Yard | `https://www.usna.edu/MarineCorps/MARDET/marines_on_the_yard.php` |
 | Midshipmen Resources | `https://www.usna.edu/MarineCorps/Midshipmen/index.php` |
 | Fleet Assignment Info | `https://www.usna.edu/MarineCorps/Fleet_Marines.php` |
 

@@ -22,7 +22,7 @@ See **`cascade/DEPLOY-INTRANET.md`**.
 | Paste file | Cascade path (example) |
 |------------|------------------------|
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-intranet-company-mentors-marinecorps.html` | `MARDET/company_mentors.php` |
+| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` |
 
 ## Other files

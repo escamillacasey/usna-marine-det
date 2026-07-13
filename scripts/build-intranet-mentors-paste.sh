@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 python3 "$ROOT/scripts/generate-mentor-cards-html.py"
 
-HEADER='<!-- CASCADE paste → https://www.usna.edu/MarineCorps/MARDET/company_mentors.php -->
+HEADER='<!-- CASCADE paste → https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php -->
 <!-- USNA intranet only. Static HTML — no JavaScript. Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 
