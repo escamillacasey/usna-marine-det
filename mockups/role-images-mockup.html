@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Role Images Mockup</title><style>
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; background: #f4f4f4; color: #1a1a1a; }
+header { max-width: 1100px; margin: 0 auto 24px; }
+h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.summary { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+.badge { padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
+.badge-wired { background: #d4edda; color: #155724; }
+.badge-pending { background: #fff3cd; color: #856404; }
+.badge-legacy { background: #d1ecf1; color: #0c5460; }
+section { max-width: 1100px; margin: 0 auto 32px; }
+section > h2 { font-size: 1.15rem; border-bottom: 2px solid #003366; padding-bottom: 6px; margin-bottom: 16px; color: #003366; }
+.staff-profile { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: #fff; border: 1px solid #ddd; padding: 16px; margin-bottom: 12px; align-items: start; }
+.staff-profile__photo { margin: 0; }
+.staff-profile__photo img { width: 100%; height: auto; display: block; border: 1px solid #ccc; }
+.staff-profile__name { margin: 0 0 8px; font-size: 1rem; color: #003366; }
+.status { font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; }
+.status-wired { color: #155724; }
+.status-pending { color: #856404; }
+.media-placeholder { display: flex; align-items: center; justify-content: center; min-height: 160px; background: #e9ecef; border: 2px dashed #adb5bd; color: #6c757d; font-size: 0.85rem; text-align: center; padding: 12px; }
+.legacy-preview { margin-top: 8px; }
+.legacy-preview img { width: 100%; border: 2px dotted #17a2b8; opacity: 0.9; }
+.legacy-label { font-size: 0.75rem; color: #0c5460; margin-top: 4px; }
+.path { font-size: 0.72rem; color: #666; word-break: break-all; margin-top: 4px; }
+@media (max-width: 640px) { .staff-profile { grid-template-columns: 1fr; } }
+</style></head><body>
+<header><h1>MARDET Role Images — Quick Mockup</h1><p>Preview of each MOS card with its current image, placeholder, or suggested legacy asset.</p><div class='summary'><span class='badge badge-wired'>12 wired</span><span class='badge badge-pending'>24 pending</span><span class='badge badge-legacy'>14 legacy candidates</span></div></header>
+<section><h2>Ground Combat</h2>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/ground/infantry.jpg' alt='Infantry Officer (0302)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/ground/infantry.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Infantry Officer (0302)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/ground/artillery.jpg' alt='Field Artillery Officer (0802)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/ground/artillery.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Field Artillery Officer (0802)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/ground/combat-engineer.jpg' alt='Combat Engineer Officer (1302)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/ground/combat-engineer.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Combat Engineer Officer (1302)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>LAR image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Light Armored Reconnaissance Officer (0303)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>EGR image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Expeditionary Ground Reconnaissance Officer (0307)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>ACV image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/ground/aav.jpg' alt='Suggested legacy for Amphibious Combat Vehicle (ACV) Officer (1803)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/ground/aav.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Amphibious Combat Vehicle (ACV) Officer (1803)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/ground/laad.jpg' alt='Low Altitude Air Defense (LAAD) Officer (7204)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/ground/laad.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Low Altitude Air Defense (LAAD) Officer (7204)</h2></div>
+</article>
+</section>
+<section><h2>Aviation Combat</h2>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Flight student image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Flight Student (7599)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/air-intel.jpg' alt='Air Intelligence Officer (0207)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/air-intel.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Air Intelligence Officer (0207)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/air-support.png' alt='Air Support Control Officer (7208)'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/air-support.png</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Air Support Control Officer (7208)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Air defense control image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Air Defense Control Officer (7210)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>ATC image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/atco.png' alt='Suggested legacy for Air Traffic Control Officer (7220)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/atco.png</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Air Traffic Control Officer (7220)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>UAS image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Unmanned Aircraft System Officer (7315)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/f35.png' alt='F-35 Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/f35.png</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>F-35 Pilot</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/mv22.jpg' alt='MV-22 Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/mv22.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>MV-22 Pilot</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/ah1.png' alt='AH-1 Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/ah1.png</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>AH-1 Pilot</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/uh1y.png' alt='UH-1Y Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/uh1y.png</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>UH-1Y Pilot</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/ch53.jpg' alt='CH-53 Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/ch53.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>CH-53 Pilot</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<img src='../assets/images/public/roles/aviation/c130.jpg' alt='C-130 Pilot'/>
+<p class='status status-wired'>Wired on site</p><p class='path'>assets/images/public/roles/aviation/c130.jpg</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>C-130 Pilot</h2></div>
+</article>
+</section>
+<section><h2>Combat Support</h2>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>MAGTF intelligence image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>MAGTF Intelligence Officer (0202)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Ground intelligence image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/ground/groundintel.jpg' alt='Suggested legacy for Ground Intelligence Officer (0203)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/ground/groundintel.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Ground Intelligence Officer (0203)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>CI/HUMINT image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Counterintelligence/Human Source Intelligence Officer (0204)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>SIGINT/EW image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/aviation/airIntellsignalIntell.jpg' alt='Suggested legacy for Signals Intelligence and Electronic Warfare Officer (0206)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/aviation/airIntellsignalIntell.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Signals Intelligence and Electronic Warfare Officer (0206)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Communications image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/ground/commo.jpg' alt='Suggested legacy for Communications Officer (0602)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/ground/commo.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Communications Officer (0602)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Manpower image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/manpower.jpg' alt='Suggested legacy for Manpower Officer (0102)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/manpower.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Manpower Officer (0102)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Logistics image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/gsupply1.jpg' alt='Suggested legacy for Logistics Officer (0402)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/gsupply1.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Logistics Officer (0402)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Cyberspace image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Cyberspace Officer (1702)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Space image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Space Officer (1706)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Influence operations image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/pao.jpg' alt='Suggested legacy for Influence Officer (1707)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/pao.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Influence Officer (1707)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Ground supply image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/gsupply1.jpg' alt='Suggested legacy for Ground Supply Officer (3002)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/gsupply1.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Ground Supply Officer (3002)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Financial management image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/finance.jpg' alt='Suggested legacy for Financial Management Officer (3404)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/finance.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Financial Management Officer (3404)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>CommStrat image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/pao.jpg' alt='Suggested legacy for Communication Strategy and Operations Officer (4502)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/pao.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Communication Strategy and Operations Officer (4502)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Military police image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/mpo.jpg' alt='Suggested legacy for Military Police Officer (5803)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/mpo.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Military Police Officer (5803)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Aircraft maintenance image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/amo.jpg' alt='Suggested legacy for Aircraft Maintenance Officer (6002)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/amo.jpg</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Aircraft Maintenance Officer (6002)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Aviation supply image pending</span>
+<p class='status status-pending'>Placeholder</p>
+<div class='legacy-preview'><img src='../assets/images/scraped/MarineCorps/_files/images/roles/support/aviationsupply.png' alt='Suggested legacy for Aviation Supply Officer (6602)'/><p class='legacy-label'>Suggested legacy copy</p><p class='path'>assets/images/scraped/MarineCorps/_files/images/roles/support/aviationsupply.png</p></div>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Aviation Supply Officer (6602)</h2></div>
+</article>
+<article class='staff-profile'>
+<figure class='staff-profile__photo'>
+<span class='media-placeholder'>Judge advocate image pending</span>
+<p class='status status-pending'>Placeholder</p>
+</figure>
+<div class='staff-profile__content'><h2 class='staff-profile__name'>Judge Advocate (4402)</h2></div>
+</article>
+</section>
+</body></html>
