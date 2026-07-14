@@ -35,4 +35,4 @@ For a small change (e.g. summer training galleries, prospective Marines path flo
 3. Paste the entire contents of `paste-local-css-summer-gallery-delta.css`
 4. Publish `local.css`
 
-You need this block if `.training-gallery`, `.program-block__gallery`, or `.commissioning-path` rules are missing.
+You need this block if `.training-gallery`, `.program-block__gallery`, `.commissioning-path`, or `.training-section--evaluation` rules are missing.
