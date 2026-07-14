@@ -1,0 +1,111 @@
+/* --- USNA Marines: summer training photo galleries (Jul 2026) --- */
+/* Paste this block once at the bottom of Cascade local.css if galleries are unstyled. */
+
+.program-block__gallery {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.program-block__gallery-heading {
+  font-size: var(--font-size-lg);
+  color: var(--color-navy);
+  margin: 0 0 var(--space-md);
+}
+
+.training-gallery__grid--inline {
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+
+@media (min-width: 768px) {
+  .training-gallery__grid--inline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .program-block__gallery .training-gallery__item--featured {
+    grid-column: span 2;
+  }
+}
+
+/* Summer training photo gallery */
+.training-gallery {
+  margin-top: var(--space-2xl);
+}
+
+.training-gallery__heading {
+  font-size: var(--font-size-xl);
+  color: var(--color-navy);
+  margin: 0 0 var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.training-gallery__hero,
+.training-gallery__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.training-gallery__hero {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin-bottom: var(--space-2xl);
+}
+
+.training-gallery__grid {
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+}
+
+@media (min-width: 768px) {
+  .training-gallery__hero {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .training-gallery__item--featured {
+    grid-column: span 2;
+  }
+}
+
+.training-gallery__figure {
+  margin: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.training-gallery__figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.training-gallery__item--featured .training-gallery__figure img {
+  aspect-ratio: 16 / 9;
+}
+
+.training-gallery__caption {
+  padding: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-base);
+  margin: 0;
+  flex: 1;
+}
+
+.training-gallery__month {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-maroon);
+}
