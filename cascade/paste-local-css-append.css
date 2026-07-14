@@ -1517,6 +1517,163 @@ a.audience-card__cta:focus-visible {
   background: var(--color-off-white);
 }
 
+/* Prospective Marines — commissioning path flow */
+.commissioning-path {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2xl) 0 0;
+  display: grid;
+  gap: var(--space-lg);
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .commissioning-path {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    align-items: stretch;
+  }
+
+  .commissioning-path::before {
+    content: "";
+    position: absolute;
+    top: 2.75rem;
+    left: 12%;
+    right: 12%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--color-gold) 0%,
+      var(--color-maroon) 50%,
+      var(--color-navy) 100%
+    );
+    border-radius: 2px;
+    z-index: 0;
+  }
+}
+
+.commissioning-path__step {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.commissioning-path__marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  box-shadow: 0 0 0 4px var(--color-white), 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: var(--space-md);
+  flex-shrink: 0;
+}
+
+.commissioning-path__step--decisive .commissioning-path__marker {
+  background: var(--color-maroon);
+  box-shadow: 0 0 0 4px var(--color-white), 0 0 0 8px var(--color-gold-light);
+}
+
+.commissioning-path__body {
+  width: 100%;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-top: 4px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.commissioning-path__step--decisive .commissioning-path__body {
+  border-top-color: var(--color-maroon);
+  background: linear-gradient(180deg, #fff 0%, var(--color-off-white) 100%);
+}
+
+.commissioning-path__body:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.commissioning-path__phase {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-maroon);
+}
+
+.commissioning-path__class {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.commissioning-path__program {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+}
+
+.commissioning-path__program a {
+  color: var(--color-navy);
+  text-decoration: none;
+}
+
+.commissioning-path__program a:hover,
+.commissioning-path__program a:focus-visible {
+  color: var(--color-maroon);
+  text-decoration: underline;
+}
+
+.commissioning-path__badge {
+  display: inline-block;
+  margin-left: var(--space-xs);
+  padding: 0.15em 0.5em;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  background: var(--color-maroon);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.commissioning-path__desc {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-base);
+}
+
+.commissioning-path__desc a {
+  font-weight: 600;
+}
+
+@media (max-width: 899px) {
+  .commissioning-path__step:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 1.5rem;
+    margin: var(--space-sm) auto 0;
+    background: linear-gradient(180deg, var(--color-gold), var(--color-maroon));
+    border-radius: 2px;
+  }
+}
+
 /* Company mentor grid */
 .mentor-toolbar {
   display: flex;

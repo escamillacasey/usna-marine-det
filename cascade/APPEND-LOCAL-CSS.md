@@ -26,13 +26,13 @@ Updates `cascade/paste-local-css-append.css` automatically.
 
 If `local.css` already contains `/* --- USNA Marines site styles`**, do **not** paste the full `paste-local-css-append.css` again — that duplicates ~1,400 lines.
 
-For a small change (e.g. summer training galleries), paste only the delta:
+For a small change (e.g. summer training galleries, prospective Marines path flow), paste only the delta:
 
-**File:** `cascade/paste-local-css-summer-gallery-delta.css` (~110 lines)
+**File:** `cascade/paste-local-css-summer-gallery-delta.css` (~170 lines)
 
 1. Open Cascade → `_files/css/local.css`
 2. Scroll to the **very bottom**
 3. Paste the entire contents of `paste-local-css-summer-gallery-delta.css`
 4. Publish `local.css`
 
-You need this block if `.training-gallery` or `.program-block__gallery` rules are missing (galleries show as a plain vertical list of huge images).
+You need this block if `.training-gallery`, `.program-block__gallery`, or `.commissioning-path` rules are missing.
