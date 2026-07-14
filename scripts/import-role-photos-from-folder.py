@@ -17,7 +17,7 @@ TARGET_SIZE = (300, 400)
 # Source-relative path -> destination under public/roles
 WIRED: dict[str, str] = {
     "ground/infantry.avif": "ground/infantry.jpg",
-    "ground/engineer.avif": "ground/combat-engineer.jpg",
+    "ground/engineer.avif": "ground/engineer.jfif",
     "ground/acv.avif": "ground/acv.jpg",
     "ground/recon_in_the_rain.avif": "ground/egr.jpg",
     "aviation/ch53.avif": "aviation/ch53.jpg",
