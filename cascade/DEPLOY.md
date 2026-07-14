@@ -32,6 +32,8 @@ Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append 
 
 **Photos:** upload to `assets/images/public/leadership/` and `assets/images/public/mentors/` (see `LIVE-URLS.md`).
 
+**Summer training gallery:** drop sitrep photos in `assets/images/incoming/summer-training/`, list them in `data/summer-training-photos.csv`, then run `python3 scripts/import-summer-training-photos.py` and `python3 scripts/build-summer-training-pages.py`. Upload `assets/images/public/summer-training/` to Cascade before re-pasting `paste-summer-training-marinecorps.html`.
+
 **Roles** (`roles/index.php`, etc.): paste files still link here — pages return 404 until published.
 
 ## CSS reminder

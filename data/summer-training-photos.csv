@@ -1,0 +1,9 @@
+source_file,program,caption,alt,month,sort_order,featured
+# Drop photos in assets/images/incoming/summer-training/ then run:
+#   python3 scripts/import-summer-training-photos.py
+#   python3 scripts/build-summer-training-pages.py
+#
+# program: leatherneck | magtf | protramid | selective | marsot | general
+# featured: y or n (y = large tile in gallery hero row)
+# Example row (remove # prefix):
+# sitrep-leatherneck-01.jpg,leatherneck,Squad attack at Quantico,Marines conduct squad attack during Leatherneck,May,1,y
