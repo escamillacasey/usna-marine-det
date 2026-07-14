@@ -19,7 +19,7 @@ WIRED: dict[str, str] = {
     "ground/infantry.avif": "ground/infantry.jpg",
     "ground/engineer.avif": "ground/engineer.jfif",
     "ground/acv.avif": "ground/acv.jpg",
-    "ground/recon_in_the_rain.avif": "ground/egr.jpg",
+    "ground/recon_in_the_rain.avif": "ground/egr1.jpg",
     "aviation/ch53.avif": "aviation/ch53.jpg",
     "aviation/j35-2.avif": "aviation/f35.png",
     "aviation/UH1Y2.avif": "aviation/uh1y.png",
