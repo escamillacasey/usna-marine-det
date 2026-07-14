@@ -14,6 +14,16 @@ PASTE = ROOT / "cascade" / "paste-summer-training-marinecorps.html"
 BODY_INCLUDE = INCLUDES / "summer-training-body.html"
 GALLERY_INCLUDE = INCLUDES / "summer-training-gallery.html"
 
+INLINE_GALLERY_MARKERS = {
+    "leatherneck": ("<!-- LEATHERNECK_GALLERY_INSERT -->", INCLUDES / "summer-training-leatherneck-gallery.html"),
+    "magtf": ("<!-- MAGTF_GALLERY_INSERT -->", INCLUDES / "summer-training-magtf-gallery.html"),
+    "protramid": ("<!-- PROTRAMID_GALLERY_INSERT -->", INCLUDES / "summer-training-protramid-gallery.html"),
+    "mciws": ("<!-- MCIWS_GALLERY_INSERT -->", INCLUDES / "summer-training-mciws-gallery.html"),
+    "mwtc": ("<!-- MWTC_GALLERY_INSERT -->", INCLUDES / "summer-training-mwtc-gallery.html"),
+}
+
+IMAGE_LOCAL_PREFIX = "../"
+
 PASTE_HEADER = """<!-- CASCADE paste → https://www.usna.edu/MarineCorps/Midshipmen/summer-training.php -->
 <!-- Upload gallery images to assets/images/public/summer-training/ before pasting. -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
@@ -36,14 +46,32 @@ LOCAL_LINKS = (
 )
 
 
-def load_gallery() -> str:
-    if not GALLERY_INCLUDE.exists():
+def load_include(path: Path) -> str:
+    if not path.exists():
         return ""
-    return GALLERY_INCLUDE.read_text(encoding="utf-8").strip()
+    return path.read_text(encoding="utf-8").strip()
 
 
-def stitch_body(body: str, gallery: str, photos_nav: str) -> str:
-    result = body.replace("<!-- PHOTOS_NAV -->", photos_nav if gallery else "")
+def load_gallery() -> str:
+    return load_include(GALLERY_INCLUDE)
+
+
+def stitch_inline_galleries(body: str, image_prefix: str = "") -> str:
+    result = body
+    for _program, (marker, include_path) in INLINE_GALLERY_MARKERS.items():
+        gallery = load_include(include_path)
+        if image_prefix:
+            gallery = gallery.replace("assets/images/public/", f"{image_prefix}assets/images/public/")
+        replacement = f"\n{gallery}\n" if gallery else ""
+        result = result.replace(marker, replacement)
+    return result
+
+
+def stitch_body(body: str, gallery: str, photos_nav: str, image_prefix: str = "") -> str:
+    result = stitch_inline_galleries(body, image_prefix=image_prefix)
+    result = result.replace("<!-- PHOTOS_NAV -->", photos_nav if gallery else "")
+    if image_prefix and gallery:
+        gallery = gallery.replace("assets/images/public/", f"{image_prefix}assets/images/public/")
     result = result.replace("<!-- GALLERY_INSERT -->", f"\n{gallery}\n" if gallery else "")
     return result.strip() + "\n"
 
@@ -87,7 +115,7 @@ def main() -> int:
     gallery = load_gallery()
 
     cascade_body = stitch_body(body, gallery, PHOTOS_NAV_CASCADE)
-    local_body = stitch_body(body, to_local_html(gallery), PHOTOS_NAV_LOCAL)
+    local_body = stitch_body(body, to_local_html(gallery), PHOTOS_NAV_LOCAL, image_prefix=IMAGE_LOCAL_PREFIX)
     local_body = to_local_html(local_body)
 
     PASTE.write_text(PASTE_HEADER + cascade_body, encoding="utf-8")
@@ -97,7 +125,9 @@ def main() -> int:
     PAGE.write_text(replace_cascade_block(page, indent_for_page(local_body)), encoding="utf-8")
     print(f"Wrote {PAGE.relative_to(ROOT)}")
     if gallery:
-        print("Gallery section included (Photos nav link active).")
+        print("Page-wide gallery section included (Photos nav link active).")
+    elif any(load_include(path) for _, path in INLINE_GALLERY_MARKERS.values()):
+        print("Inline program galleries included.")
     else:
         print("No gallery photos yet — run import-summer-training-photos.py after adding CSV rows.")
     return 0

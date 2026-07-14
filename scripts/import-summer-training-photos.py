@@ -16,7 +16,9 @@ ROOT = Path(__file__).resolve().parent.parent
 INCOMING = ROOT / "assets/images/incoming/summer-training"
 PUBLIC = ROOT / "assets/images/public/summer-training"
 MANIFEST = ROOT / "data/summer-training-photos.csv"
-GALLERY_INCLUDE = ROOT / "cascade/includes/summer-training-gallery.html"
+INCLUDES = ROOT / "cascade/includes"
+GALLERY_INCLUDE = INCLUDES / "summer-training-gallery.html"
+INLINE_PROGRAMS = ("leatherneck", "magtf", "protramid", "mciws", "mwtc")
 REPORT = ROOT / "data/summer-training-photo-import-report.txt"
 
 PROGRAM_LABELS = {
@@ -25,6 +27,8 @@ PROGRAM_LABELS = {
     "protramid": "PROTRAMID Marine Week",
     "selective": "Selective programs",
     "marsot": "MARSOT Screener",
+    "mciws": "MCIWS",
+    "mwtc": "MWTC",
     "general": "Summer training",
 }
 
@@ -60,17 +64,17 @@ def read_manifest() -> list[PhotoRow]:
         source = (raw.get("source_file") or "").strip()
         if not source:
             continue
-            rows.append(
-                PhotoRow(
-                    source_file=raw["source_file"].strip(),
-                    program=raw.get("program", "general").strip().lower() or "general",
-                    caption=raw.get("caption", "").strip(),
-                    alt=(raw.get("alt") or raw.get("caption", "")).strip() or "Summer training photo",
-                    month=raw.get("month", "").strip(),
-                    sort_order=int(raw.get("sort_order") or 999),
-                    featured=str(raw.get("featured", "")).strip().lower() in {"y", "yes", "true", "1"},
-                )
+        rows.append(
+            PhotoRow(
+                source_file=source,
+                program=raw.get("program", "general").strip().lower() or "general",
+                caption=raw.get("caption", "").strip(),
+                alt=(raw.get("alt") or raw.get("caption", "")).strip() or "Summer training photo",
+                month=raw.get("month", "").strip(),
+                sort_order=int(raw.get("sort_order") or 999),
+                featured=str(raw.get("featured", "")).strip().lower() in {"y", "yes", "true", "1"},
             )
+        )
     rows.sort(key=lambda r: (r.program, r.sort_order, r.source_file))
     return rows
 
@@ -104,13 +108,34 @@ def publish_image(src: Path, program: str, stem: str) -> tuple[Path, str]:
     return dest, rel
 
 
+def render_program_gallery(program: str, rows: list[PhotoRow]) -> str:
+    items = [r for r in rows if r.program == program and r.published_path]
+    if not items:
+        return ""
+    items.sort(key=lambda r: (r.sort_order, r.source_file))
+    parts = [
+        '<div class="program-block__gallery">',
+        '<h3 class="program-block__gallery-heading">Training in action</h3>',
+        '<ul class="training-gallery__grid training-gallery__grid--inline">',
+    ]
+    for row in items:
+        parts.append(_render_item(row, featured=row.featured))
+    parts.extend(["</ul>", "</div>"])
+    return "\n".join(parts) + "\n"
+
+
 def render_gallery(rows: list[PhotoRow]) -> str:
     if not rows:
         return ""
 
-    featured = [r for r in rows if r.featured]
+    inline = set(INLINE_PROGRAMS)
+    page_rows = [r for r in rows if r.program not in inline]
+    if not page_rows:
+        return ""
+
+    featured = [r for r in page_rows if r.featured]
     by_program: dict[str, list[PhotoRow]] = {}
-    for row in rows:
+    for row in page_rows:
         by_program.setdefault(row.program, []).append(row)
 
     parts = [
@@ -222,7 +247,15 @@ def main() -> int:
     gallery_html = render_gallery(published)
     if not args.dry_run:
         GALLERY_INCLUDE.write_text(gallery_html, encoding="utf-8")
-        print(f"Wrote {GALLERY_INCLUDE.relative_to(ROOT)} ({len(published)} photos)")
+        for program in INLINE_PROGRAMS:
+            include = INCLUDES / f"summer-training-{program}-gallery.html"
+            include.write_text(render_program_gallery(program, published), encoding="utf-8")
+            count = len([r for r in published if r.program == program])
+            print(f"Wrote {include.relative_to(ROOT)} ({count} photos)")
+        if gallery_html:
+            print(f"Wrote {GALLERY_INCLUDE.relative_to(ROOT)} (page-wide gallery)")
+        elif not any(r.program in INLINE_PROGRAMS for r in published):
+            print(f"Wrote {GALLERY_INCLUDE.relative_to(ROOT)} ({len(published)} photos)")
 
     REPORT.write_text("\n".join(log) + "\n", encoding="utf-8")
     print(f"Report: {REPORT.relative_to(ROOT)}")

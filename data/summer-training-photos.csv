@@ -1,9 +1,31 @@
 source_file,program,caption,alt,month,sort_order,featured
-# Drop photos in assets/images/incoming/summer-training/ then run:
-#   python3 scripts/import-summer-training-photos.py
-#   python3 scripts/build-summer-training-pages.py
-#
-# program: leatherneck | magtf | protramid | selective | marsot | general
-# featured: y or n (y = large tile in gallery hero row)
-# Example row (remove # prefix):
-# sitrep-leatherneck-01.jpg,leatherneck,Squad attack at Quantico,Marines conduct squad attack during Leatherneck,May,1,y
+leatherneck/summer-2026-block-i-sitrep_15-19-june__05.jpg,leatherneck,Leatherneck company at MOUT Town,Midshipmen in formation at MOUT Town during Leatherneck,Summer 2026,1,y
+leatherneck/summer-2026-block-i-sitrep_15-19-june__01.jpg,leatherneck,Live-fire machine gun training,Midshipmen conduct live-fire machine gun training during Leatherneck,Summer 2026,2,n
+leatherneck/summer-2026-block-i-sitrep_7-11-june__12.jpg,leatherneck,Demolitions demonstration,Midshipmen observe a demolitions demonstration during field training,Summer 2026,3,n
+leatherneck/summer-2026-block-i-sitrep_7-11-june__04.jpg,leatherneck,Tactical brief in the field,Midshipmen receive a tactical brief during a field exercise,Summer 2026,4,n
+leatherneck/summer-2026-block-i-sitrep_7-11-june__03.jpg,leatherneck,Tactical combat casualty care,Midshipmen practice tactical combat casualty care in the field,Summer 2026,5,n
+leatherneck/summer-2026-block-i-sitrep_1-5-june__05.jpg,leatherneck,Obstacle course mud crawl,Midshipmen low-crawl through a mud obstacle course,Summer 2026,6,n
+leatherneck/summer-2026-block-ii-sitrep_29-june--3-july__10.png,leatherneck,Tactical water movement,Midshipmen conduct tactical movement through a water obstacle,Summer 2026,7,n
+leatherneck/summer-2026-block-ii-sitrep_22-26-june__06.jpg,leatherneck,Weapons handling instruction,Marine instructor supervises midshipmen during weapons handling,Summer 2026,8,n
+leatherneck/summer-2026-block-ii-sitrep_5-11-july__04.png,leatherneck,Combat Fitness Test — maneuver under fire,Midshipmen perform buddy carries during maneuver-under-fire training,Summer 2026,9,n
+leatherneck/summer-2026-block-i-sitrep_15-19-june__07.jpg,leatherneck,Ruck march at Quantico,Midshipmen ruck march through the Quantico training area,Summer 2026,10,n
+magtf/summer-2026-block-ii-sitrep_5-11-july__09.jpg,magtf,View from the ramp,Midshipmen view the coastline from a Marine Corps transport aircraft during MAGTF,Summer 2026,1,n
+magtf/summer-2026-block-ii-sitrep_29-june--3-july__14.jpg,magtf,Ruck march with operating forces,Midshipmen ruck with Marines during MAGTF fleet immersion,Summer 2026,2,n
+magtf/summer-2026-block-ii-sitrep_29-june--3-july__17.jpg,magtf,Fleet aviation maintenance,Midshipmen work with fleet Marines on aviation maintenance during MAGTF,Summer 2026,3,n
+magtf/summer-2026-block-ii-sitrep_29-june--3-july__19.jpg,magtf,CH-53 helicopter operations,CH-53 helicopter conducts low-hover training with MAGTF midshipmen,Summer 2026,4,n
+magtf/summer-2026-block-ii-sitrep_29-june--3-july__21.jpg,magtf,External lift training,Midshipmen train on external lift operations under a heavy-lift helicopter,Summer 2026,5,n
+magtf/summer-2026-block-ii-sitrep_29-june--3-july__23.jpg,magtf,Air-ground integration at sunset,Midshipmen with a light armored vehicle as a CH-53 operates overhead during MAGTF,Summer 2026,6,y
+mciws/summer-2026-block-i-sitrep_1-5-june__25.gif,mciws,Pool combatatives training,Midshipmen practice water survival techniques in full uniform at the pool,Summer 2026,1,n
+mciws/summer-2026-block-i-sitrep_7-11-june__29.gif,mciws,Combat gear water rescue,Midshipmen train on towing a casualty in full gear during MCIWS,Summer 2026,2,y
+mciws/summer-2026-block-i-sitrep_7-11-june__31.gif,mciws,MCIWS class graduation,MCIWS students pose at the Marine Corps Water Survival School,Summer 2026,3,n
+mciws/summer-2026-block-i-sitrep_7-11-june__30.gif,mciws,Beach physical training,MCIWS students conduct surf conditioning on the beach,Summer 2026,4,n
+mwtc/summer-2026-block-i-sitrep_7-11-june__34.jpg,mwtc,Mountain ruck march,Midshipmen ruck through mountainous terrain during MWTC,Summer 2026,1,n
+mwtc/summer-2026-block-i-sitrep_7-11-june__35.jpg,mwtc,Indoor rock climbing,MWTC students train on technical climbing skills,Summer 2026,2,n
+mwtc/summer-2026-block-i-sitrep_15-19-june__16.jpg,mwtc,Alpine ridge movement,Midshipmen move through high-altitude terrain during MWTC,Summer 2026,3,n
+mwtc/summer-2026-block-i-sitrep_15-19-june__17.jpg,mwtc,Snowbound mountain movement,Midshipmen move through snow-covered alpine terrain during MWTC,Summer 2026,4,y
+mwtc/summer-2026-block-i-sitrep_15-19-june__19.jpg,mwtc,Casualty evacuation drill,Midshipmen practice casualty evacuation on a mountain trail during MWTC,Summer 2026,5,n
+protramid/summer-2026-block-i-sitrep_7-11-june__21.jpg,protramid,7-ton static display,Midshipmen pose with a Marine Corps tactical truck during PROTRAMID,Summer 2026,1,n
+protramid/summer-2026-block-i-sitrep_7-11-june__24.jpg,protramid,Live-fire range,PROTRAMID midshipmen train on the rifle range,Summer 2026,2,n
+protramid/summer-2026-block-i-sitrep_26-29-may__06.jpg,protramid,Combat Fitness Test,Midshipmen carry ammo cans during maneuver-under-fire training,Summer 2026,3,n
+protramid/summer-2026-block-i-sitrep_26-29-may__08.jpg,protramid,Weapons familiarization,Midshipmen receive instruction on crew-served weapons during PROTRAMID,Summer 2026,4,n
+protramid/summer-2026-block-i-sitrep_26-29-may__09.jpg,protramid,Light armored vehicle tour,Midshipmen explore a light armored vehicle during PROTRAMID,Summer 2026,5,y
