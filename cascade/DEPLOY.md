@@ -61,8 +61,8 @@ Copy **`cascade/paste-local-css-append.css`** → paste at the **bottom** of Cas
 | Issue | Notes |
 |-------|-------|
 | **Site nav Home → 404** | Fix in Cascade navigation per `FIX-NAV.md` |
-| Roles pages | Not live; nav links 404 until deployed |
+| **Fleet + MOTY outdated** | Re-paste per `DEPLOY-REMAINING.md` |
 | Hero / content images | Wire `assets/images/public/content/` into pages |
 | Marine Cyber | Static hub card until 2027 revamp |
 
-**Intranet deploy:** see `cascade/DEPLOY-INTRANET.md`.
+**Intranet deploy:** see `cascade/DEPLOY-INTRANET.md`. **Remaining public pastes:** see `cascade/DEPLOY-REMAINING.md`.

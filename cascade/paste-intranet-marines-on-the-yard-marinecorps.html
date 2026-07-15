@@ -1,5 +1,6 @@
 <!-- CASCADE paste → https://www.usna.edu/MarineCorps/MARDET/marines_on_the_yard.php -->
-<!-- USNA intranet only. Upload roster data JS first. See DEPLOY-INTRANET.md -->
+<!-- DEPLOY: 1) Paste HTML (source mode). 2) Add JS to Page Metadata (block at bottom). 3) Publish. -->
+<!-- Fixes: Marine directory container (#yard-directory) + MARDET leadership URLs (not root leadership.php). -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 
 <div class="marines-page-header">
@@ -20,7 +21,7 @@
 <p class="community-card__where">Sampson Hall &#183; Marine Detachment offices</p>
 <p>The USNA Marine Detachment runs the Marine Corps engagement program: informing, influencing, assessing, selecting, and equipping midshipmen for commissioning as Marine officers. MARDET staff coordinate summer training (Leatherneck, MAGTF, PROTRAMID), selection, accessions, and detachment administration &#8212; nested within the Naval Academy mission to develop midshipmen morally, mentally, and physically.</p>
 <p><strong>Talk to MARDET if you need:</strong> selection guidance, summer training questions, or detachment-level policy.</p>
-<p><a href="leadership.php">Detachment leadership</a> &#183; <a href="index.php">MARDET Team home</a></p>
+<p><a href="https://www.usna.edu/MarineCorps/MARDET/leadership.php">Detachment leadership</a> &#183; <a href="https://www.usna.edu/MarineCorps/MARDET/index.php">MARDET Team home</a></p>
 </article>
 
 <article class="community-card" id="mentors">
@@ -85,7 +86,7 @@
 <tr>
 <td>MARDET</td>
 <td>Selection, training, accessions</td>
-<td><a href="leadership.php">Detachment leadership</a></td>
+<td><a href="https://www.usna.edu/MarineCorps/MARDET/leadership.php">Detachment leadership</a></td>
 </tr>
 <tr>
 <td>Company mentor</td>
@@ -114,9 +115,11 @@
 </div>
 </section>
 
-<!-- Page metadata → JavaScript (after paste):
+<!-- Page metadata → JavaScript (required for Marine directory roster): -->
+<!--
 <script src="_files/js/intranet/company-mentors-data.js"></script>
 <script src="_files/js/intranet/marines-on-the-yard-data.js"></script>
 <script src="_files/js/marines-on-the-yard.js"></script>
 <script src="_files/js/main.js"></script>
 -->
+<!-- Or paste cascade/snippets/foot-marines-on-the-yard.html into Metadata → JavaScript (replace ASSET_BASE with nothing — paths are site-root _files). -->

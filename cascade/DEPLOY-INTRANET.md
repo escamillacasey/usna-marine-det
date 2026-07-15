@@ -127,7 +127,7 @@ Any **404** → fix upload path before testing pages.
 **Photos** (Network tab, hard refresh)
 
 - [ ] Spot-check `company-02.jpg` → 200
-- [ ] Companies **1** and **20** show “Photo pending” placeholder until photos uploaded
+- [x] Companies **1** and **20** — photos live (re-paste only if placeholders return)
 
 **Behavior**
 
