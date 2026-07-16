@@ -18,7 +18,7 @@ PUBLIC = ROOT / "assets/images/public/summer-training"
 MANIFEST = ROOT / "data/summer-training-photos.csv"
 INCLUDES = ROOT / "cascade/includes"
 GALLERY_INCLUDE = INCLUDES / "summer-training-gallery.html"
-INLINE_PROGRAMS = ("leatherneck", "magtf", "protramid", "mciws", "mwtc")
+INLINE_PROGRAMS = ("leatherneck", "magtf", "protramid", "mciws", "mwtc", "mcmap")
 REPORT = ROOT / "data/summer-training-photo-import-report.txt"
 
 PROGRAM_LABELS = {
@@ -29,6 +29,7 @@ PROGRAM_LABELS = {
     "marsot": "MARSOT Screener",
     "mciws": "MCIWS",
     "mwtc": "MWTC",
+    "mcmap": "MCMAP",
     "general": "Summer training",
 }
 

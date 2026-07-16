@@ -20,6 +20,7 @@ INLINE_GALLERY_MARKERS = {
     "protramid": ("<!-- PROTRAMID_GALLERY_INSERT -->", INCLUDES / "summer-training-protramid-gallery.html"),
     "mciws": ("<!-- MCIWS_GALLERY_INSERT -->", INCLUDES / "summer-training-mciws-gallery.html"),
     "mwtc": ("<!-- MWTC_GALLERY_INSERT -->", INCLUDES / "summer-training-mwtc-gallery.html"),
+    "mcmap": ("<!-- MCMAP_GALLERY_INSERT -->", INCLUDES / "summer-training-mcmap-gallery.html"),
 }
 
 IMAGE_LOCAL_PREFIX = "../"
