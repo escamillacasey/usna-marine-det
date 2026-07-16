@@ -111,7 +111,8 @@ Same root cause as Home: nav is **auto-generated from the site folder tree**. Th
    - **Include in Navigation** → **Yes**
    - **Display Name** → e.g. **Marine Detachment** or **MARDET** (what you want in the menu)
 4. On child pages that should appear under it:
-   - `company_mentors.php` → **Include in Navigation → Yes**
+   - `company_mentors.php` → **Include in Navigation → Yes** (public overview)
+   - `company_mentor_assignments.php` → gated roster; optional in nav
    - `marines_on_the_yard.php` → **Include in Navigation → Yes** (when published)
 5. In the **root folder**, sort by **Order** and place **MARDET** where you want it (typically after Midshipmen, before Fleet Marines).
 6. Confirm **`MARDET/index.php`** is **Published** (not draft only).

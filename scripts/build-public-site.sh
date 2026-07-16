@@ -17,6 +17,7 @@ rsync -a \
   --exclude 'assets/images/incoming' \
   --exclude 'assets/images/scraped' \
   --exclude 'docs/internal' \
+  --exclude 'templates' \
   --exclude 'data' \
   --exclude 'scripts' \
   "$ROOT/" "$OUT/"

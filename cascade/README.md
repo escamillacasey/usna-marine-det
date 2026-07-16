@@ -17,13 +17,15 @@ Generated and hand-maintained files for Hannon Hill Cascade CMS.
 
 ### Intranet (USNA internal only)
 
-See **`cascade/DEPLOY-INTRANET.md`**.
+See **`cascade/MIGRATE-TO-MARINES.md`** for `usna.edu/Marines` cutover. Nav-safe mentors split: **`DEPLOY-MENTORS-INTRANET-SPLIT.md`** + **`SITE-STRUCTURE.md`**.
 
 | Paste file | Cascade path (example) |
 |------------|------------------------|
+| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` *(public overview)* |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
-| `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` |
+| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` *(gated roster)* |
+| `paste-public-marines-on-the-yard-coming-soon-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(coming soon)* |
+| `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(full — when ready)* |
 
 ## Other files
 

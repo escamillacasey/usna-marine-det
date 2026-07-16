@@ -1,6 +1,9 @@
 # Cascade deploy — intranet (MARDET)
 
-**Host on USNA intranet only** (`intranet.usna.edu` or equivalent). Do **not** publish these pages to the open `www.usna.edu/MarineCorps` site.
+**Production host:** `https://www.usna.edu/Marines/` — **one site**, public + SSO-gated pages.  
+**Do not** publish the **full roster** on **ungated** pages.
+
+**Nav-safe split:** Public overview at `company_mentors.php`; gated roster at `company_mentor_assignments.php`. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
 
 Same CSS workflow as public pages: `local.css` with Marines bundle appended at the bottom.
 
@@ -48,9 +51,14 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ---
 
-### 2. Company mentors (`paste-intranet-company-mentors-marinecorps.html`)
+### 2. Company mentors
 
-**Page path:** `Midshipmen/company_mentors.php`
+| Host | Paste file | Path (unchanged) |
+|------|------------|------------------|
+| **Public** | `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
+| **Gated** | `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` |
+
+**Page paths:** overview (nav) + assignments (roster, SSO). See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
 
 **Static HTML (no JavaScript):** paste file includes all 36 mentor cards, grouped by battalion. Battalion jump links replace the JS filter toolbar.
 
@@ -116,7 +124,7 @@ Any **404** → fix upload path before testing pages.
 - [ ] Hub cards styled (gold left border)
 - [ ] **Console** (F12 → Console): no red errors *(optional `main.js` only if wired in metadata)*
 
-### C. Company mentors (`Midshipmen/company_mentors.php`) — static HTML
+### C. Mentor assignments (`Midshipmen/company_mentor_assignments.php`) — gated roster
 
 **Page source**
 

@@ -1,7 +1,11 @@
-# Cascade deploy order — MarineCorps test site
+# Cascade deploy order — `usna.edu/Marines`
 
-Live site map: **`cascade/LIVE-URLS.md`**  
+**Migrating from `MarineCorps/`?** Read **`cascade/MIGRATE-TO-MARINES.md`** first.
+
+Live site map: **`cascade/LIVE-URLS.md`** (`cascade/site-urls.json`)  
 Fix broken **Home** nav: **`cascade/FIX-NAV.md`** (Cascade navigation — not paste HTML)
+
+Before pasting, sync URLs: `python3 scripts/apply-site-urls.py`
 
 Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append updated `marines.css` to `_files/css/local.css`.
 
@@ -27,8 +31,10 @@ Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append 
 | `paste-roles-aviation-marinecorps.html` | `Midshipmen/roles/aviation.php` |
 | `paste-roles-support-marinecorps.html` | `Midshipmen/roles/support.php` |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
-| `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(when ready)* |
+| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` | Public |
+| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` | Gated |
+| `paste-public-marines-on-the-yard-coming-soon-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(coming soon)* |
+| `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(full directory — when ready)* |
 
 **Photos:** upload to `assets/images/public/leadership/` and `assets/images/public/mentors/` (see `LIVE-URLS.md`).
 
@@ -65,4 +71,4 @@ Copy **`cascade/paste-local-css-append.css`** → paste at the **bottom** of Cas
 | Hero / content images | Wire `assets/images/public/content/` into pages |
 | Marine Cyber | Static hub card until 2027 revamp |
 
-**Intranet deploy:** see `cascade/DEPLOY-INTRANET.md`. **Remaining public pastes:** see `cascade/DEPLOY-REMAINING.md`.
+**Intranet deploy:** see `cascade/DEPLOY-INTRANET.md`. **Mentors intranet gate (nav-safe):** `cascade/DEPLOY-MENTORS-INTRANET-SPLIT.md` + `cascade/SITE-STRUCTURE.md`. **Remaining public pastes:** see `cascade/DEPLOY-REMAINING.md`.
