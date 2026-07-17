@@ -85,5 +85,5 @@ Published photos resolve under **`assets/images/public/…`** or **`assets/image
 
 Examples:
 - `../assets/images/public/leadership/col-reid.jpg` (from `MARDET/leadership.php`)
-- `assets/images/intranet/mentors/company-02.jpg` (from gated `company_mentor_assignments.php`)
+- `assets/images/public/mentors/company-02.jpg` (from gated `company_mentor_assignments.php`)
 - `assets/images/public/roles/ground/infantry.jpg` (from `Midshipmen/roles/`)

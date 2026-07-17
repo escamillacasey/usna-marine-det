@@ -31,7 +31,7 @@ SCRIPTS_DIR = ROOT / "scripts"
 STATE_FILE = DATA_DIR / ".last-sync.json"
 REPORT_FILE = DATA_DIR / "sync-report.txt"
 INTRANET_JS_DIR = ROOT / "js" / "intranet"
-MENTOR_PHOTO_PREFIX = "../../assets/images/intranet/mentors"
+MENTOR_PHOTO_PREFIX = "../../assets/images/public/mentors"
 
 COMMUNITY_SLUGS = {
     "mardet": "mardet",

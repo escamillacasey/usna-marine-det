@@ -10,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_JS = ROOT / "js" / "intranet" / "company-mentors-data.js"
-PHOTOS_DIR = ROOT / "assets" / "images" / "intranet" / "mentors"
+PHOTOS_DIR = ROOT / "assets" / "images" / "public" / "mentors"
+LOCAL_PHOTO_PREFIX = "../../assets/images/public/mentors/"
 OUT_LOCAL = ROOT / "cascade" / "includes" / "mentor-cards-local.html"
 OUT_CASCADE = ROOT / "cascade" / "includes" / "mentor-cards-cascade.html"
 # Photo prefix for Cascade paste (Midshipmen/company_mentors.php). Live site serves from assets/.
@@ -133,7 +134,7 @@ def main() -> int:
     mentors = parse_mentors()
     OUT_LOCAL.parent.mkdir(parents=True, exist_ok=True)
     OUT_LOCAL.write_text(
-        grouped_html(mentors, "../../assets/images/intranet/mentors/"),
+        grouped_html(mentors, LOCAL_PHOTO_PREFIX),
         encoding="utf-8",
     )
     OUT_CASCADE.write_text(

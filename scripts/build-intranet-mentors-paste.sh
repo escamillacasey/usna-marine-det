@@ -6,7 +6,7 @@ python3 "$ROOT/scripts/generate-mentor-cards-html.py"
 
 HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/MarineCorps/Midshipmen/company_mentor_assignments.php -->
 <!-- Full roster — USNA login required. Public overview: paste-public-company-mentors-marinecorps.html → company_mentors.php -->
-<!-- Static HTML — no JavaScript. Regenerate: CASCADE_PHOTO_PREFIX="assets/images/intranet/mentors/" bash scripts/build-intranet-mentors-paste.sh -->
+<!-- Static HTML — no JavaScript. Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 
 <div class="marines-page-header">
