@@ -25,7 +25,7 @@ INLINE_GALLERY_MARKERS = {
 
 IMAGE_LOCAL_PREFIX = "../"
 
-PASTE_HEADER = """<!-- CASCADE paste → https://www.usna.edu/Marines/Midshipmen/summer-training.php -->
+PASTE_HEADER = """<!-- CASCADE paste → https://www.usna.edu/MarineCorps/Midshipmen/summer-training.php -->
 <!-- Upload gallery images to assets/images/public/summer-training/ before pasting. -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 

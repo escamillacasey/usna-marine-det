@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 python3 "$ROOT/scripts/generate-mentor-cards-html.py"
 
-HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/Marines/Midshipmen/company_mentor_assignments.php -->
+HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/MarineCorps/Midshipmen/company_mentor_assignments.php -->
 <!-- Full roster — USNA login required. Public overview: paste-public-company-mentors-marinecorps.html → company_mentors.php -->
 <!-- Static HTML — no JavaScript. Regenerate: CASCADE_PHOTO_PREFIX="assets/images/intranet/mentors/" bash scripts/build-intranet-mentors-paste.sh -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@ HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/Marines/Midshipmen/co
 
 <section class="content-section">
 <div class="container">
-<p>Below is the current company mentor roster: photos, contact information, primary duty, collateral assignments, and summer duty where applicable. New to the program? Read <a href="https://www.usna.edu/Marines/Midshipmen/company_mentors.php">what a company Marine mentor is</a>.</p>
+<p>Below is the current company mentor roster: photos, contact information, primary duty, collateral assignments, and summer duty where applicable. New to the program? Read <a href="https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php">what a company Marine mentor is</a>.</p>
 
 <nav aria-label="Jump to battalion" class="page-subnav">
 <a href="#battalion-1">1st Battalion</a>

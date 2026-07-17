@@ -1,10 +1,10 @@
 {
-  "site_slug": "Marines",
-  "public_base": "https://www.usna.edu/Marines/",
-  "legacy_public_base": "https://www.usna.edu/MarineCorps/",
-  "intranet_base": "https://www.usna.edu/Marines/",
+  "site_slug": "MarineCorps",
+  "public_base": "https://www.usna.edu/MarineCorps/",
+  "future_public_base": "https://www.usna.edu/Marines/",
+  "intranet_base": "https://www.usna.edu/MarineCorps/",
   "intranet_mode": "same_host_page_auth",
-  "intranet_mode_notes": "One Cascade site at www.usna.edu/Marines. Web Services enables SSO/page-level auth on gated folders — not a separate intranet.usna.edu tree. Confirm gating rules before publish.",
+  "intranet_mode_notes": "One Cascade site at www.usna.edu/MarineCorps until cutover to Marines/. Web Services enables SSO/page-level auth on gated folders.",
   "paths": {
     "home": "index.php",
     "fleet": "Fleet_Marines.php",

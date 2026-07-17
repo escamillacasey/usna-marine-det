@@ -1,6 +1,6 @@
-# Cascade deploy order — `usna.edu/Marines`
+# Cascade deploy order — `usna.edu/MarineCorps`
 
-**Migrating from `MarineCorps/`?** Read **`cascade/MIGRATE-TO-MARINES.md`** first.
+**Cutting over to `Marines/`?** Run `python3 scripts/apply-site-urls.py --migrate`, then read **`cascade/MIGRATE-TO-MARINES.md`**.
 
 Live site map: **`cascade/LIVE-URLS.md`** (`cascade/site-urls.json`)  
 Fix broken **Home** nav: **`cascade/FIX-NAV.md`** (Cascade navigation — not paste HTML)

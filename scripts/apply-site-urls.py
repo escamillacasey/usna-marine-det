@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Rewrite legacy MarineCorps absolute URLs to canonical Marines URLs in Cascade pastes."""
+"""Rewrite absolute site URLs in Cascade pastes per cascade/site-urls.json.
+
+Default (--active): future_public_base → public_base (Marines/ → MarineCorps/).
+Use --migrate when cutting over: public_base → future_public_base.
+"""
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -15,32 +20,33 @@ TARGET_DIRS = [
     ROOT / "cascade" / "snippets",
 ]
 
-# Also patch build-script headers that embed URLs
 TARGET_FILES = [
     ROOT / "scripts" / "build-intranet-mentors-paste.sh",
     ROOT / "scripts" / "build-summer-training-pages.py",
+    ROOT / "scripts" / "build-roles-pages.py",
 ]
 
 
 def load_config() -> dict:
     data = json.loads(CONFIG.read_text(encoding="utf-8"))
-    for key in ("public_base", "legacy_public_base"):
-        if not data.get(key, "").endswith("/"):
+    for key in ("public_base", "future_public_base", "legacy_public_base"):
+        if key in data and data[key] and not data[key].endswith("/"):
             data[key] = data[key].rstrip("/") + "/"
+    if "future_public_base" not in data and data.get("legacy_public_base"):
+        data["future_public_base"] = data["legacy_public_base"]
     return data
 
 
-def replace_in_text(text: str, legacy: str, public: str) -> tuple[str, int]:
-    count = text.count(legacy)
+def replace_in_text(text: str, source: str, target: str) -> tuple[str, int]:
+    count = text.count(source)
     if count:
-        text = text.replace(legacy, public)
-    # Host-only comments sometimes omit trailing path
-    legacy_host = legacy.rstrip("/")
-    public_host = public.rstrip("/")
-    if legacy_host != legacy:
-        extra = text.count(legacy_host)
+        text = text.replace(source, target)
+    source_host = source.rstrip("/")
+    target_host = target.rstrip("/")
+    if source_host != source:
+        extra = text.count(source_host)
         if extra:
-            text = text.replace(legacy_host, public_host)
+            text = text.replace(source_host, target_host)
             count += extra
     return text, count
 
@@ -55,33 +61,46 @@ def iter_html_files() -> list[Path]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Rewrite site URLs in Cascade pastes.")
+    parser.add_argument(
+        "--migrate",
+        action="store_true",
+        help="Cutover mode: public_base → future_public_base (MarineCorps/ → Marines/).",
+    )
+    args = parser.parse_args()
+
     cfg = load_config()
-    legacy = cfg["legacy_public_base"]
     public = cfg["public_base"]
+    future = cfg.get("future_public_base", "https://www.usna.edu/Marines/")
     intranet = cfg.get("intranet_base", public)
     if not intranet.endswith("/"):
         intranet += "/"
 
+    if args.migrate:
+        source, target = public, future
+        mode = "migrate (cutover)"
+    else:
+        source, target = future, public
+        mode = "active (MarineCorps)"
+
     total = 0
     for path in iter_html_files() + [p for p in TARGET_FILES if p.exists()]:
         original = path.read_text(encoding="utf-8")
-        updated, n = replace_in_text(original, legacy, public)
-        # intranet.usna.edu/MarineCorps → www Marines (same-host auth model)
-        updated, n2 = replace_in_text(
-            updated,
-            "https://intranet.usna.edu/MarineCorps/",
-            intranet,
-        )
-        n += n2
+        updated, n = replace_in_text(original, source, target)
+        if not args.migrate:
+            updated, n2 = replace_in_text(
+                updated,
+                "https://intranet.usna.edu/MarineCorps/",
+                intranet,
+            )
+            n += n2
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             print(f"  {path.relative_to(ROOT)} ({n} replacements)")
             total += n
 
-    print(f"\nDone. {total} URL replacements. Config: cascade/site-urls.json")
-    print(f"  {legacy} → {public}")
-    if intranet != public:
-        print(f"  intranet base → {intranet}")
+    print(f"\nDone. {total} URL replacements ({mode}). Config: cascade/site-urls.json")
+    print(f"  {source} → {target}")
     return 0
 
 

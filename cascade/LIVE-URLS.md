@@ -1,18 +1,19 @@
-# Live URL map — `usna.edu/Marines`
+# Live URL map — `usna.edu/MarineCorps`
 
 Use these in paste files and when fixing Cascade navigation.
 
 | | URL |
 |---|-----|
-| **Production base** | `https://www.usna.edu/Marines/` |
-| **Legacy (redirect)** | `https://www.usna.edu/MarineCorps/` |
+| **Production base (active)** | `https://www.usna.edu/MarineCorps/` |
+| **Future cutover** | `https://www.usna.edu/Marines/` |
 | **Config source** | `cascade/site-urls.json` |
 | **Migration plan** | `cascade/MIGRATE-TO-MARINES.md` |
 
 Regenerate paste URLs after path changes:
 
 ```bash
-python3 scripts/apply-site-urls.py
+python3 scripts/apply-site-urls.py          # active: Marines/ → MarineCorps/
+python3 scripts/apply-site-urls.py --migrate  # cutover: MarineCorps/ → Marines/
 ```
 
 ---
@@ -45,12 +46,12 @@ From `MARDET/index.php` body:
 
 | Label | URL |
 |-------|-----|
-| Detachment Leadership | `https://www.usna.edu/Marines/MARDET/leadership.php` |
-| Company Mentors (overview) | `https://www.usna.edu/Marines/Midshipmen/company_mentors.php` |
-| Mentor Assignments (roster) | `https://www.usna.edu/Marines/Midshipmen/company_mentor_assignments.php` |
-| Marines on the Yard | `https://www.usna.edu/Marines/MARDET/marines_on_the_yard.php` |
-| Midshipmen Resources | `https://www.usna.edu/Marines/Midshipmen/index.php` |
-| Fleet Assignment Info | `https://www.usna.edu/Marines/Fleet_Marines.php` |
+| Detachment Leadership | `https://www.usna.edu/MarineCorps/MARDET/leadership.php` |
+| Company Mentors (overview) | `https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php` |
+| Mentor Assignments (roster) | `https://www.usna.edu/MarineCorps/Midshipmen/company_mentor_assignments.php` |
+| Marines on the Yard | `https://www.usna.edu/MarineCorps/MARDET/marines_on_the_yard.php` |
+| Midshipmen Resources | `https://www.usna.edu/MarineCorps/Midshipmen/index.php` |
+| Fleet Assignment Info | `https://www.usna.edu/MarineCorps/Fleet_Marines.php` |
 
 **Not:** `company-mentors.php`, `marines-on-the-yard.php`, `fleet-application.php`, or lowercase `midshipmen/`.
 
@@ -58,7 +59,7 @@ From `MARDET/index.php` body:
 
 ## One site — public + intranet
 
-`Marines/` is a **single Cascade site**. Intranet content uses **page/folder SSO** on the same URLs — not a separate `intranet.usna.edu/Marines` tree unless Web Services directs otherwise.
+`MarineCorps/` is the **active Cascade site**. Intranet content uses **page/folder SSO** on the same URLs — not a separate `intranet.usna.edu` tree unless Web Services directs otherwise.
 
 | Tier | Mechanism |
 |------|-----------|
