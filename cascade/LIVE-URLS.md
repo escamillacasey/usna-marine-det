@@ -6,6 +6,7 @@ Use these in paste files and when fixing Cascade navigation.
 |---|-----|
 | **Production base (active)** | `https://www.usna.edu/MarineCorps/` |
 | **Future cutover** | `https://www.usna.edu/Marines/` |
+| **Intranet base** | `https://intranet.usna.edu/USMC/` |
 | **Config source** | `cascade/site-urls.json` |
 | **Migration plan** | `cascade/MIGRATE-TO-MARINES.md` |
 
@@ -57,16 +58,16 @@ From `MARDET/index.php` body:
 
 ---
 
-## One site — public + intranet
+## Public www vs intranet
 
-`MarineCorps/` is the **active Cascade site**. Intranet content uses **page/folder SSO** on the same URLs — not a separate `intranet.usna.edu` tree unless Web Services directs otherwise.
+| Host | Cascade root | Audience |
+|------|--------------|----------|
+| `www.usna.edu/MarineCorps/` | Active public site | Open internet |
+| `intranet.usna.edu/USMC/` | Separate Cascade site | USNA login |
 
-| Tier | Mechanism |
-|------|-----------|
-| Public | No auth on page |
-| Gated | Cascade requires USNA login; paste intranet HTML |
+Intranet pastes use **relative links** (resolve under `USMC/`). Public www pastes use `https://www.usna.edu/MarineCorps/…` until Marines cutover.
 
-Update `cascade/site-urls.json` if Web Services confirms a different intranet base.
+Update `cascade/site-urls.json` → `intranet_base` if the intranet slug changes.
 
 ---
 

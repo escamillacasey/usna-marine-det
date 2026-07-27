@@ -1,16 +1,10 @@
-# Migration plan — `usna.edu/Marines` (public + intranet, one site)
+# Migration plan — `usna.edu/Marines` (public www cutover)
 
 Target production host: **`https://www.usna.edu/Marines/`**  
-Legacy test host: `https://www.usna.edu/MarineCorps/` (retire with redirects)
+Legacy test host: `https://www.usna.edu/MarineCorps/` (retire with redirects)  
+**Intranet (separate host):** **`https://intranet.usna.edu/USMC/`** — not part of this www cutover; see **`DEPLOY-INTRANET.md`**.
 
-This is **one Cascade site** with two audiences — not two separate site roots.
-
-| Audience | How it works on `Marines/` |
-|----------|----------------------------|
-| **Traditional (public)** | Open pages: home, Midshipmen resources, roles, summer training, fleet info, detachment leadership bios |
-| **Intranet (authenticated)** | Same URL tree; Web Services enables **page- or folder-level SSO** on gated assets. Logged-in mids/Marines see roster, emails, MOTY directory, DCP links |
-
-**Nav rule unchanged:** Cascade left nav comes from the **folder tree**. Do not rename `Midshipmen/`, `MARDET/`, or `company_mentors.php` during migration — only change the **site root slug** (`MarineCorps` → `Marines`) and paste bodies.
+This document covers **public www** migration. Intranet content lives on **`intranet.usna.edu/USMC/`** with the same folder tree (`Midshipmen/`, `MARDET/`, etc.).
 
 ---
 

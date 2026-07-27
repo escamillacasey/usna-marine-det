@@ -1,62 +1,74 @@
-# Company mentors — public overview + gated roster (`Marines/`)
+# Company mentors — intranet only (`intranet.usna.edu/USMC/`)
 
-Two pages, same `Midshipmen/` folder — nav stays on the public overview.
+**Captured model (Jul 2026):** Full roster on **`Midshipmen/company_mentors.php`** on the intranet site only. Paste uses **relative links** so navigation stays on `intranet.usna.edu/USMC/`.
+
+| Page | Paste file | Host |
+|------|------------|------|
+| **`Midshipmen/company_mentors.php`** | `paste-intranet-company-mentors-marinecorps.html` | **intranet.usna.edu/USMC/** |
+
+Public `www` no longer hosts the roster. Optional public stub: `paste-public-company-mentors-marinecorps.html` (overview only, no PII).
+
+**Read first:** `SITE-STRUCTURE.md`, `cascade/site-urls.json`
+
+---
+
+## Legacy two-page split (www + SSO)
+
+Previously: public overview at `company_mentors.php` + gated roster at `company_mentor_assignments.php` on **www**. Superseded by intranet-only roster on `company_mentors.php`.
+
+<details>
+<summary>Legacy deploy steps (www same-host SSO)</summary>
 
 | Page | Paste file | Audience |
 |------|------------|----------|
 | **`Midshipmen/company_mentors.php`** | `paste-public-company-mentors-marinecorps.html` | **Public** — what a company Marine mentor is |
 | **`Midshipmen/company_mentor_assignments.php`** | `paste-intranet-company-mentors-marinecorps.html` | **Gated** — full 36-card roster |
 
-**Read first:** `SITE-STRUCTURE.md`, `MIGRATE-TO-MARINES.md`
+</details>
 
 ---
 
-## Why two pages
+## Deploy (intranet)
 
-- **Public** visitors (prospective students, parents, internet) learn the mentor program without PII.
-- **Authenticated** mids and MARDET Marines get photos, email, duties, and battalion jump links.
-- Left nav **Company Mentors** stays on `company_mentors.php` — do not move or rename.
+### 1. Regenerate paste
 
-`company_mentor_assignments.php` is linked from the overview, Midshipmen hub, MARDET hub, and MOTY. **Include in Navigation** on assignments is optional (omit from public nav if you prefer login-only discovery).
+```bash
+bash scripts/build-intranet-mentors-paste.sh
+```
 
----
+### 2. Publish on intranet Cascade
 
-## Deploy
+1. Open **`Midshipmen/company_mentors.php`** on **intranet.usna.edu/USMC/**
+2. **Source/HTML mode** → paste **`paste-intranet-company-mentors-marinecorps.html`**
+3. **Include in Navigation** → Yes (display name: **Company Mentors**)
+4. Upload photos → `assets/images/public/mentors/company-*.jpg`
+5. **Publish**
 
-### 1. Public overview (`company_mentors.php`)
+### Relative links in paste (no edit needed)
 
-1. Paste `paste-public-company-mentors-marinecorps.html` (source mode).
-2. **Configure:** Include in Navigation → **Yes**; Display name → **Company Mentors**.
-3. **No** authentication on this page.
-4. Publish.
+| Link in paste | Resolves to |
+|---------------|-------------|
+| `../_files/css/local.css` | Site CSS |
+| `assets/images/public/mentors/company-NN.jpg` | Mentor photos |
+| `prospective-marines.php` | Same folder (`Midshipmen/`) |
+| `summer-training.php` | Same folder |
+| `../MARDET/leadership.php` | MARDET leadership |
+| `#battalion-N` | In-page jump |
 
-### 2. Gated roster (`company_mentor_assignments.php`)
+### Smoke test (intranet)
 
-1. Create page at `Midshipmen/company_mentor_assignments.php` if missing.
-2. Regenerate:
-   ```bash
-   CASCADE_PHOTO_PREFIX="assets/images/intranet/mentors/" \
-     bash scripts/build-intranet-mentors-paste.sh
-   ```
-3. Paste `paste-intranet-company-mentors-marinecorps.html`.
-4. Web Services: enable **authentication** on this page.
-5. Upload `assets/images/intranet/mentors/`.
-6. Publish.
-
-### Smoke tests
-
-| Page | Logged out | Logged in |
-|------|------------|-----------|
-| `company_mentors.php` | Program description, no `mailto:` | Same |
-| `company_mentor_assignments.php` | Login wall | 36 cards, photos 200 |
+- [ ] 36 `.mentor-card` elements in page source
+- [ ] Photos → 200, `Content-Type: image/jpeg`
+- [ ] Click **Summer Training** → stays on `intranet.usna.edu/USMC/…`
+- [ ] No `mailto:` on public www copy (if public stub remains)
 
 ---
 
 ## AY rollover
 
 1. `python3 scripts/sync-from-sheets.py`
-2. `CASCADE_PHOTO_PREFIX="assets/images/intranet/mentors/" bash scripts/build-intranet-mentors-paste.sh`
-3. Re-paste **`company_mentor_assignments.php` only** — public overview unchanged unless copy edits
+2. `bash scripts/build-intranet-mentors-paste.sh`
+3. Re-paste **`Midshipmen/company_mentors.php`** on intranet only
 
 ---
 
@@ -65,5 +77,6 @@ Two pages, same `Midshipmen/` folder — nav stays on the public overview.
 | Symptom | Fix |
 |---------|-----|
 | Company Mentors missing from nav | `company_mentors.php` → Include in Navigation **Yes** |
-| Roster visible when logged out | `company_mentor_assignments.php` not gated — escalate Web Services |
-| 404 on assignments | Create `company_mentor_assignments.php` under `Midshipmen/` |
+| Photos broken | Confirm `assets/images/public/mentors/` uploaded on intranet site |
+| Links jump to www | Re-paste — paste must use relative hrefs, not `https://www.usna.edu/…` |
+

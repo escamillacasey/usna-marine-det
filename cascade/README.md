@@ -15,17 +15,17 @@ Generated and hand-maintained files for Hannon Hill Cascade CMS.
 | `paste-prospective-marines-marinecorps.html` | `Midshipmen/prospective-marines.php` |
 | `paste-summer-training-marinecorps.html` | `Midshipmen/summer-training.php` |
 
-### Intranet (USNA internal only)
+### Intranet (`intranet.usna.edu/USMC/`)
 
-See **`cascade/MIGRATE-TO-MARINES.md`** for `usna.edu/Marines` cutover. Nav-safe mentors split: **`DEPLOY-MENTORS-INTRANET-SPLIT.md`** + **`SITE-STRUCTURE.md`**.
+See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`** + **`DEPLOY-INTRANET.md`**. Folder tree matches www (`Midshipmen/`, `MARDET/`); only the Cascade root slug differs (`USMC` vs `MarineCorps`).
 
-| Paste file | Cascade path (example) |
-|------------|------------------------|
-| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` *(public overview)* |
+| Paste file | Cascade path |
+|------------|--------------|
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` *(gated roster)* |
-| `paste-public-marines-on-the-yard-coming-soon-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(coming soon)* |
+| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` *(full roster)* |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(full — when ready)* |
+
+Public www stub (optional): `paste-public-company-mentors-marinecorps.html` → `Midshipmen/company_mentors.php` on **www** only.
 
 ## Other files
 

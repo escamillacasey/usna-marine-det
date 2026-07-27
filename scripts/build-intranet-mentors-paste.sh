@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
-# Regenerate static mentor cards + full Cascade paste file.
+# Regenerate static mentor cards + Cascade paste for intranet company mentors.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 python3 "$ROOT/scripts/generate-mentor-cards-html.py"
 
-HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/MarineCorps/Midshipmen/company_mentor_assignments.php -->
-<!-- Full roster — USNA login required. Public overview: paste-public-company-mentors-marinecorps.html → company_mentors.php -->
-<!-- Static HTML — no JavaScript. Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
+HEADER='<!-- CASCADE paste → intranet.usna.edu/USMC/Midshipmen/company_mentors.php -->
+<!-- INTRANET ONLY — full roster. All href/src below are relative to the USMC/ site root. -->
+<!-- Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
 <link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
 
 <div class="marines-page-header">
 <div class="container">
-<h1 class="marines-page-header__title">Mentor Assignments</h1>
+<h1 class="marines-page-header__title">Marine Company Mentors</h1>
 <p class="marines-page-header__subtitle">Current Marine officer assigned to each of the Brigade'\''s 36 companies.</p>
 </div>
 </div>
 
 <section class="content-section">
 <div class="container">
-<p>Below is the current company mentor roster: photos, contact information, primary duty, collateral assignments, and summer duty where applicable. New to the program? Read <a href="https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php">what a company Marine mentor is</a>.</p>
+<p>Company Marine mentors are the detachment'\''s primary link to midshipmen in Bancroft Hall. Below: photos, contact information, primary duty, collateral assignments, and summer duty. For the commissioning path and summer programs, see <a href="prospective-marines.php">Prospective Marines</a> and <a href="summer-training.php">Summer Training</a>.</p>
 
 <nav aria-label="Jump to battalion" class="page-subnav">
 <a href="#battalion-1">1st Battalion</a>
@@ -32,6 +32,7 @@ HEADER='<!-- CASCADE paste → GATED: https://www.usna.edu/MarineCorps/Midshipme
 '
 
 FOOTER='
+<p class="info-callout">Detachment-level questions: <a href="../MARDET/leadership.php">Detachment Leadership</a> · <a href="../MARDET/index.php">MARDET Team</a></p>
 </div>
 </section>
 '

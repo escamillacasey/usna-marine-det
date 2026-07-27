@@ -1,9 +1,14 @@
-# Site structure — `usna.edu/Marines` (public + intranet, one site)
+# Site structure — public www + intranet (`USMC`)
 
 USNA Cascade builds the **left nav from the folder tree**, not from paste HTML. Renaming, moving, or deleting pages breaks nav until the whole site is reconfigured and republished.
 
-**Production root:** `https://www.usna.edu/Marines/` (replaces legacy `…/MarineCorps/`).  
-**One site, two audiences:** open web pages + SSO-gated pages on the **same path tree** — see `MIGRATE-TO-MARINES.md`.
+| Host | Cascade root | Notes |
+|------|--------------|-------|
+| **Public (active)** | `https://www.usna.edu/MarineCorps/` | Open internet |
+| **Public (cutover)** | `https://www.usna.edu/Marines/` | See `MIGRATE-TO-MARINES.md` |
+| **Intranet** | `https://intranet.usna.edu/USMC/` | MARDET hub, mentor roster, MOTY — same folder tree as www |
+
+**Folder names** (`Midshipmen/`, `MARDET/`, `company_mentors.php`) are identical on both hosts; only the site root slug differs (`MarineCorps` / `Marines` vs `USMC`).
 
 ---
 

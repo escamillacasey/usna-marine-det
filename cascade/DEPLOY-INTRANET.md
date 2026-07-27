@@ -1,9 +1,9 @@
 # Cascade deploy — intranet (MARDET)
 
-**Production host:** `https://www.usna.edu/Marines/` — **one site**, public + SSO-gated pages.  
-**Do not** publish the **full roster** on **ungated** pages.
+**Production host:** `https://intranet.usna.edu/USMC/` — separate Cascade site from public www.  
+**Do not** publish the **full mentor roster** on **www.usna.edu** (ungated).
 
-**Nav-safe split:** Public overview at `company_mentors.php`; gated roster at `company_mentor_assignments.php`. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
+**Company mentors:** Full roster on **`Midshipmen/company_mentors.php`** on intranet only. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
 
 Same CSS workflow as public pages: `local.css` with Marines bundle appended at the bottom.
 
@@ -51,22 +51,19 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 ---
 
-### 2. Company mentors
+### 2. Company mentors (intranet only)
 
-| Host | Paste file | Path (unchanged) |
-|------|------------|------------------|
-| **Public** | `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
-| **Gated** | `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` |
+| Host | Paste file | Path |
+|------|------------|------|
+| **Intranet** | `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
 
-**Page paths:** overview (nav) + assignments (roster, SSO). See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
+Deploy on **`intranet.usna.edu/USMC/`** only. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
 
 **Static HTML (no JavaScript):** paste file includes all 36 mentor cards, grouped by battalion. Battalion jump links replace the JS filter toolbar.
 
-**Before paste:** upload mentor photos to `_files/images/public/mentors/` (Marine Corps - Public on www) or `_files/images/intranet/mentors/` (real intranet host).
+**Before paste:** upload mentor photos to `assets/images/public/mentors/` on the USMC intranet site.
 
-**After roster changes:** run `python3 scripts/sync-from-sheets.py` then `python3 scripts/generate-mentor-cards-html.py` and re-paste.
-
-**No page-metadata JavaScript required.**
+**After roster changes:** run `python3 scripts/sync-from-sheets.py` then `bash scripts/build-intranet-mentors-paste.sh` and re-paste.
 
 ---
 

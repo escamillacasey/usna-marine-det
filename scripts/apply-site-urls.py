@@ -88,12 +88,12 @@ def main() -> int:
         original = path.read_text(encoding="utf-8")
         updated, n = replace_in_text(original, source, target)
         if not args.migrate:
-            updated, n2 = replace_in_text(
-                updated,
+            for legacy_intranet in (
                 "https://intranet.usna.edu/MarineCorps/",
-                intranet,
-            )
-            n += n2
+                "https://intranet.usna.edu/Marines/",
+            ):
+                updated, n2 = replace_in_text(updated, legacy_intranet, intranet)
+                n += n2
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             print(f"  {path.relative_to(ROOT)} ({n} replacements)")
