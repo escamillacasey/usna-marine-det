@@ -30,9 +30,13 @@ For a small change (e.g. summer training galleries, prospective Marines path flo
 
 **File:** `cascade/paste-local-css-summer-gallery-delta.css` (~170 lines)
 
+**Company mentor cards only** (grid, borders, photo crop on intranet):
+
+**File:** `cascade/paste-local-css-mentor-cards-delta.css` (~220 lines)
+
 1. Open Cascade → `_files/css/local.css`
 2. Scroll to the **very bottom**
-3. Paste the entire contents of `paste-local-css-summer-gallery-delta.css`
-4. Publish `local.css`
+3. Paste the entire delta file
+4. Publish `local.css` → hard refresh the mentors page
 
 You need this block if `.training-gallery`, `.program-block__gallery`, `.commissioning-path`, or `.training-section--evaluation` rules are missing.
