@@ -2,23 +2,34 @@
 # Regenerate static mentor cards + Cascade paste for intranet company mentors.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Live intranet paths (from view-source audit Jul 2026)
+export CASCADE_PHOTO_PREFIX="${CASCADE_PHOTO_PREFIX:-/USMC/_files/images/mentors/}"
 python3 "$ROOT/scripts/generate-mentor-cards-html.py"
 
-HEADER='<!-- CASCADE paste → intranet.usna.edu/USMC/Midshipmen/company_mentors.php -->
-<!-- INTRANET ONLY — full roster. All href/src below are relative to the USMC/ site root. -->
+STYLE_FILE="$ROOT/cascade/paste-local-css-mentor-cards-delta.css"
+STYLE_INNER=$(sed '/^\/\*/d' "$STYLE_FILE")
+
+read -r -d '' HEADER <<'HEADER_EOF' || true
+<!-- CASCADE paste → intranet.usna.edu/USMC/company_mentors.php -->
+<!-- INTRANET ONLY — full roster. Styles embedded below (USNA loads intranet-root _files/css/local.css). -->
 <!-- Regenerate: bash scripts/build-intranet-mentors-paste.sh -->
-<link href="../_files/css/local.css" media="all" rel="stylesheet" type="text/css"/>
+<style>
+HEADER_EOF
+
+read -r -d '' HEADER2 <<'HEADER2_EOF' || true
+</style>
 
 <div class="marines-page-header">
 <div class="container">
 <h1 class="marines-page-header__title">Marine Company Mentors</h1>
-<p class="marines-page-header__subtitle">Current Marine officer assigned to each of the Brigade'\''s 36 companies.</p>
+<p class="marines-page-header__subtitle">Current Marine officer assigned to each of the Brigade's 36 companies.</p>
 </div>
 </div>
 
 <section class="content-section">
 <div class="container">
-<p>Company Marine mentors are the detachment'\''s primary link to midshipmen in Bancroft Hall. Below: photos, contact information, primary duty, collateral assignments, and summer duty. For the commissioning path and summer programs, see <a href="prospective-marines.php">Prospective Marines</a> and <a href="summer-training.php">Summer Training</a>.</p>
+<p>Company Marine mentors are the detachment's primary link to midshipmen in Bancroft Hall. Below: photos, contact information, primary duty, collateral assignments, and summer duty. For the commissioning path and summer programs, see <a href="prospective-marines.php">Prospective Marines</a> and <a href="summer-training.php">Summer Training</a>.</p>
 
 <nav aria-label="Jump to battalion" class="page-subnav">
 <a href="#battalion-1">1st Battalion</a>
@@ -29,7 +40,7 @@ HEADER='<!-- CASCADE paste → intranet.usna.edu/USMC/Midshipmen/company_mentors
 <a href="#battalion-6">6th Battalion</a>
 </nav>
 
-'
+HEADER2_EOF
 
 FOOTER='
 <p class="info-callout">Detachment-level questions: <a href="../MARDET/leadership.php">Detachment Leadership</a> · <a href="../MARDET/index.php">MARDET Team</a></p>
@@ -38,7 +49,9 @@ FOOTER='
 '
 
 {
-  printf '%s' "$HEADER"
+  printf '%s\n' "$HEADER"
+  printf '%s\n' "$STYLE_INNER"
+  printf '%s' "$HEADER2"
   cat "$ROOT/cascade/includes/mentor-cards-cascade.html"
   printf '%s' "$FOOTER"
 } > "$ROOT/cascade/paste-intranet-company-mentors-marinecorps.html"

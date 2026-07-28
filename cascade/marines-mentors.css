@@ -1,6 +1,4 @@
-/* --- USNA Marines: company mentor cards (intranet delta) --- */
-/* Paste at the BOTTOM of Cascade _files/css/local.css if cards have no grid/borders. */
-/* Full site styles: cascade/paste-local-css-append.css */
+/* USNA Marines mentor cards — upload to USMC/_files/css/marines-mentors.css */
 
 :root {
   --color-maroon: #800000;

@@ -1,10 +1,14 @@
 # Company mentors — intranet only (`intranet.usna.edu/USMC/`)
 
-**Captured model (Jul 2026):** Full roster on **`Midshipmen/company_mentors.php`** on the intranet site only. Paste uses **relative links** so navigation stays on `intranet.usna.edu/USMC/`.
+**Captured model (Jul 2026):** Full roster on **`company_mentors.php`** on the intranet site only.
 
 | Page | Paste file | Host |
 |------|------------|------|
-| **`Midshipmen/company_mentors.php`** | `paste-intranet-company-mentors-marinecorps.html` | **intranet.usna.edu/USMC/** |
+| **`company_mentors.php`** | `paste-intranet-company-mentors-marinecorps.html` | **intranet.usna.edu/USMC/** |
+
+**Live path (Jul 2026):** `https://intranet.usna.edu/USMC/company_mentors.php` (USMC site root — not `Midshipmen/`).
+
+Paste includes an embedded **`<style>`** block for mentor cards. USNA Standard 3.0 loads **`intranet.usna.edu/_files/css/local.css`** (intranet root), not `USMC/_files/css/local.css` — editing the wrong `local.css` will not style this page.
 
 Public `www` no longer hosts the roster. Optional public stub: `paste-public-company-mentors-marinecorps.html` (overview only, no PII).
 
@@ -38,10 +42,10 @@ bash scripts/build-intranet-mentors-paste.sh
 
 ### 2. Publish on intranet Cascade
 
-1. Open **`Midshipmen/company_mentors.php`** on **intranet.usna.edu/USMC/**
-2. **Source/HTML mode** → paste **`paste-intranet-company-mentors-marinecorps.html`**
+1. Open **`company_mentors.php`** on **intranet.usna.edu/USMC/**
+2. **Source/HTML mode** → paste **`paste-intranet-company-mentors-marinecorps.html`** (includes embedded mentor card CSS)
 3. **Include in Navigation** → Yes (display name: **Company Mentors**)
-4. Upload photos → `assets/images/public/mentors/company-*.jpg`
+4. Upload photos → `USMC/_files/images/mentors/company-*.jpg`
 5. **Publish**
 
 ### Relative links in paste (no edit needed)
@@ -79,4 +83,6 @@ bash scripts/build-intranet-mentors-paste.sh
 | Company Mentors missing from nav | `company_mentors.php` → Include in Navigation **Yes** |
 | Photos broken | Confirm `assets/images/public/mentors/` uploaded on intranet site |
 | Links jump to www | Re-paste — paste must use relative hrefs, not `https://www.usna.edu/…` |
+| Cards unstyled (stacked list, huge photos) | Re-paste latest paste file — it embeds `<style>` for `.mentor-grid` / `.mentor-card`. Do not rely on `USMC/_files/css/local.css` alone. |
+| Edited wrong CSS file | Template loads **`intranet.usna.edu/_files/css/local.css`** (root). Optional upload: `cascade/marines-mentors.css` → `USMC/_files/css/marines-mentors.css`. |
 
