@@ -11,7 +11,7 @@ import subprocess
 import zipfile
 from pathlib import Path
 
-from PIL import Image
+from role_photo_export import ROLE_CARD_SIZE, RolePhotoSpec, export_role_image
 
 ROOT = Path(__file__).resolve().parent.parent
 INCOMING = ROOT / "assets/images/incoming/mardet-drop"
@@ -20,32 +20,38 @@ ROLES_PUBLIC = ROOT / "assets/images/public/roles"
 MANIFEST = ROOT / "data/summer-training-photos.csv"
 REPORT = ROOT / "data/mardet-photo-import-report.txt"
 
-ROLE_TARGET_SIZE = (300, 400)
 SUMMER_MAX_WIDTH = 1400
 SUMMER_JPEG_QUALITY = 86
 
-# Zip-relative path (under MARDET/) -> public/roles destination
-ROLE_WIRED: dict[str, str] = {
-    "Aviation Combat/0207.jpg": "aviation/air-intel.jpg",
-    "Aviation Combat/7220.jpg": "aviation/atc.jpg",
-    "Aviation Combat/7315.avif": "aviation/uas.jpg",
-    "Aviation Combat/CH-53 Pilot.jpg": "aviation/ch53.jpg",
-    "Aviation Combat/F-35 Pilot.avif": "aviation/f35.png",
-    "Aviation Combat/MV-22 Pilot.jpg": "aviation/mv22.jpg",
-    "Aviation Combat/UH-1Y Pilot.webp": "aviation/uh1y.png",
-    "Combat Support/0102.jpg": "support/manpower.jpg",
-    "Combat Support/0203.jpg": "support/ground-intel.jpg",
-    "Combat Support/0204.webp": "support/ci-humint.jpg",
-    "Combat Support/0206.jpg": "support/sigint-ew.jpg",
-    "Combat Support/0602.avif": "support/communications.jpg",
-    "Combat Support/1706.webp": "support/space.jpg",
-    "Combat Support/1707.webp": "support/influence.jpg",
-    "Combat Support/3404.webp": "support/financial.jpg",
-    "Combat Support/4402.jpg": "support/judge-advocate.jpg",
-    "Combat Support/4502.jpg": "support/commstrat.jpg",
-    "Combat Support/5803.jpg": "support/military-police.jpg",
-    "Combat Support/6602.webp": "support/aviation-supply.png",
-}
+# Zip-relative path (under MARDET/) -> export spec
+# Aviation/aircraft: contain (avoid cutting airframes). Portraits: cover_top.
+ROLE_SPECS: list[RolePhotoSpec] = [
+    RolePhotoSpec("Aviation Combat/0207.jpg", "aviation/air-intel.jpg", "cover_top"),
+    RolePhotoSpec("Aviation Combat/7220.jpg", "aviation/atc.jpg", "contain"),
+    RolePhotoSpec("Aviation Combat/7315.avif", "aviation/uas.jpg", "cover_top"),
+    RolePhotoSpec("Aviation Combat/CH-53 Pilot.jpg", "aviation/ch53.jpg", "contain"),
+    RolePhotoSpec("Aviation Combat/F-35 Pilot.avif", "aviation/f35.png", "contain"),
+    RolePhotoSpec("Aviation Combat/MV-22 Pilot.jpg", "aviation/mv22.jpg", "contain"),
+    RolePhotoSpec("Aviation Combat/UH-1Y Pilot.webp", "aviation/uh1y.png", "contain"),
+    RolePhotoSpec("Combat Support/0102.jpg", "support/manpower.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/0203.jpg", "support/ground-intel.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/0204.webp", "support/ci-humint.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/0206.jpg", "support/sigint-ew.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/0602.avif", "support/communications.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/1706.webp", "support/space.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/1707.webp", "support/influence.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/3404.webp", "support/financial.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/4402.jpg", "support/judge-advocate.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/4502.jpg", "support/commstrat.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/5803.jpg", "support/military-police.jpg", "cover_top"),
+    RolePhotoSpec("Combat Support/6602.webp", "support/aviation-supply.png", "cover_top"),
+]
+
+# Optional paths checked when PAO adds files later
+OPTIONAL_ROLE_SPECS: list[RolePhotoSpec] = [
+    RolePhotoSpec("Aviation Combat/AH-1 Pilot.jpg", "aviation/ah1.png", "contain"),
+    RolePhotoSpec("Aviation Combat/AH-1Z Pilot.jpg", "aviation/ah1.png", "contain"),
+]
 
 SUMMER_PROGRAMS: list[tuple[re.Pattern[str], str, str]] = [
     (re.compile(r"^FFI\b", re.I), "ffi", "Force Fitness Instructor"),
@@ -57,30 +63,35 @@ SUMMER_PROGRAMS: list[tuple[re.Pattern[str], str, str]] = [
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif"}
 
-
-def crop_portrait(img: Image.Image, size: tuple[int, int] = ROLE_TARGET_SIZE) -> Image.Image:
-    target_w, target_h = size
-    target_ratio = target_w / target_h
-    src_w, src_h = img.size
-    src_ratio = src_w / src_h
-    if src_ratio > target_ratio:
-        new_w = int(src_h * target_ratio)
-        left = (src_w - new_w) // 2
-        img = img.crop((left, 0, left + new_w, src_h))
-    else:
-        new_h = int(src_w / target_ratio)
-        top = (src_h - new_h) // 2
-        img = img.crop((0, top, src_w, top + new_h))
-    return img.resize(size, Image.Resampling.LANCZOS)
+SCRAPED_AH1 = (
+    ROOT / "assets/images/scraped/MarineCorps/_files/images/roles/aviation/AH1.png"
+)
 
 
-def export_role_image(src: Path, dest: Path) -> None:
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    img = crop_portrait(Image.open(src).convert("RGB"))
-    if dest.suffix.lower() == ".png":
-        img.save(dest, "PNG", optimize=True)
-    else:
-        img.save(dest, "JPEG", quality=88, optimize=True)
+def import_role_specs(src_root: Path, specs: list[RolePhotoSpec], log: list[str]) -> None:
+    for spec in specs:
+        src = src_root / spec.src_rel
+        dest = ROLES_PUBLIC / spec.dest_rel
+        if not src.exists():
+            log.append(f"  SKIP missing: {spec.src_rel}")
+            continue
+        export_role_image(src, dest, spec)
+        log.append(f"  OK {spec.src_rel} -> {spec.dest_rel} ({spec.mode})")
+
+
+def import_ah1_fallback(log: list[str]) -> None:
+    """AH-1Z was not in the PAO zip; use contain on legacy art so the airframe stays visible."""
+    dest = ROLES_PUBLIC / "aviation/ah1.png"
+    if not SCRAPED_AH1.exists():
+        log.append("  SKIP ah1.png — no PAO file and no scraped fallback")
+        return
+    export_role_image(
+        SCRAPED_AH1,
+        dest,
+        RolePhotoSpec("", "aviation/ah1.png", "contain"),
+    )
+    log.append(f"  OK fallback {SCRAPED_AH1.name} -> aviation/ah1.png (contain)")
+    log.append("  NOTE: Request AH-1Z / AH-1W photo from PAO for aviation/ah1.png")
 
 
 def extract_zip(zip_path: Path) -> Path:
@@ -218,31 +229,60 @@ def main() -> int:
         help="Path to MARDET photo zip",
     )
     parser.add_argument("--skip-build", action="store_true", help="Import only; do not regenerate pages")
+    parser.add_argument(
+        "--roles-only",
+        choices=("all", "aviation", "support"),
+        default="all",
+        help="Re-import only selected role categories",
+    )
+    parser.add_argument(
+        "--from-dir",
+        type=Path,
+        help="Use an extracted MARDET folder instead of unzipping (e.g. ~/Downloads/MARDET)",
+    )
     args = parser.parse_args()
 
     zip_path = Path(args.zip_path).expanduser()
-    if not zip_path.exists():
-        raise SystemExit(f"Zip not found: {zip_path}")
+    if args.from_dir:
+        src_root = Path(args.from_dir).expanduser()
+        if not src_root.exists():
+            raise SystemExit(f"Source folder not found: {src_root}")
+        log: list[str] = [f"Source dir: {src_root}", ""]
+    else:
+        if not zip_path.exists():
+            raise SystemExit(f"Zip not found: {zip_path}")
+        log = [f"Source zip: {zip_path}", ""]
+        src_root = extract_zip(zip_path)
+        log.append(f"Extracted -> {src_root.relative_to(ROOT)}")
 
-    log: list[str] = [f"Source zip: {zip_path}", ""]
-    src_root = extract_zip(zip_path)
-    log.append(f"Extracted -> {src_root.relative_to(ROOT)}")
+    specs = ROLE_SPECS
+    if args.roles_only == "aviation":
+        specs = [s for s in ROLE_SPECS if s.dest_rel.startswith("aviation/")]
+    elif args.roles_only == "support":
+        specs = [s for s in ROLE_SPECS if s.dest_rel.startswith("support/")]
 
-    log.append("\nRole images:")
-    for src_rel, dest_rel in ROLE_WIRED.items():
-        src = src_root / src_rel
-        dest = ROLES_PUBLIC / dest_rel
-        if not src.exists():
-            raise SystemExit(f"Missing expected file in zip: {src_rel}")
-        export_role_image(src, dest)
-        log.append(f"  OK {src_rel} -> {dest_rel}")
+    if specs:
+        log.append("\nRole images:")
+        import_role_specs(src_root, specs, log)
+        if args.roles_only in ("all", "aviation"):
+            import_role_specs(src_root, OPTIONAL_ROLE_SPECS, log)
+            ah1_from_pao = any((src_root / s.src_rel).exists() for s in OPTIONAL_ROLE_SPECS)
+            if not ah1_from_pao:
+                import_ah1_fallback(log)
+
+    if args.roles_only != "all":
+        REPORT.write_text("\n".join(log) + "\n", encoding="utf-8")
+        print(REPORT.read_text(encoding="utf-8"))
+        if not args.skip_build and args.roles_only == "aviation":
+            run_script("build-roles-pages.py")
+        return 0
 
     unused_role_dirs = []
     for folder in ("Aviation Combat", "Combat Support"):
         folder_path = src_root / folder
         if not folder_path.exists():
             continue
-        wired_names = {Path(k).name for k in ROLE_WIRED if k.startswith(folder)}
+        wired_names = {Path(s.src_rel).name for s in ROLE_SPECS if s.src_rel.startswith(folder)}
         for path in sorted(folder_path.iterdir()):
             if path.is_file() and path.name not in wired_names:
                 unused_role_dirs.append(f"  unused: {folder}/{path.name}")

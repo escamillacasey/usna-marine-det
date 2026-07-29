@@ -652,8 +652,9 @@
 .staff-profile__photo img {
   width: 100%;
   aspect-ratio: 5 / 7;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
+  background: #202020;
 }
 
 .staff-profile__role {
