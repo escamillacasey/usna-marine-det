@@ -21,6 +21,11 @@ INLINE_GALLERY_MARKERS = {
     "mciws": ("<!-- MCIWS_GALLERY_INSERT -->", INCLUDES / "summer-training-mciws-gallery.html"),
     "mwtc": ("<!-- MWTC_GALLERY_INSERT -->", INCLUDES / "summer-training-mwtc-gallery.html"),
     "mcmap": ("<!-- MCMAP_GALLERY_INSERT -->", INCLUDES / "summer-training-mcmap-gallery.html"),
+    "marsot": ("<!-- MARSOT_GALLERY_INSERT -->", INCLUDES / "summer-training-marsot-gallery.html"),
+    "secfor": ("<!-- SECFOR_GALLERY_INSERT -->", INCLUDES / "summer-training-secfor-gallery.html"),
+    "rtap": ("<!-- RTAP_GALLERY_INSERT -->", INCLUDES / "summer-training-rtap-gallery.html"),
+    "marsoc": ("<!-- MARSOC_GALLERY_INSERT -->", INCLUDES / "summer-training-marsoc-gallery.html"),
+    "ffi": ("<!-- FFI_GALLERY_INSERT -->", INCLUDES / "summer-training-ffi-gallery.html"),
 }
 
 IMAGE_LOCAL_PREFIX = "../"

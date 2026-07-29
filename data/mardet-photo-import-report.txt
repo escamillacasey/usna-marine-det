@@ -1,0 +1,46 @@
+Source zip: /Users/hellbentactual/Downloads/MARDET (2).zip
+
+Extracted -> assets/images/incoming/mardet-drop
+
+Role images:
+  OK Aviation Combat/0207.jpg -> aviation/air-intel.jpg
+  OK Aviation Combat/7220.jpg -> aviation/atc.jpg
+  OK Aviation Combat/7315.avif -> aviation/uas.jpg
+  OK Aviation Combat/CH-53 Pilot.jpg -> aviation/ch53.jpg
+  OK Aviation Combat/F-35 Pilot.avif -> aviation/f35.png
+  OK Aviation Combat/MV-22 Pilot.jpg -> aviation/mv22.jpg
+  OK Aviation Combat/UH-1Y Pilot.webp -> aviation/uh1y.png
+  OK Combat Support/0102.jpg -> support/manpower.jpg
+  OK Combat Support/0203.jpg -> support/ground-intel.jpg
+  OK Combat Support/0204.webp -> support/ci-humint.jpg
+  OK Combat Support/0206.jpg -> support/sigint-ew.jpg
+  OK Combat Support/0602.avif -> support/communications.jpg
+  OK Combat Support/1706.webp -> support/space.jpg
+  OK Combat Support/1707.webp -> support/influence.jpg
+  OK Combat Support/3404.webp -> support/financial.jpg
+  OK Combat Support/4402.jpg -> support/judge-advocate.jpg
+  OK Combat Support/4502.jpg -> support/commstrat.jpg
+  OK Combat Support/5803.jpg -> support/military-police.jpg
+  OK Combat Support/6602.webp -> support/aviation-supply.png
+
+Summer training staged: 15 files -> assets/images/incoming/summer-training
+  ffi: ffi/ffi-2.webp
+  ffi: ffi/ffi-3.jpg
+  ffi: ffi/ffi.avif
+  secfor: secfor/marine-secfor-2.webp
+  secfor: secfor/marine-secfor-3.webp
+  secfor: secfor/marine-secfor.webp
+  marsoc: marsoc/marsoc-and-recon-2.jpg
+  marsoc: marsoc/marsoc-and-recon-3.webp
+  marsoc: marsoc/marsoc-and-recon.jpg
+  marsot: marsot/marsot-screener-2.jpg
+  marsot: marsot/marsot-screener-3.jpg
+  marsot: marsot/marsot-screener.jpg
+  rtap: rtap/rtap-2.jpg
+  rtap: rtap/rtap-3.png
+  rtap: rtap/rtap.jpg
+
+Manifest rows added: 15
+
+Unused role files (not wired):
+  unused: Combat Support/6602.png

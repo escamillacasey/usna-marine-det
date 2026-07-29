@@ -18,7 +18,7 @@ PUBLIC = ROOT / "assets/images/public/summer-training"
 MANIFEST = ROOT / "data/summer-training-photos.csv"
 INCLUDES = ROOT / "cascade/includes"
 GALLERY_INCLUDE = INCLUDES / "summer-training-gallery.html"
-INLINE_PROGRAMS = ("leatherneck", "magtf", "protramid", "mciws", "mwtc", "mcmap")
+INLINE_PROGRAMS = ("leatherneck", "magtf", "protramid", "mciws", "mwtc", "mcmap", "marsot", "secfor", "rtap", "marsoc", "ffi")
 REPORT = ROOT / "data/summer-training-photo-import-report.txt"
 
 PROGRAM_LABELS = {
@@ -27,6 +27,10 @@ PROGRAM_LABELS = {
     "protramid": "PROTRAMID Marine Week",
     "selective": "Selective programs",
     "marsot": "MARSOT Screener",
+    "secfor": "Marine SECFOR",
+    "rtap": "RTAP",
+    "marsoc": "MARSOC / Recon",
+    "ffi": "Force Fitness Instructor",
     "mciws": "MCIWS",
     "mwtc": "MWTC",
     "mcmap": "MCMAP",
