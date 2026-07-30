@@ -28,6 +28,7 @@ data/*.csv
 !data/*.csv.example
 !data/company-mentor-list.csv
 !data/summer-training-photos.csv
+!data/role-photo-placeholders.csv
 data/*.xlsx
 data/*.xlsm
 

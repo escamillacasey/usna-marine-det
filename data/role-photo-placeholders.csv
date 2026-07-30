@@ -1,0 +1,17 @@
+# Roles using assets/images/public/roles/image-coming-soon.jpg until PAO photos arrive.
+# Regenerate pastes: python3 scripts/build-roles-pages.py
+page,role,original_asset,reason
+ground,Infantry Officer (0302),ground/infantry.jpg,Awaiting PAO ground combat photos
+ground,Field Artillery Officer (0802),ground/artillery.jpg,Awaiting PAO ground combat photos
+ground,Combat Engineer Officer (1302),ground/engineer.jfif,Awaiting PAO ground combat photos
+ground,Light Armored Reconnaissance Officer (0303),ground/lar.jpg,Awaiting PAO ground combat photos
+ground,Expeditionary Ground Reconnaissance Officer (0307),ground/egr1.jpg,Awaiting PAO ground combat photos
+ground,Amphibious Combat Vehicle Officer (1803),ground/acv.jpg,Awaiting PAO ground combat photos
+ground,Low Altitude Air Defense Officer (7204),ground/laad.jpg,Awaiting PAO ground combat photos
+aviation,AH-1 Pilot,aviation/ah1.png,No PAO AH-1Z photo in MARDET drop
+aviation,C-130 Pilot,aviation/c130.jpg,Legacy photo — PAO replacement pending
+support,MAGTF Intelligence Officer,support/magtf-intel.jpg,Legacy photo — entry may be removed per Senior Marine
+support,Logistics Officer,support/logistics.jpg,Legacy interim photo — PAO replacement pending
+support,Cyberspace Operations Officer,support/cyberspace.jpg,Legacy interim photo — PAO replacement pending
+support,Ground Supply Officer,support/ground-supply.jpg,Legacy photo — PAO replacement pending
+support,Aircraft Maintenance Officer,support/aircraft-maintenance.jpg,Legacy photo — PAO replacement pending

@@ -657,6 +657,11 @@
   background: #202020;
 }
 
+.staff-profile__photo--pending img {
+  object-fit: cover;
+  background: #003057;
+}
+
 .staff-profile__role {
   font-size: var(--font-size-sm);
   font-weight: 700;
