@@ -1,0 +1,44 @@
+host,from_path,to_path,redirect_type,priority,confidence,notes
+www.usna.edu,/Marine/,/MarineCorps/,301,high,high,Short alias; currently resolves to /Marines/
+www.usna.edu,/Marine/index.php,/MarineCorps/,301,high,high,
+www.usna.edu,/Marines/,/MarineCorps/,301,high,high,Legacy site root
+www.usna.edu,/Marines/index.php,/MarineCorps/,301,high,high,
+www.usna.edu,/Marines/Index.php,/MarineCorps/,301,high,high,
+www.usna.edu,/Marines/Home.php,/MarineCorps/,301,high,high,Legacy alternate home
+www.usna.edu,/USMC/,/MarineCorps/,301,high,high,Legacy site root
+www.usna.edu,/USMC/index.php,/MarineCorps/,301,high,high,
+www.usna.edu,/USMC/Index.php,/MarineCorps/,301,high,high,
+www.usna.edu,/USMC/Home.php,/MarineCorps/,301,high,high,Legacy alternate home
+www.usna.edu,/USMC/Prospective_Marine.php,/MarineCorps/Midshipmen/prospective-marines.php,301,high,high,Same content modern URL
+www.usna.edu,/Marines/Prospective_Marine.php,/MarineCorps/Midshipmen/prospective-marines.php,301,high,high,Mirror of USMC
+www.usna.edu,/USMC/Summer_Training.php,/MarineCorps/Midshipmen/summer-training.php,301,high,high,
+www.usna.edu,/Marines/Summer_Training.php,/MarineCorps/Midshipmen/summer-training.php,301,high,high,Mirror of USMC
+www.usna.edu,/USMC/staff.php,/MarineCorps/MARDET/leadership.php,301,high,high,Detachment leadership
+www.usna.edu,/Marines/staff.php,/MarineCorps/MARDET/leadership.php,301,high,high,Mirror of USMC
+www.usna.edu,/USMC/FacultyStaffApp.php,/MarineCorps/Fleet_Marines.php,301,high,high,Fleet/faculty application
+www.usna.edu,/Marines/FacultyStaffApp.php,/MarineCorps/Fleet_Marines.php,301,high,high,Mirror of USMC
+www.usna.edu,/USMC/Marine-Company-Mentors-public.php,/MarineCorps/Midshipmen/index.php,301,medium,medium,Public overview; full roster on intranet only
+www.usna.edu,/Marines/Marine-Company-Mentors-public.php,/MarineCorps/Midshipmen/index.php,301,medium,medium,Mirror of USMC
+www.usna.edu,/USMC/Selection.php,/MarineCorps/Midshipmen/prospective-marines.php,301,medium,medium,Confirm with Senior Marine
+www.usna.edu,/Marines/Selection.php,/MarineCorps/Midshipmen/prospective-marines.php,301,medium,medium,Mirror of USMC
+www.usna.edu,/USMC/marine_corps.php,/MarineCorps/,301,medium,medium,Generic legacy landing
+www.usna.edu,/Marines/marine_corps.php,/MarineCorps/,301,medium,medium,Mirror of USMC
+www.usna.edu,/USMC/degree_update.php,/MarineCorps/Fleet_Marines.php,301,low,low,Confirm destination with MARDET
+www.usna.edu,/Marines/degree_update.php,/MarineCorps/Fleet_Marines.php,301,low,low,Mirror of USMC
+www.usna.edu,/USMC/Directives-Control-Point.php,/MarineCorps/MARDET/index.php,301,low,low,Confirm still needed
+www.usna.edu,/Marines/Directives-Control-Point.php,/MarineCorps/MARDET/index.php,301,low,low,Mirror of USMC
+www.usna.edu,/USMC/MaRSATS External.php,/MarineCorps/MARDET/index.php,301,low,low,URL contains space; encode as MaRSATS%20External.php
+www.usna.edu,/Marines/MaRSATS External.php,/MarineCorps/MARDET/index.php,301,low,low,Mirror of USMC
+www.usna.edu,/Marines/Midshipmen/*,/MarineCorps/Midshipmen/*,301,high,high,Pattern redirect; modern tree only on MarineCorps
+www.usna.edu,/USMC/Midshipmen/*,/MarineCorps/Midshipmen/*,301,high,high,Pattern redirect
+www.usna.edu,/Marines/MARDET/*,/MarineCorps/MARDET/*,301,high,high,Pattern redirect
+www.usna.edu,/USMC/MARDET/*,/MarineCorps/MARDET/*,301,high,high,Pattern redirect
+www.usna.edu,/Marines/Fleet_Marines.php,/MarineCorps/Fleet_Marines.php,301,high,high,
+www.usna.edu,/USMC/Fleet_Marines.php,/MarineCorps/Fleet_Marines.php,301,high,high,
+www.usna.edu,/MarineCorps/roles/aviation.php,/MarineCorps/Midshipmen/roles/aviation.php,301,medium,high,404 today; linked from legacy home
+www.usna.edu,/MarineCorps/roles/index.php,/MarineCorps/Midshipmen/roles/index.php,301,medium,high,404 today
+www.usna.edu,/MarineCorps/roles/support.php,/MarineCorps/Midshipmen/roles/support.php,301,medium,high,404 today
+www.usna.edu,/MarineCorps/leadership.php,/MarineCorps/MARDET/leadership.php,301,medium,high,Retired root path
+intranet.usna.edu,/Marines/,/USMC/,301,high,high,Do not redirect to www
+intranet.usna.edu,/Marines/index.php,/USMC/,301,high,high,
+intranet.usna.edu,/Marines/company_mentors.php,/USMC/company_mentors.php,301,high,medium,If both paths exist

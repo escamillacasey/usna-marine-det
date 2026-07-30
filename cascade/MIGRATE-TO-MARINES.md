@@ -83,7 +83,7 @@ Keep `assets/images/public/` for leadership, summer training, roles — safe on 
 
 - [ ] Confirm site slug: **`Marines`** (not `MarineCorps`, not `USMC`)
 - [ ] Confirm auth model (Option A vs B) and which folders get SSO
-- [ ] Plan **301 redirects**: `/MarineCorps/*` → `/Marines/*`
+- [ ] Plan **301 redirects**: `/MarineCorps/*` → `/Marines/*` *(cutover)* — or **now**: `/Marines/*` and `/USMC/*` → `/MarineCorps/*` per **`docs/SITE-REDIRECT-MAP.md`**
 - [ ] Confirm whether `Midshipmen/` and `MARDET/` casing stays the same
 
 ### Phase 1 — Repo URL sweep (before paste)
