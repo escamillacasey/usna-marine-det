@@ -81,7 +81,7 @@ Ops workbook and full roster CSV stay local (gitignored). `data/company-mentor-l
 
 The site is organized around three primary users:
 
-1. **Midshipmen** — Marine option, training, mentors, roles
+1. **Midshipmen** — Marine Corps Service Assignment, training, mentors, roles
 2. **MARDET Team** — detachment members and internal resources
 3. **Fleet Marines** — applying for USNA billets
 

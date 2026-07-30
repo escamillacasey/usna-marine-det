@@ -27,11 +27,12 @@ Public copy on this site should reflect **commander's intent** and detachment pr
 | **Primary tagline** | Inform, influence, and develop midshipmen for service as Marine Corps officers. | `index.html` hero |
 | **Engagement model (short)** | Shaping engagements inform, influence, and assess; decisive engagements select and equip. | Reference only — use plain language on public pages |
 | **Detachment mission** | The detachment embodies the Naval Academy mission to develop midshipmen morally, mentally, and physically — attracting, identifying, screening, and selecting high-quality midshipmen for Marine Corps commissions. | `pages/intranet/index.html` (intranet) |
-| **About (para 1)** | The Marine Detachment supports the Naval Academy mission to develop midshipmen morally, mentally, and physically. Marine cadre inform and influence all midshipmen on the Marine Corps — its mission, culture, and opportunities for service — regardless of commissioning intent. | `index.html` |
-| **About (para 2)** | Through four years of engagement, the detachment assesses suitability, selects those best qualified to commission, and equips Marine-selects for success at The Basic School. | `index.html` |
-| **Midshipmen hub subtitle** | Learn more about leading Marines, Summer Training Opportunities, and get connected with your Marine Mentor. | `paste-midshipmen-marinecorps.html`, home audience card |
+| **About (para 1)** | The Marine Detachment supports the Naval Academy mission to develop midshipmen morally, mentally, and physically. Marine cadre inform and influence all midshipmen on the Marine Corps — its mission, culture, and opportunities for service. | `index.html`, `paste-home-marinecorps.html` |
+| **About (para 2)** | Through four years of engagement, the detachment assesses suitability, selects those best qualified to commission, and equips Marine Selects for success at The Basic School. | `index.html`, `paste-home-marinecorps.html` |
+| **Midshipmen hub subtitle** | Learn more about summer training, get connected with your Marine Mentor, and your path to commission as a Marine Corps officer. | `paste-midshipmen-marinecorps.html`, home audience card |
+| **Service Assignment (not “Marine Option”)** | Use **Marine Corps Service Assignment** on public pages. Group shorthand for selected mids: **Marine Selects**. | Site-wide public pastes |
 | **Fleet card / page subtitle** | Apply for a USNA Billet and learn more about USNA as an Enlisted to Officer pathway. Requirements, billet types, deadlines and how to submit a package. | `paste-home-marinecorps.html`, `paste-fleet-application-marinecorps.html` |
-| **Why Marines?** | Fight and win; character, judgment, warfighting mindset; earn the title Marine Officer. Second graf ties to Superintendent strategic vision (leaders of character, warfighters of consequence, leading sailors and Marines). | `paste-midshipmen-marinecorps.html` |
+| **Why Marines?** | Fight and win our Nation's **battles**; character, judgment, warfighting mindset; earn the title Marine Officer. Second graf ties to Superintendent strategic vision (leaders of character, warfighters of consequence, leading sailors and Marines). | `paste-midshipmen-marinecorps.html` |
 
 ---
 
@@ -84,4 +85,4 @@ Public copy on this site should reflect **commander's intent** and detachment pr
 
 ## Status
 
-**Last alignment pass:** AY 2025-2026 campaign plan ingested (22 Aug 2025). Public pages updated to reflect commander's intent and inform/influence/assess/select/equip model without publishing the order.
+**Last alignment pass:** AY 2025-2026 campaign plan + Phase A/B copy (Marine Corps Service Assignment, Marine Selects, Leatherneck/MAGTF/TBS updates). Public pages updated to reflect commander's intent and inform/influence/assess/select/equip model without publishing the order.

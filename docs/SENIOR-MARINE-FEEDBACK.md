@@ -22,43 +22,43 @@
 ## Phase A — Quick copy (no assets)
 
 ### Home
-- [ ] Remove “regardless of commissioning intent” (`paste-home-marinecorps.html`, `index.html`)
+- [x] Remove “regardless of commissioning intent” (`paste-home-marinecorps.html`, `index.html`)
 
 ### Midshipmen index
-- [ ] Reorder hub header/card emphasis (chronological for mids):
+- [x] Reorder hub header/card emphasis (chronological for mids):
   1. Learn more about **summer training**
   2. **Marine Mentor**
   3. **Path to Commission**
   4. **Leading Marines**
-- [ ] Replace **“Marine Option”** → **Marine Corps Service Assignment** (site-wide pass)
-- [ ] Remove **“Signed in on the Yard?”** callout — intranet access is implicit; link to mentor assignments without that framing (`paste-midshipmen-marinecorps.html`)
+- [x] Replace **“Marine Option”** → **Marine Corps Service Assignment** (site-wide pass — public pages)
+- [x] Remove **“Signed in on the Yard?”** callout — intranet access is implicit; link to mentor assignments without that framing (`paste-midshipmen-marinecorps.html`)
 
 ### Leatherneck / summer training copy
-- [ ] Remove **“Marine Option”** and **“Selection”** → **Service Assignment** references (Leatherneck section + related callouts)
+- [x] Remove **“Marine Option”** and **“Selection”** → **Service Assignment** references (Leatherneck section + related callouts)
 
 ### Prospective Marines
-- [ ] Add eligibility line: **“To be eligible for service assignment to the Marine Corps, you must go to Leatherneck.”**
-- [ ] **MAGTF:** correct duration — **4 weeks** (not 2); clarify **with an FMF unit**
-- [ ] **PROTRAMID:** clarify **with an FMF unit** (parallel to MAGTF note)
+- [x] Add eligibility line: **“To be eligible for service assignment to the Marine Corps, you must go to Leatherneck.”**
+- [x] **MAGTF:** correct duration — **4 weeks** (not 2); clarify **with an FMF unit**
+- [x] **PROTRAMID:** clarify **with an FMF unit** (parallel to MAGTF note)
 
 ### TBS (Prospective Marines)
-- [ ] **29-week curriculum** (not “6 months”)
-- [ ] Keep page in **second person** (addressed to the reader)
-- [ ] Remove **“Points to consider”** section
+- [x] **29-week curriculum** (not “6 months”)
+- [x] Keep page in **second person** (addressed to the reader)
+- [x] Remove **“Points to consider”** section
 - [ ] Add **TBS official logo** (asset needed — placeholder OK until file received)
 - [ ] Add **banger bar** for key TBS points:
   - Every Marine Officer is a **provisional Rifle Platoon Commander**
   - Common training / grounding themes (draft with PAO if needed)
 
 ### Support roles (summary line only)
-- [ ] Add to roles support summary: **“…and other functions that provide vital capabilities to MAGTF success on the battlefield.”**
+- [x] Add to roles support summary: **“…and other functions that provide vital capabilities to MAGTF success on the battlefield.”**
 
 ---
 
 ## Phase B — Verbiage & messaging alignment
 
-- [ ] Global find/replace plan: **Marine Option** → **Marine Corps Service Assignment** (public pages only; don’t break official USNA forms/links)
-- [ ] Update `docs/MESSAGING-GUIDE.md` approved phrases after copy lands
+- [x] Global find/replace plan: **Marine Option** → **Marine Corps Service Assignment** (public pages only; don’t break official USNA forms/links)
+- [x] Update `docs/MESSAGING-GUIDE.md` approved phrases after copy lands
 - [ ] Run `python3 scripts/apply-site-urls.py` before Cascade paste if URLs touched
 - [ ] Re-paste affected pages on `MarineCorps/` (see deploy table at bottom)
 
@@ -69,7 +69,7 @@
 ## Phase C — Roles content (Ground, Aviation, Support)
 
 ### All roles / hub
-- [ ] Change **wars** → **battles** (“The Marine Corps wins our Nation’s battles”)
+- [x] Change **wars** → **battles** (“The Marine Corps wins our Nation’s battles”) — Midshipmen hub (`paste-midshipmen-marinecorps.html`)
 - [ ] Amplify **Role of the Marine Corps** + **MAGTF integration** — **await PAO input**
 - [ ] **Contemplate regrouping** layout: **Air (pilots only) | Ground | Cyber** vs current Ground / Aviation / Support — decision needed before refactor
 
