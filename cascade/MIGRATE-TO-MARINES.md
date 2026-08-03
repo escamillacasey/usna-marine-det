@@ -161,8 +161,7 @@ See **`FIX-NAV.md`** if MARDET folder drops out of the menu after bulk publish.
 | `paste-fleet-application-marinecorps.html` | `Fleet_Marines.php` | Public |
 | `paste-leadership-marinecorps.html` | `MARDET/leadership.php` | Public |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` | Gated |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` | Gated |
-| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` | Public |
+| `paste-intranet-company-mentors-marinecorps.html` | `company_mentors.php` on **intranet.usna.edu/USMC/** | Intranet only |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` | Mixed / gated for directory |
 
 *(Paste filenames still say `marinecorps` — content URLs inside point at `Marines/` after `apply-site-urls.py`. Rename files later; not required for launch.)*

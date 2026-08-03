@@ -30,8 +30,7 @@ python3 scripts/apply-site-urls.py --migrate  # cutover: MarineCorps/ → Marine
 | Fleet Assignments | `Fleet_Marines.php` | Public |
 | MARDET hub | `MARDET/index.php` | Gated |
 | Detachment Leadership | `MARDET/leadership.php` | Public |
-| Company mentors (overview) | `Midshipmen/company_mentors.php` | Public |
-| Mentor assignments (roster) | `Midshipmen/company_mentor_assignments.php` | Gated |
+| Company mentors (roster) | `company_mentors.php` on **intranet.usna.edu/USMC/** | Intranet only |
 | Marines on the Yard | `MARDET/marines_on_the_yard.php` | **Coming soon** — use `paste-public-marines-on-the-yard-coming-soon-marinecorps.html` |
 | Roles hub | `Midshipmen/roles/index.php` | Public |
 | Roles aviation | `Midshipmen/roles/aviation.php` | Public |
@@ -48,8 +47,7 @@ From `MARDET/index.php` body:
 | Label | URL |
 |-------|-----|
 | Detachment Leadership | `https://www.usna.edu/MarineCorps/MARDET/leadership.php` |
-| Company Mentors (overview) | `https://www.usna.edu/MarineCorps/Midshipmen/company_mentors.php` |
-| Mentor Assignments (roster) | `https://www.usna.edu/MarineCorps/Midshipmen/company_mentor_assignments.php` |
+| Company Mentors | `https://intranet.usna.edu/USMC/company_mentors.php` |
 | Marines on the Yard | `https://www.usna.edu/MarineCorps/MARDET/marines_on_the_yard.php` |
 | Midshipmen Resources | `https://www.usna.edu/MarineCorps/Midshipmen/index.php` |
 | Fleet Assignment Info | `https://www.usna.edu/MarineCorps/Fleet_Marines.php` |
@@ -86,5 +84,5 @@ Published photos resolve under **`assets/images/public/…`** or **`assets/image
 
 Examples:
 - `../assets/images/public/leadership/col-reid.jpg` (from `MARDET/leadership.php`)
-- `assets/images/public/mentors/company-02.jpg` (from gated `company_mentor_assignments.php`)
+- `assets/images/public/mentors/company-02.jpg` (from intranet `company_mentors.php`)
 - `assets/images/public/roles/ground/infantry.jpg` (from `Midshipmen/roles/`)

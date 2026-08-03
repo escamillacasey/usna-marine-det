@@ -3,7 +3,7 @@
 **Production host:** `https://intranet.usna.edu/USMC/` — separate Cascade site from public www.  
 **Do not** publish the **full mentor roster** on **www.usna.edu** (ungated).
 
-**Company mentors:** Full roster on **`Midshipmen/company_mentors.php`** on intranet only. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
+**Company mentors:** Full roster on **`company_mentors.php`** at **intranet.usna.edu/USMC/** only. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**. No public www page.
 
 Same CSS workflow as public pages: `local.css` with Marines bundle appended at the bottom.
 
@@ -55,7 +55,7 @@ Regenerate: `bash scripts/build-intranet-mentors-paste.sh`
 
 | Host | Paste file | Path |
 |------|------------|------|
-| **Intranet** | `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` |
+| **Intranet** | `paste-intranet-company-mentors-marinecorps.html` | `company_mentors.php` (USMC site root) |
 
 Deploy on **`intranet.usna.edu/USMC/`** only. See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`**.
 
@@ -89,7 +89,7 @@ Snippets: `cascade/snippets/foot-marines-on-the-yard.html`.
 | Page | First line of paste |
 |------|---------------------|
 | `MARDET/index.php` | `<link href="../_files/css/local.css" …/>` |
-| `Midshipmen/company_mentors.php` | `<link href="../_files/css/local.css" …/>` |
+| `company_mentors.php` (intranet root) | `<link href="../_files/css/local.css" …/>` |
 | `MARDET/marines_on_the_yard.php` | `<link href="../_files/css/local.css" …/>` |
 
 Adjust `../` if your intranet folder depth differs.
@@ -121,7 +121,7 @@ Any **404** → fix upload path before testing pages.
 - [ ] Hub cards styled (gold left border)
 - [ ] **Console** (F12 → Console): no red errors *(optional `main.js` only if wired in metadata)*
 
-### C. Mentor assignments (`Midshipmen/company_mentor_assignments.php`) — gated roster
+### C. Company mentors (`company_mentors.php` on intranet) — full roster
 
 **Page source**
 

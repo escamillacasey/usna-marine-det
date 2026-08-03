@@ -4,7 +4,7 @@
   "future_public_base": "https://www.usna.edu/Marines/",
   "intranet_base": "https://intranet.usna.edu/USMC/",
   "intranet_mode": "separate_host",
-  "intranet_mode_notes": "Full midshipmen/MARDET content on intranet.usna.edu/USMC/. Public www hosts open pages only; gated pages use relative links on intranet.",
+  "intranet_mode_notes": "Full midshipmen/MARDET content on intranet.usna.edu/USMC/. Public www hosts open pages only. Company mentors roster is intranet-only at company_mentors.php (no public www page).",
   "paths": {
     "home": "index.php",
     "fleet": "Fleet_Marines.php",
@@ -14,8 +14,7 @@
     "midshipmen_hub": "Midshipmen/index.php",
     "prospective_marines": "Midshipmen/prospective-marines.php",
     "summer_training": "Midshipmen/summer-training.php",
-    "company_mentors": "Midshipmen/company_mentors.php",
-    "company_mentor_assignments": "Midshipmen/company_mentor_assignments.php",
+    "company_mentors": "company_mentors.php",
     "roles_ground": "Midshipmen/roles/index.php",
     "roles_aviation": "Midshipmen/roles/aviation.php",
     "roles_support": "Midshipmen/roles/support.php"

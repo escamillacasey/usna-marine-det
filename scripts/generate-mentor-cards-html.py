@@ -14,7 +14,7 @@ PHOTOS_DIR = ROOT / "assets" / "images" / "public" / "mentors"
 LOCAL_PHOTO_PREFIX = "../../assets/images/public/mentors/"
 OUT_LOCAL = ROOT / "cascade" / "includes" / "mentor-cards-local.html"
 OUT_CASCADE = ROOT / "cascade" / "includes" / "mentor-cards-cascade.html"
-# Photo prefix for Cascade paste (intranet …/Midshipmen/company_mentors.php). Relative to site root.
+# Photo prefix for Cascade paste (intranet …/company_mentors.php). Relative to site root.
 CASCADE_PHOTO_PREFIX = os.environ.get(
     "CASCADE_PHOTO_PREFIX",
     "assets/images/public/mentors/",

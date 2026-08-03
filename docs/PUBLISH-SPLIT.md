@@ -44,6 +44,6 @@ Public cutover to `www.usna.edu/Marines/`: **`cascade/MIGRATE-TO-MARINES.md`**.
 
 ## Copy rules for public midshipmen pages
 
-- Link to **`https://intranet.usna.edu/USMC/Midshipmen/company_mentors.php`** for current mentor assignments (or generic “ask your company Marine mentor in Bancroft”).
+- Link to **`https://intranet.usna.edu/USMC/company_mentors.php`** for current mentor assignments (or generic “ask your company Marine mentor in Bancroft”).
 - Do **not** put roster emails or mentor cards on ungated **www** pages.
 - Direct external audiences to **Detachment Leadership** for detachment-level questions.

@@ -10,6 +10,13 @@ INCLUDES = ROOT / "cascade" / "includes"
 PAGES = ROOT / "pages" / "roles"
 CASCADE = ROOT / "cascade"
 
+# Site-root asset path (Cascade upload folder). Role pages live at Midshipmen/roles/ —
+# HTML must use ../../ so src resolves to …/MarineCorps/assets/images/public/roles/…
+ROLE_PLACEHOLDER = "assets/images/public/roles/image-coming-soon.jpg"
+ROLES_IMG_PREFIX = "assets/images/public/roles/"
+CASCADE_ROLES_IMG_PREFIX = "../../assets/images/public/roles/"
+LOCAL_ROLES_IMG_PREFIX = "../../assets/images/public/roles/"
+
 NAV_CASCADE = """<nav aria-label="Roles in the Corps" class="page-subnav">
 <a href="https://www.usna.edu/MarineCorps/Midshipmen/roles/index.php">Ground Combat</a>
 <a href="https://www.usna.edu/MarineCorps/Midshipmen/roles/aviation.php">Aviation Combat</a>
@@ -85,8 +92,13 @@ PASTE_FILES = {
 }
 
 
+def cascade_body(body: str) -> str:
+    return body.replace(f'src="{ROLES_IMG_PREFIX}', f'src="{CASCADE_ROLES_IMG_PREFIX}')
+
+
 def local_body(body: str) -> str:
-    return body.replace(NAV_CASCADE, NAV_LOCAL)
+    body = body.replace(NAV_CASCADE, NAV_LOCAL)
+    return body.replace(f'src="{ROLES_IMG_PREFIX}', f'src="{LOCAL_ROLES_IMG_PREFIX}')
 
 
 def inject_page(page: Path, inner: str) -> None:
@@ -112,7 +124,7 @@ def inject_page(page: Path, inner: str) -> None:
 def main() -> int:
     for key in ("ground", "aviation", "support"):
         body = (INCLUDES / f"roles-{key}-body.html").read_text(encoding="utf-8")
-        paste = PASTE_HEADERS[key] + body + PASTE_FOOTER
+        paste = PASTE_HEADERS[key] + cascade_body(body) + PASTE_FOOTER
         PASTE_FILES[key].write_text(paste, encoding="utf-8")
         print(f"Wrote {PASTE_FILES[key].name}")
 

@@ -30,12 +30,13 @@ Marines/                              ← Cascade site root
     ├── index.php
     ├── prospective-marines.php
     ├── summer-training.php
-    ├── company_mentors.php           ← public: what a mentor is
-    ├── company_mentor_assignments.php ← gated: full roster
     └── roles/
         ├── index.php
         ├── aviation.php
         └── support.php
+
+USMC/ (intranet site root only)
+└── company_mentors.php               ← full roster (intranet only)
 ```
 
 **Never rename for intranet gate or Marines migration:**
@@ -45,7 +46,7 @@ Marines/                              ← Cascade site root
 | `company-mentors.php` (hyphen) | 404; nav and paste links use underscore |
 | `midshipmen/` (lowercase) | Live URLs use `Midshipmen/` |
 | Moving mentors under `MARDET/` | Breaks paste links and nav |
-| Deleting `company_mentors.php` | Nav 404 — **gate** the page instead |
+| Deleting intranet `company_mentors.php` | Nav 404 on mentor roster |
 | Second root `MarineCorps/` after cutover | Split nav, duplicate content |
 
 ---
@@ -54,8 +55,7 @@ Marines/                              ← Cascade site root
 
 | Path | Public (anonymous) | Authenticated (USNA login) |
 |------|-------------------|----------------------------|
-| `Midshipmen/company_mentors.php` | Program overview (what, role, how to find) | Same |
-| `Midshipmen/company_mentor_assignments.php` | Login wall | Full roster paste |
+| `company_mentors.php` (intranet root) | — | Full mentor roster paste |
 | `MARDET/marines_on_the_yard.php` | Community overview | `#yard-directory` roster |
 | `MARDET/index.php` | Optional public teaser | MARDET hub + internal links |
 | `MARDET/leadership.php` | Reid + Giraldi bios | Same |
@@ -79,10 +79,11 @@ Same URL paths — Cascade auth controls HTML exposure, not folder names.
 7. Enable **redirects** `MarineCorps/*` → `Marines/*`.
 8. Verify left nav on `…/Marines/index.php` — all sections 200.
 
-### Company mentors (no nav breakage)
+### Company mentors (intranet only)
 
-1. Keep **`Midshipmen/company_mentors.php`** in nav — public overview paste.
-2. Add **`Midshipmen/company_mentor_assignments.php`** — gated roster; optional in nav.
+1. Publish **`company_mentors.php`** on **intranet.usna.edu/USMC/** — paste `paste-intranet-company-mentors-marinecorps.html`.
+2. **Include in Navigation → Yes** on the intranet site.
+3. Do **not** publish a public www company mentors page — public pages link to the intranet URL.
 
 ---
 

@@ -31,8 +31,7 @@ Homepage (`index.php`) is live. Re-paste pages after URL or CSS changes; append 
 | `paste-roles-aviation-marinecorps.html` | `Midshipmen/roles/aviation.php` |
 | `paste-roles-support-marinecorps.html` | `Midshipmen/roles/support.php` |
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` | Public |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentor_assignments.php` | Gated |
+| `paste-intranet-company-mentors-marinecorps.html` | `company_mentors.php` on **intranet.usna.edu/USMC/** only |
 | `paste-public-marines-on-the-yard-coming-soon-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(coming soon)* |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(full directory — when ready)* |
 

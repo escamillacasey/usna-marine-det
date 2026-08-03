@@ -47,7 +47,9 @@
 | `Summer_Training.php` | `/MarineCorps/Midshipmen/summer-training.php` | **High** | Same content, modern URL |
 | `staff.php` | `/MarineCorps/MARDET/leadership.php` | **High** | Detachment leadership bios |
 | `FacultyStaffApp.php` | `/MarineCorps/Fleet_Marines.php` | **High** | Fleet / faculty-staff application info |
-| `Marine-Company-Mentors-public.php` | `/MarineCorps/Midshipmen/index.php` | **Medium** | Public overview until mentors stub exists; roster is intranet-only |
+| `Marine-Company-Mentors-public.php` | `https://intranet.usna.edu/USMC/company_mentors.php` | **Medium** | Legacy public mentors; roster is intranet-only |
+| `Midshipmen/company_mentors.php` (www) | `https://intranet.usna.edu/USMC/company_mentors.php` | **High** | Public page removed Jul 2026 |
+| `Midshipmen/company_mentor_assignments.php` (www) | `https://intranet.usna.edu/USMC/company_mentors.php` | **High** | Legacy two-page split consolidated |
 | `Selection.php` | `/MarineCorps/Midshipmen/prospective-marines.php` | **Medium** | Selection path — confirm with Senior Marine |
 | `marine_corps.php` | `/MarineCorps/` | **Medium** | Generic legacy landing |
 | `degree_update.php` | `/MarineCorps/Fleet_Marines.php` | **Low** | Internal fleet form — confirm destination |

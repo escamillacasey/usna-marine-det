@@ -23,7 +23,6 @@ DVIDS_DOWNLOADS: list[tuple[int, str, str]] = [
     (7737144, "aviation", "air-defense-control.jpg"),
     (8291474, "aviation", "atc.jpg"),
     (8765465, "aviation", "uas.jpg"),
-    (5877109, "support", "magtf-intel.jpg"),
     (8025301, "support", "logistics.jpg"),
     (168167, "support", "military-police.jpg"),  # fresher than legacy mpo.jpg
     (8961399, "support", "influence.jpg"),  # MAGTF design wargame — interim for 1707

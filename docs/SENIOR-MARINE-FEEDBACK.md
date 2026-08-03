@@ -45,7 +45,7 @@
 - [x] **29-week curriculum** (not “6 months”)
 - [x] Keep page in **second person** (addressed to the reader)
 - [x] Remove **“Points to consider”** section
-- [ ] Add **TBS official logo** (asset needed — placeholder OK until file received)
+- [x] Add **TBS official logo** (asset needed — placeholder OK until file received)
 - [ ] Add **banger bar** for key TBS points:
   - Every Marine Officer is a **provisional Rifle Platoon Commander**
   - Common training / grounding themes (draft with PAO if needed)
@@ -93,7 +93,7 @@
 - [ ] **C-130** — new narrative: versatile intra-theater lift, mid-air refueling, transportation, insertion; **Hellfire** capability
 
 ### Support
-- [ ] **Intel** — remove **MAGTF Intel Officer** entry
+- [x] **Intel** — remove **MAGTF Intel Officer** entry
 - [ ] Better images: **Ground Intel, HUMINT, Comm Officer, Logistics Officer, MP, Ground Supply, Financial Management**
 
 ---
@@ -107,7 +107,7 @@
 | 0207, 7220 officer, 7315 MQ-9, UH-1Y fast rope, CH-53 sling load | Aviation | [ ] Incoming |
 | Intel, HUMINT, Comm, Logistics, MP, Supply, Fin Mgmt | Support | [ ] Incoming |
 | Gas chamber / PROTRAMID highlights | Summer Training | [ ] Incoming |
-| TBS official logo | Prospective Marines | [ ] Incoming |
+| TBS official logo | Prospective Marines | [x] In repo — paste + upload `assets/images/public/content/tbs-logo.png` |
 
 **Pipeline:** drop files in `assets/images/incoming/` → manifest/import → regenerate role pastes (`scripts/build-roles-pages.py`).
 
@@ -122,7 +122,7 @@
 ### Mentors
 - [ ] Add **“Schedule a meeting”** link (standard URL pattern TBD — Calendly, USNA form, or mailto?)
 - [ ] **Standardize bios** across 36 mentors (source: sheet sync + PAO?)
-- [ ] Deploy mentor roster on **`intranet.usna.edu/USMC/Midshipmen/company_mentors.php`** (paste `paste-intranet-company-mentors-marinecorps.html`)
+- [ ] Deploy mentor roster on **`intranet.usna.edu/USMC/company_mentors.php`** (paste `paste-intranet-company-mentors-marinecorps.html`)
 
 ### Roles IA (future)
 - [ ] Decision: regroup to **Air (pilots) | Ground | Cyber** — impacts nav, three paste files, and `Midshipmen/roles/` tree
@@ -154,8 +154,7 @@
 | `paste-roles-ground-marinecorps.html` | `Midshipmen/roles/index.php` | Ground MOS content/images |
 | `paste-roles-aviation-marinecorps.html` | `Midshipmen/roles/aviation.php` | Aviation content/images |
 | `paste-roles-support-marinecorps.html` | `Midshipmen/roles/support.php` | Support content/images |
-| `paste-public-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` | Meeting link, bios |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` on **intranet.usna.edu/USMC/** | Full roster |
+| `paste-intranet-company-mentors-marinecorps.html` | `company_mentors.php` on **intranet.usna.edu/USMC/** | Full roster |
 
 ---
 

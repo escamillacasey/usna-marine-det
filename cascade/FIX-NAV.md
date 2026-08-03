@@ -111,19 +111,18 @@ Same root cause as Home: nav is **auto-generated from the site folder tree**. Th
    - **Include in Navigation** → **Yes**
    - **Display Name** → e.g. **Marine Detachment** or **MARDET** (what you want in the menu)
 4. On child pages that should appear under it:
-   - `company_mentors.php` → **Include in Navigation → Yes** (public overview)
-   - `company_mentor_assignments.php` → gated roster; optional in nav
    - `marines_on_the_yard.php` → **Include in Navigation → Yes** (when published)
-5. In the **root folder**, sort by **Order** and place **MARDET** where you want it (typically after Midshipmen, before Fleet Marines).
-6. Confirm **`MARDET/index.php`** is **Published** (not draft only).
-7. **Publish the site root folder and all contents** so every page gets fresh nav HTML.
+5. **Company mentors** live on **intranet.usna.edu/USMC/company_mentors.php** only — remove from public www nav if present.
+6. In the **root folder**, sort by **Order** and place **MARDET** where you want it (typically after Midshipmen, before Fleet Marines).
+7. Confirm **`MARDET/index.php`** is **Published** (not draft only).
+8. **Publish the site root folder and all contents** so every page gets fresh nav HTML.
 
 ### Verify
 
 | Check | Expected |
 |-------|----------|
 | Left nav on `index.php` | **Marine Detachment** (or MARDET) with sub-links |
-| Hover / mobile | Company Mentors, Marines on the Yard |
+| Hover / mobile | Marines on the Yard (no public Company Mentors link) |
 | Direct URL still works | `…/MARDET/index.php` → 200 |
 
 ### If it keeps disappearing

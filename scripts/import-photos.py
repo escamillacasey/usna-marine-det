@@ -426,7 +426,7 @@ def write_report(result: ImportResult, mentors: list[dict], used_companies: set[
         lines.append("- `bash scripts/build-intranet-mentors-paste.sh`")
         lines.append(
             "- Re-paste `cascade/paste-intranet-company-mentors-marinecorps.html` "
-            "→ `Midshipmen/company_mentors.php`"
+            "→ `company_mentors.php` on intranet.usna.edu/USMC/"
         )
         lines.append(
             "- Upload new photos to Cascade `_files/images/public/mentors/` "

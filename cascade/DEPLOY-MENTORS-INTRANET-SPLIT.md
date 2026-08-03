@@ -10,7 +10,7 @@
 
 Paste includes an embedded **`<style>`** block for mentor cards. USNA Standard 3.0 loads **`intranet.usna.edu/_files/css/local.css`** (intranet root), not `USMC/_files/css/local.css` — editing the wrong `local.css` will not style this page.
 
-Public `www` no longer hosts the roster. Optional public stub: `paste-public-company-mentors-marinecorps.html` (overview only, no PII).
+Public `www` does not host company mentors. Full roster lives on intranet only (`paste-intranet-company-mentors-marinecorps.html`).
 
 **Read first:** `SITE-STRUCTURE.md`, `cascade/site-urls.json`
 
@@ -64,7 +64,7 @@ bash scripts/build-intranet-mentors-paste.sh
 - [ ] 36 `.mentor-card` elements in page source
 - [ ] Photos → 200, `Content-Type: image/jpeg`
 - [ ] Click **Summer Training** → stays on `intranet.usna.edu/USMC/…`
-- [ ] No `mailto:` on public www copy (if public stub remains)
+- [ ] No `mailto:` on public www mentor pages (roster is intranet-only)
 
 ---
 

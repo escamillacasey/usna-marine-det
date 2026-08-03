@@ -22,10 +22,8 @@ See **`DEPLOY-MENTORS-INTRANET-SPLIT.md`** + **`DEPLOY-INTRANET.md`**. Folder tr
 | Paste file | Cascade path |
 |------------|--------------|
 | `paste-intranet-mardet-marinecorps.html` | `MARDET/index.php` |
-| `paste-intranet-company-mentors-marinecorps.html` | `Midshipmen/company_mentors.php` *(full roster)* |
+| `paste-intranet-company-mentors-marinecorps.html` | `company_mentors.php` *(intranet only — full roster)* |
 | `paste-intranet-marines-on-the-yard-marinecorps.html` | `MARDET/marines_on_the_yard.php` *(full — when ready)* |
-
-Public www stub (optional): `paste-public-company-mentors-marinecorps.html` → `Midshipmen/company_mentors.php` on **www** only.
 
 ## Other files
 
